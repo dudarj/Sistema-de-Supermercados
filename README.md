@@ -16,10 +16,10 @@ Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos
 
 # Usuários Envolvidos e seus tratamentos:
 
-➢ Funcionários: 
+### ➢ Funcionários: 
 - Cadastro e Login (com Banco de Dados): possui Nome, Senha, CPF e Cargo (Gerente ou Separador); 
 
-## ➢ Gerente: 
+### ➢ Gerente: 
 - Fazer o controle do estoque de produtos do supermercado; 
 - Faz controle dos dados dos clientes (cadastros);
 - Inserir produto ao estoque (Nome, Código, Valor, Quantidade, Promoções…); 
@@ -27,14 +27,14 @@ Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos
 - Criar e Exibir um relatório de estoque (quantidade disponíveis por produto no início e no final do dia); 
 - Bônus: Criar e Exibir um relatório de vendas (volume de vendas realizadas e o funcionário responsável pela venda, permitindo ver as falhas no processo de vendas e, uma vez vistas, saná-las);
 
-## ➢ Separador:
+### ➢ Separador:
 - Faz controle dos tipos de pedido:
 
   <p>Buscar no local: Separa os produtos e envia para a sacola, de forma que o cliente por fim tenha acesso à sua compra;</p>
   <p>Via Delivery: Opera a baixa do frete em pedidos via delivery, separa produtos e confirma a chegada da compra;</p>
 - Opera a Folha de Pagamento;
 
-## ➢ Cliente:
+### ➢ Cliente:
 - Acessa o estoque de produtos para a realização da compra; 
 - Escolhe o(s) produto(s) desejado(s) e realiza a compra selecionando a forma de pagamento; 
 - Agenda Pedido para buscar no local ou pede via delivery; 
