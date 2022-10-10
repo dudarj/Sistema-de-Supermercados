@@ -30,8 +30,8 @@ Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos
 ## ➢ Separador:
 - Faz controle dos tipos de pedido:
 
-  Buscar no local: Separa os produtos e envia para a sacola, de forma que o cliente por fim tenha acesso à sua compra;
-  Via Delivery: Opera a baixa do frete em pedidos via delivery, separa produtos e confirma a chegada da compra;
+  <p>Buscar no local: Separa os produtos e envia para a sacola, de forma que o cliente por fim tenha acesso à sua compra;</p>
+  <p>Via Delivery: Opera a baixa do frete em pedidos via delivery, separa produtos e confirma a chegada da compra;</p>
 - Opera a Folha de Pagamento;
 
 ## ➢ Cliente:
