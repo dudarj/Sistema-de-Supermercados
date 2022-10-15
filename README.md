@@ -4,10 +4,10 @@
 
 Desenvolvido pelos seguintes alunos do Centro Federal de Educação Tecnológica, do curso técnico de informática do 2° ano do ensino médio:
 
-<p>🌱 Maria Eduarda Rezende Pereira</p>
-<p>🌱 Enzo Bambirra Pinto</p> 
-<p>🌱 Samuel Pereira de Almeida</p>
-<p>🌱 João Pedro Lopes e Silva</p>
+🌱 Maria Eduarda Rezende Pereira<br>
+🌱 Enzo Bambirra Pinto<br> 
+🌱 Samuel Pereira de Almeida<br>
+🌱 João Pedro Lopes e Silva<br>
 
 
 A tecnologia permite administrar a frente de caixa e o estoque, gerenciar toda operação, além de automatizar tarefas do backoffice. O sistema possui controle de estoque, controle de vendas, controle de acessos de usuário e relatórios.
