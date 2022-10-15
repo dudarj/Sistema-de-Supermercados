@@ -29,7 +29,7 @@ Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos
 
 ### ➢ Separador
 - Faz o controle do pedido:
-  <p>Via Delivery: Opera a baixa do frete em pedidos via delivery, separa produtos e confirma a chegada da compra;</p>
+  Via Delivery: Opera a baixa do frete em pedidos via delivery, separa produtos e confirma a chegada da compra;<br>
 - Opera a Folha de Pagamento;
 
 ### ➢ Cliente:
