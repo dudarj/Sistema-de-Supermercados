@@ -28,7 +28,7 @@ Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos
 - Bônus: Criar e Exibir um relatório de vendas (volume de vendas realizadas e o funcionário responsável pela venda, permitindo ver as falhas no processo de vendas e, uma vez vistas, saná-las);
 
 ### ➢ Separador
-- Faz o controle do pedido:
+- Faz o controle do pedido:<br>
   Via Delivery: Opera a baixa do frete em pedidos via delivery, separa produtos e confirma a chegada da compra;<br>
 - Opera a Folha de Pagamento;
 
