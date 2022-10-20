@@ -37,5 +37,5 @@ Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos
 - Acessa o estoque de produtos para a realização da compra; 
 - Escolhe o(s) itens(s) desejado(s) e realiza a compra selecionando a forma de pagamento; 
 - Faz o pedido (busca no local); 
-- Faz cadastro (Nome, CPF, Endereço, Telefone, E-mail, Senha…) e Login(E-mail e Senha); 
+- Faz cadastro (Nome, CPF, Endereço, Telefone, E-mail, Senha…) e Login (E-mail e Senha); 
 - Adicionar e Remover os itens do pedido (produtos) do carrinho;
