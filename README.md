@@ -30,7 +30,7 @@ Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos
 ### ➢ Separador
 - Faz o controle do pedido:<br>
   Separa os itens do pedido;<br>
-  Controla a questão dos produtos perecíveis e não perecíveis disponíveis<br>
+  Controla a questão dos produtos perecíveis e não perecíveis disponíveis;<br>
 - Opera a Folha de Pagamento;
 
 ### ➢ Cliente:
