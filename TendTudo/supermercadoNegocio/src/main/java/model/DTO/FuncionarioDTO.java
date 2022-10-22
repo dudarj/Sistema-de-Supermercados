@@ -11,16 +11,16 @@ import java.util.Objects;
  *
  * @author Aluno
  */
-public class Funcionario {
+public class FuncionarioDTO {
     
     private String nome;
     private String senha;
     private String cpf;
 
-    public Funcionario() {
+    public FuncionarioDTO() {
     }
 
-    public Funcionario(String nome, String senha, String cpf) {
+    public FuncionarioDTO(String nome, String senha, String cpf) {
         this.nome = nome;
         this.senha = senha;
         this.cpf = cpf;
@@ -71,7 +71,7 @@ public class Funcionario {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Funcionario other = (Funcionario) obj;
+        final FuncionarioDTO other = (FuncionarioDTO) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
