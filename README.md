@@ -9,7 +9,6 @@ Desenvolvido pelos seguintes alunos do Centro Federal de Educação Tecnológica
 🌱 Samuel Pereira de Almeida<br>
 🌱 João Pedro Lopes e Silva<br>
 
-
 A tecnologia permite administrar a frente de caixa e o estoque, gerenciar toda operação, além de automatizar tarefas do backoffice. O sistema possui controle de estoque, controle de vendas, controle de acessos de usuário e relatórios.
 
 Ao automatizar, ou seja, confiar o máximo de tarefas aos sistemas informáticos e não aos recursos humanos, o objetivo é melhorar a produtividade, reduzir custos e permitir que as equipes liberem tempo para se concentrar em tarefas de valor agregado, como melhorar o relacionamento com clientes ou monitoramento de projetos. 
