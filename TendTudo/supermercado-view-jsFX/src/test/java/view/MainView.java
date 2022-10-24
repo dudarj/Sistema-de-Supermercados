@@ -36,7 +36,7 @@ public class MainView extends javax.swing.JFrame {
 
         desktopPane.setBackground(new java.awt.Color(252, 195, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Logo TendTudo.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imgs/Logo TendTudo.jpg"))); // NOI18N
         desktopPane.add(jLabel1);
         jLabel1.setBounds(190, 0, 200, 130);
 
