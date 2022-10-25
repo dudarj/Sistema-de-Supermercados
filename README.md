@@ -1,6 +1,6 @@
 # Sistema-de-Supermercados
 
-## Olá pessoal 👋
+## Olá pessoal  👋
 
 Desenvolvido pelos seguintes alunos do Centro Federal de Educação Tecnológica, do curso técnico de informática do 2° ano do ensino médio:
 
