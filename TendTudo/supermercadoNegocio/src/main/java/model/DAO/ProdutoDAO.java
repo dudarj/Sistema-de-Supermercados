@@ -1,5 +1,6 @@
 package model.DAO;
 
+import java.util.List;
 import model.DTO.Produto;
 
 public interface ProdutoDAO {
@@ -8,5 +9,6 @@ public interface ProdutoDAO {
     void update(Produto obj);
     void deleteById(Produto id);
     Produto findById(Long id);
+    List<Produto> ListarProdutos();
     
 }

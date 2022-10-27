@@ -1,5 +1,6 @@
 package model.DAO;
 
+import java.util.List;
 import model.DTO.TipoPagamento;
 
 
@@ -8,5 +9,5 @@ public interface TipoPagamentoDAO {
     void update(TipoPagamento obj);
     void deleteById(TipoPagamento id);
     TipoPagamento findById(Long id);
-    
+    List<TipoPagamento> ListarTiposPagamentos();
 }

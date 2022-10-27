@@ -6,6 +6,7 @@
 package model.DAO.impl;
 
 import java.sql.Connection;
+import java.util.List;
 import model.DAO.ClienteDAO;
 import model.DTO.Cliente;
 
@@ -39,6 +40,11 @@ public class ClienteDAOJDBC implements ClienteDAO {
     @Override
     public Cliente findById(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Cliente> ListarClientes() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

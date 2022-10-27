@@ -6,6 +6,7 @@
 package model.DAO.impl;
 
 import java.sql.Connection;
+import java.util.List;
 import model.DAO.TipoPagamentoDAO;
 import model.DTO.TipoPagamento;
 
@@ -39,6 +40,11 @@ public class TipoPagamentoDAOJDBC implements TipoPagamentoDAO {
     @Override
     public TipoPagamento findById(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<TipoPagamento> ListarTiposPagamentos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

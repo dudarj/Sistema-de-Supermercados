@@ -6,6 +6,7 @@
 package model.DAO.impl;
 
 import java.sql.Connection;
+import java.util.List;
 import model.DAO.ProdutoDAO;
 import model.DTO.Produto;
 
@@ -36,6 +37,11 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
     @Override
     public Produto findById(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Produto> ListarProdutos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

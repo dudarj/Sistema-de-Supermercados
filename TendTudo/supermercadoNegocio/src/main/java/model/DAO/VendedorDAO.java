@@ -1,5 +1,6 @@
 package model.DAO;
 
+import java.util.List;
 import model.DTO.Vendedor;
 
 public interface VendedorDAO {
@@ -7,5 +8,5 @@ public interface VendedorDAO {
     void update(Vendedor obj);
     void deleteById(Vendedor id);
     Vendedor findById(Long id);
-    
+    List<Vendedor> ListarVendedores();
 }

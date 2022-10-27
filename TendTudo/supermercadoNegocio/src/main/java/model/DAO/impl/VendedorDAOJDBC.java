@@ -6,6 +6,7 @@
 package model.DAO.impl;
 
 import java.sql.Connection;
+import java.util.List;
 import model.DAO.VendedorDAO;
 import model.DTO.Vendedor;
 
@@ -38,5 +39,10 @@ public class VendedorDAOJDBC implements VendedorDAO{
     @Override
     public Vendedor findById(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Vendedor> ListarVendedores() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
