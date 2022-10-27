@@ -7,8 +7,9 @@ public interface ProdutoDAO {
     
     void insert(Produto obj); 
     void update(Produto obj);
-    void deleteById(Produto id);
+    void deleteById(Long id);
     Produto findById(Long id);
+    void listar (Produto obj);
     List<Produto> ListarProdutos();
     
 }

@@ -6,6 +6,9 @@
 package model.DAO.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.List;
 import model.DAO.ItemDAO;
 import model.DTO.Item;
@@ -15,7 +18,7 @@ import model.DTO.Item;
  * @author Aluno
  */
 public class ItemDAOJDBC implements ItemDAO {
-    
+    Item i = new Item();
     private Connection conn;
 
 	public  ItemDAOJDBC(Connection conn) {
@@ -24,22 +27,68 @@ public class ItemDAOJDBC implements ItemDAO {
 
     @Override
     public void insert(Item obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlInsert = "INSERT INTO item(quantidade, valortotal, codigo_produto, codigo_venda) VALUES (?,?,?,?)";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlInsert);
+            st.setInt(1, i.getQuantidade());
+            st.setDouble(2, i.getValorTotal());
+            st.setLong(3, i.getCodigo());
+            st.setInt(4, i.getCodigoVenda());
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void update(Item obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlUpdate = "UPDATE item SET quantidade=?, valortotal=?, codigo_produto=?, codigo_venda=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlUpdate);
+            st.setInt(1, i.getQuantidade());
+            st.setDouble(2, i.getValorTotal());
+            st.setLong(3, i.getCodigo());
+            st.setInt(4, i.getCodigoVenda());
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
-    public void deleteById(Item id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteById(Long id) {
+        String sqlDelete = "DELETE FROM item WHERE id=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlDelete);
+            st.setLong(1, id);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     @Override
     public Item findById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlFindById = "SELECT FROM item WHERE id=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlFindById);
+            st.setLong(1, id);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        return null;
+    }
+
+    @Override
+    public void listar(Item obj) {
+        String sqlListar = "SELECT * FROM item";
+        try{
+            PreparedStatement st = conn.prepareStatement(sqlListar);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

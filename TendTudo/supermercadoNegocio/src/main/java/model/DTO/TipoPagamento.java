@@ -9,12 +9,12 @@ public class TipoPagamento implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private Long codigo;
-    private Long descricao;
+    private String descricao;//Samuel alterou a tipagem da descrição para String
 
     public TipoPagamento() {
     }
 
-    public TipoPagamento(Long codigo, Long descricao) {
+    public TipoPagamento(Long codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -27,11 +27,11 @@ public class TipoPagamento implements Serializable {
         this.codigo = codigo;
     }
 
-    public Long getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(Long descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 

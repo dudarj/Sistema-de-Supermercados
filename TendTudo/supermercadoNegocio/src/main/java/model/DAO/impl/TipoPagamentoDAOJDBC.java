@@ -6,6 +6,9 @@
 package model.DAO.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.List;
 import model.DAO.TipoPagamentoDAO;
 import model.DTO.TipoPagamento;
@@ -15,7 +18,7 @@ import model.DTO.TipoPagamento;
  * @author Aluno
  */
 public class TipoPagamentoDAOJDBC implements TipoPagamentoDAO {
-    
+    TipoPagamento t = new TipoPagamento();
     private Connection conn;
 
 	public  TipoPagamentoDAOJDBC(Connection conn) {
@@ -24,22 +27,61 @@ public class TipoPagamentoDAOJDBC implements TipoPagamentoDAO {
 
     @Override
     public void insert(TipoPagamento obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlInsert = "INSERT INTO tipopagamento(descricao) VALUES (?)";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlInsert);
+            st.setString(1, t.getDescricao());
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void update(TipoPagamento obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlUpdate = "UPDATE tipopagamento SET descricao=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlUpdate);
+            st.setString(1, t.getDescricao());
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     @Override
-    public void deleteById(TipoPagamento id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void deleteById(Long id) {
+        String sqlDelete = "DELETE FROM tipopagamento WHERE id=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlDelete);
+            st.setLong(1, id);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }     }
 
     @Override
     public TipoPagamento findById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlFindById = "SELECT FROM tipopagamento WHERE id=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlFindById);
+            st.setLong(1, id);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        return null;    
+    }
+
+    @Override
+    public void listar(Long id) {
+        String sqlListar = "SELECT * FROM tipopagamento";
+        try{
+            PreparedStatement st = conn.prepareStatement(sqlListar);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

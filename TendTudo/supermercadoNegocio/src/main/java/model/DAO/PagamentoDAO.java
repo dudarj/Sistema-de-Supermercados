@@ -7,7 +7,8 @@ import model.DTO.Pagamento;
 public interface PagamentoDAO {
     void insert(Pagamento obj); 
     void update(Pagamento obj);
-    void deleteById(Pagamento id);
+    void deleteById(Long id);
     Pagamento findById(Long id);
+    void listar (Pagamento obj);
     List<Pagamento> ListarPagamentos();
 }

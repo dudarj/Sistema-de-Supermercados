@@ -6,7 +6,8 @@ import model.DTO.Vendedor;
 public interface VendedorDAO {
     void insert(Vendedor obj); 
     void update(Vendedor obj);
-    void deleteById(Vendedor id);
+    void deleteById(Long id);
     Vendedor findById(Long id);
+    void listar (Vendedor obj);
     List<Vendedor> ListarVendedores();
 }

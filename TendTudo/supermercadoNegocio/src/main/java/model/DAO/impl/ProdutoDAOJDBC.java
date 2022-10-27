@@ -6,13 +6,16 @@
 package model.DAO.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.List;
 import model.DAO.ProdutoDAO;
 import model.DTO.Produto;
 
 
 public class ProdutoDAOJDBC implements ProdutoDAO {
-    
+    Produto pr = new Produto ();
     private Connection conn;
 
 	public  ProdutoDAOJDBC(Connection conn) {
@@ -21,22 +24,66 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
 
     @Override
     public void insert(Produto obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlInsert = "INSERT INTO produto(descricao, preco, quantidade) VALUES (?,?,?)";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlInsert);
+            st.setString(1, pr.getDescricao());
+            st.setDouble(2, pr.getPreco());
+            st.setInt(3, pr.getQuantidade());
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void update(Produto obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sqlUpdate = "UPDATE produto SET descricao=?, preco=?, quantidade=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlUpdate);
+            st.setString(1, pr.getDescricao());
+            st.setDouble(2, pr.getPreco());
+            st.setInt(3, pr.getQuantidade());
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     @Override
-    public void deleteById(Produto id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteById(Long id) {
+        String sqlDelete = "DELETE FROM produto WHERE id=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlDelete);
+            st.setLong(1, id);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     @Override
     public Produto findById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         String sqlFindById = "SELECT FROM produto WHERE id=?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlFindById);
+            st.setLong(1, id);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        return null;    
+    }
+
+    @Override
+    public void listar(Produto obj) {
+        String sqlListar = "SELECT * FROM produto";
+        try{
+            PreparedStatement st = conn.prepareStatement(sqlListar);
+            st.execute();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

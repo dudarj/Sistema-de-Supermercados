@@ -8,8 +8,9 @@ public interface ItemDAO {
     
     void insert(Item obj); 
     void update(Item obj);
-    void deleteById(Item id);
+    void deleteById(Long id);
     Item findById(Long id);
+    void listar (Item obj);
     List<Item> ListarItens();
     
 }
