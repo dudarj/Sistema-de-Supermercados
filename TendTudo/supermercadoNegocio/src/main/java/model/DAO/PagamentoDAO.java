@@ -9,6 +9,5 @@ public interface PagamentoDAO {
     void update(Pagamento obj);
     void deleteById(Long id);
     Pagamento findById(Long id);
-    void listar (Pagamento obj);
     List<Pagamento> ListarPagamentos();
 }

@@ -8,7 +8,7 @@ public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private Long codigo;
-    private String Descricao;
+    private String descricao;
     private double preco;
     private int quantidade;
 
@@ -17,7 +17,7 @@ public class Produto implements Serializable {
 
     public Produto(Long codigo, String Descricao, double preco, int quantidade) {
         this.codigo = codigo;
-        this.Descricao = Descricao;
+        this.descricao = Descricao;
         this.preco = preco;
         this.quantidade = quantidade;
     }
@@ -31,11 +31,11 @@ public class Produto implements Serializable {
     }
 
     public String getDescricao() {
-        return Descricao;
+        return descricao;
     }
 
     public void setDescricao(String Descricao) {
-        this.Descricao = Descricao;
+        this.descricao = Descricao;
     }
 
     public double getPreco() {
@@ -58,7 +58,7 @@ public class Produto implements Serializable {
     public int hashCode() {
         int hash = 5;
         hash = 47 * hash + Objects.hashCode(this.codigo);
-        hash = 47 * hash + Objects.hashCode(this.Descricao);
+        hash = 47 * hash + Objects.hashCode(this.descricao);
         hash = 47 * hash + (int) (Double.doubleToLongBits(this.preco) ^ (Double.doubleToLongBits(this.preco) >>> 32));
         hash = 47 * hash + this.quantidade;
         return hash;
@@ -82,7 +82,7 @@ public class Produto implements Serializable {
         if (this.quantidade != other.quantidade) {
             return false;
         }
-        if (!Objects.equals(this.Descricao, other.Descricao)) {
+        if (!Objects.equals(this.descricao, other.descricao)) {
             return false;
         }
         if (!Objects.equals(this.codigo, other.codigo)) {
@@ -93,7 +93,7 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "Produto{" + "codigo=" + codigo + ", Descricao=" + Descricao + ", preco=" + preco + ", quantidade=" + quantidade + '}';
+        return "Produto{" + "codigo=" + codigo + ", Descricao=" + descricao + ", preco=" + preco + ", quantidade=" + quantidade + '}';
     }
     
 }

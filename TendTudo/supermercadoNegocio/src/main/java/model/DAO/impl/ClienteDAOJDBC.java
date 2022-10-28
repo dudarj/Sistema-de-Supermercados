@@ -1,43 +1,51 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO.impl;
 
-import java.lang.System.Logger;
+import conexao.ConexaoJdbc;
+import conexao.DbException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.List;
 import model.DAO.ClienteDAO;
 import model.DTO.Cliente;
 
-/**
- *
- * @author Aluno
- */
 public class ClienteDAOJDBC implements ClienteDAO {
-    Cliente c = new Cliente();
+
     private Connection conn;
 
-	public  ClienteDAOJDBC(Connection conn) {
-		this.conn = conn;
-	}
+    public ClienteDAOJDBC(Connection conn) {
+        this.conn = conn;
+    }
 
     @Override
     public void insert(Cliente obj) {
-        String sqlInsert = "INSERT INTO cliente(nome, cpf, telefone, endereco, status) VALUES (?,?,?,?,?)";
+        String sqlInsert = "INSERT INTO cliente "
+                + "(nome, cpf, telefone, endereco, status) "
+                + "VALUES (?,?,?,?,?)";
         try {
-            PreparedStatement st = conn.prepareStatement(sqlInsert);
-            st.setString(1, c.getNome());
-            st.setString(2, c.getCpf());
-            st.setString(3, c.getTelefone());
-            st.setString(4, c.getEndereco());
-            String status = Integer.toString(c.getStatus());
-            st.setString(5, status);
-            st.execute();
+            PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
+            st.setString(1, obj.getNome());
+            st.setString(2, obj.getCpf());
+            st.setString(3, obj.getTelefone());
+            st.setString(4, obj.getEndereco());
+            st.setInt(5, obj.getStatus());
+
+            int linhasAfetadas = st.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+                ResultSet rs = st.getGeneratedKeys();
+                if (rs.next()) {
+                    Long id = rs.getLong(1);
+                    obj.setCodigo(id);
+                }
+                ConexaoJdbc.closeResultSet(rs);
+            } else {
+                throw new DbException("Erro inesperado, nehuma linha foi afetada!");
+            }
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -45,60 +53,92 @@ public class ClienteDAOJDBC implements ClienteDAO {
 
     @Override
     public void update(Cliente obj) {
-       String sqlUpdate = "UPDATE cliente SET nome=?, cpf=?, telefone=?, endereco=?, status=?";
+        String sqlUpdate = "UPDATE cliente "
+                + "SET nome = ?, cpf = ?, telefone = ?, endereco = ?, status=? "
+                + "WHERE codigo = ?";
         try {
             PreparedStatement st = conn.prepareStatement(sqlUpdate);
-            st.setString(1, c.getNome());
-            st.setString(2, c.getCpf());
-            st.setString(3, c.getTelefone());
-            st.setString(4, c.getEndereco());
-            String status = Integer.toString(c.getStatus());
-            st.setString(5, status);
-            st.execute();
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        String sqlDelete = "DELETE FROM cliente WHERE id=?";
-        try {
-            PreparedStatement st = conn.prepareStatement(sqlDelete);
-            st.setLong(1, id);
-            st.execute();
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-    }
-
-    @Override
-    public Cliente findById(Long id) {
-         String sqlFindById = "SELECT FROM cliente WHERE id=?";
-        try {
-            PreparedStatement st = conn.prepareStatement(sqlFindById);
-            st.setLong(1, id);
-            st.execute();
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        return null;
-    }
-
-    @Override
-    public void listar(Cliente obj) {
-        String sqlListar = "SELECT * FROM cliente";
-        try{
-            PreparedStatement st = conn.prepareStatement(sqlListar);
-            st.execute();
+            st.setString(1, obj.getNome());
+            st.setString(2, obj.getCpf());
+            st.setString(3, obj.getTelefone());
+            st.setString(4, obj.getEndereco());
+            st.setInt(5, obj.getStatus());
+            st.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public List<Cliente> ListarClientes() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void deleteById(Long id) {
+        String sqlDelete = "DELETE FROM cliente WHERE codigo = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlDelete);
+            st.setLong(1, id);
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+
+    @Override
+    public Cliente findById(Long id) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            st = conn.prepareStatement("SELECT * FROM cliente "
+                    + "WHERE codigo = ?");
+
+            st.setLong(1, id);
+            rs = st.executeQuery();
+
+            if (rs.next()) {
+                Cliente obj = new Cliente();
+                obj.setCodigo(rs.getLong("codigo"));
+                obj.setNome(rs.getString("nome"));
+                obj.setCpf(rs.getString("cpf"));
+                obj.setTelefone(rs.getString("telefone"));
+                obj.setEndereco(rs.getString("endereco"));
+                obj.setStatus(rs.getInt("status"));
+                return obj;
+            }
+
+            return null;
+
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
+
+    @Override
+    public List<Cliente> ListarClientes() {
+        List<Cliente> lista = new ArrayList<>();
+
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            st = conn.prepareStatement("SELECT * " + "FROM cliente " + "ORDER BY nome");
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+                Cliente obj = new Cliente();
+                obj.setCodigo(rs.getLong("codigo"));
+                obj.setNome(rs.getString("nome"));
+                obj.setCpf(rs.getString("cpf"));
+                obj.setTelefone(rs.getString("telefone"));
+                obj.setEndereco(rs.getString("endereco"));
+                obj.setStatus(rs.getInt("status"));
+                lista.add(obj);
+            }
+            return lista;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
 }

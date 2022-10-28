@@ -8,6 +8,5 @@ public interface VendedorDAO {
     void update(Vendedor obj);
     void deleteById(Long id);
     Vendedor findById(Long id);
-    void listar (Vendedor obj);
     List<Vendedor> ListarVendedores();
 }

@@ -46,7 +46,7 @@ public class MainView extends javax.swing.JFrame {
         LoginBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         LoginBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         desktopPane.add(LoginBtn);
-        LoginBtn.setBounds(370, 270, 140, 40);
+        LoginBtn.setBounds(220, 270, 140, 40);
 
         CadastrarBtn1.setBackground(new java.awt.Color(252, 195, 40));
         CadastrarBtn1.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 14)); // NOI18N
@@ -54,7 +54,7 @@ public class MainView extends javax.swing.JFrame {
         CadastrarBtn1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         CadastrarBtn1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         desktopPane.add(CadastrarBtn1);
-        CadastrarBtn1.setBounds(70, 270, 140, 40);
+        CadastrarBtn1.setBounds(220, 210, 140, 40);
 
         setJMenuBar(menuBar);
 
@@ -67,8 +67,8 @@ public class MainView extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

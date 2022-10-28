@@ -11,24 +11,14 @@ public class Item implements Serializable {
     private Long codigo;
     private int quantidade;
     private double valorTotal;
-    private int codigoVenda;
-    //Samuel Criou
-    public int getCodigoVenda() {
-        return codigoVenda;
-    }
-
-    public void setCodigoVenda(int codigoVenda) {
-        this.codigoVenda = codigoVenda;
-    }
 
     public Item() {
     }
 
-    public Item(Long codigo, int quantidade, double valorTotal, int codigoVenda) {
+    public Item(Long codigo, int quantidade, double valorTotal) {
         this.codigo = codigo;
         this.quantidade = quantidade;
         this.valorTotal = valorTotal;
-        this.codigoVenda = codigoVenda;
     }
 
     public Long getCodigo() {

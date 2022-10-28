@@ -10,7 +10,6 @@ public interface ItemDAO {
     void update(Item obj);
     void deleteById(Long id);
     Item findById(Long id);
-    void listar (Item obj);
     List<Item> ListarItens();
     
 }

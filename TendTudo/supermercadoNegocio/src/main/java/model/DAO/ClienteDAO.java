@@ -8,6 +8,5 @@ public interface ClienteDAO {
     void update(Cliente obj);
     void deleteById(Long id);
     Cliente findById(Long id);
-    void listar(Cliente obj);
     List<Cliente> ListarClientes();
 }

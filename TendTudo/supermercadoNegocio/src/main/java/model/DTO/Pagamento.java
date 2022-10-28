@@ -6,15 +6,13 @@ import java.util.Objects;
 public class Pagamento implements Serializable {
     
     private Long codigo;
-    private String descricao;
     private int parcelas;
 
     public Pagamento() {
     }
 
-    public Pagamento(Long codigo, String descricao, int parcelas) {
+    public Pagamento(Long codigo, int parcelas) {
         this.codigo = codigo;
-        this.descricao = descricao;
         this.parcelas = parcelas;
     }
 
@@ -24,14 +22,6 @@ public class Pagamento implements Serializable {
 
     public void setCodigo(Long codigo) {
         this.codigo = codigo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public int getParcelas() {
@@ -45,9 +35,8 @@ public class Pagamento implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.codigo);
-        hash = 53 * hash + Objects.hashCode(this.descricao);
-        hash = 53 * hash + this.parcelas;
+        hash = 19 * hash + Objects.hashCode(this.codigo);
+        hash = 19 * hash + this.parcelas;
         return hash;
     }
 
@@ -66,17 +55,11 @@ public class Pagamento implements Serializable {
         if (this.parcelas != other.parcelas) {
             return false;
         }
-        if (!Objects.equals(this.descricao, other.descricao)) {
-            return false;
-        }
-        if (!Objects.equals(this.codigo, other.codigo)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.codigo, other.codigo);
     }
 
     @Override
     public String toString() {
-        return "Pagamento{" + "codigo=" + codigo + ", descricao=" + descricao + ", parcelas=" + parcelas + '}';
+        return "Pagamento{" + "codigo=" + codigo + ", parcelas=" + parcelas + '}';
     }
 }
