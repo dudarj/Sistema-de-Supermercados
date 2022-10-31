@@ -6,6 +6,7 @@ import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -16,14 +17,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
-/*            ScrollPane scrollPane = loader.load();
-            
-            scrollPane.setFitToHeight(true);
-            scrollPane.setFitToWidth(true);
-
-            mainScene = new Scene(scrollPane);
-*/
-            mainScene = new Scene(loader.load());
+            AnchorPane anchorpane = loader.load();
+           
+            mainScene = new Scene(anchorpane);
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("Supermercado");
             primaryStage.show();
