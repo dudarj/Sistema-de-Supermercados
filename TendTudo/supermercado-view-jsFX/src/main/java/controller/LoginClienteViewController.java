@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author DUDA
  */
-public class TelaMenuViewController implements Initializable {
+public class LoginClienteViewController implements Initializable {
 
     /**
      * Initializes the controller class.

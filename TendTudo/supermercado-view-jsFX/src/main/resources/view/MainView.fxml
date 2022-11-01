@@ -15,7 +15,7 @@
                 <Image url="@imgs/Logo%20TendTudo2.png" />
             </image>
         </ImageView>
-        <Button fx:id="btnLogin" layoutX="248.0" layoutY="383.0" mnemonicParsing="false" onAction="#onCaminhoLogarAction" prefHeight="46.0" prefWidth="251.0" style="-fx-background-color: #A20B18;" text="Login" textAlignment="CENTER" textFill="WHITE">
+        <Button fx:id="btnLogin" layoutX="110.0" layoutY="332.0" mnemonicParsing="false" onAction="#onCaminhoLogarAction" prefHeight="46.0" prefWidth="195.0" style="-fx-background-color: #A20B18;" text="Gerência" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Arial Rounded MT Bold" size="24.0" />
             </font>
@@ -26,5 +26,16 @@
                 <Insets />
             </opaqueInsets>
         </Button>
+      <Button layoutX="417.0" layoutY="332.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="226.0" style="-fx-background-color: #A20B18;" text="Supermercado" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
     </children>
 </AnchorPane>
