@@ -7,7 +7,6 @@ Desenvolvido pelos seguintes alunos do Centro Federal de Educação Tecnológica
 🌱 Maria Eduarda Rezende Pereira<br>
 🌱 Enzo Bambirra Pinto<br> 
 🌱 Samuel Pereira de Almeida<br>
-🌱 João Pedro Lopes e Silva<br>
 
 A tecnologia permite administrar a frente de caixa e o estoque, gerenciar toda operação, além de automatizar tarefas do backoffice. O sistema possui controle de estoque, controle de vendas, controle de acessos de usuário e relatórios.
 
