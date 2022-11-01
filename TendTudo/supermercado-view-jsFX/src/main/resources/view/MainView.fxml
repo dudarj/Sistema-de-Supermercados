@@ -9,22 +9,22 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="746.0" style="-fx-background-color: #FCC328;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
-   <children>
-      <ImageView fitHeight="290.0" fitWidth="300.0" layoutX="228.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imgs/Logo%20TendTudo2.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="248.0" layoutY="383.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="251.0" style="-fx-background-color: #A20B18;" text="Login" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="24.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
-   </children>
+    <children>
+        <ImageView fitHeight="290.0" fitWidth="300.0" layoutX="228.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@imgs/Logo%20TendTudo2.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnLogin" layoutX="248.0" layoutY="383.0" mnemonicParsing="false" onAction="#onCaminhoLogarAction" prefHeight="46.0" prefWidth="251.0" style="-fx-background-color: #A20B18;" text="Login" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="24.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Button>
+    </children>
 </AnchorPane>

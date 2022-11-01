@@ -18,7 +18,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
             AnchorPane anchorpane = loader.load();
-           
+
             mainScene = new Scene(anchorpane);
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("Supermercado");
