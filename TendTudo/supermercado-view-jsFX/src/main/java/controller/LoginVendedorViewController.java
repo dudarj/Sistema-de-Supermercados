@@ -15,9 +15,12 @@ import javafx.fxml.Initializable;
  */
 public class LoginVendedorViewController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    
+    public void AlterarTabelaVisualizacao() {
+		
+	}
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
