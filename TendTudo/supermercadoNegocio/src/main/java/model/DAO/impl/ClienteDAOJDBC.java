@@ -141,4 +141,72 @@ public class ClienteDAOJDBC implements ClienteDAO {
             ConexaoJdbc.closeResultSet(rs);
         }
     }
+
+    @Override
+    public Cliente validaUsuario(Cliente obj) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+
+        try {
+            st = conn.prepareStatement("SELECT login, senha, tipo FROM cliente "
+                    + "WHERE login = ?, senha = ?, tipo = ? ");
+
+            st.setString(1, obj.getLogin());
+            st.setString(2, obj.getSenha());
+            st.setString(3, obj.getTipo());
+
+            rs = st.executeQuery();
+
+            if (rs.next()) {
+                Cliente c = new Cliente();
+                c.setLogin(rs.getString("login"));
+                c.setSenha(rs.getString("senha"));
+                c.setTipo(rs.getString("tipo"));
+                return c;
+            }
+
+            return null;
+
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
+
+    @Override
+    public Cliente findByLogin(String login) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            st = conn.prepareStatement("SELECT * FROM cliente "
+                    + "WHERE login = ?");
+
+            st.setString(1, login);
+            rs = st.executeQuery();
+
+            if (rs.next()) {
+                Cliente obj = new Cliente();
+                obj.setCodigo(rs.getLong("codigo"));
+                obj.setNome(rs.getString("nome"));
+                obj.setCpf(rs.getString("cpf"));
+                obj.setTelefone(rs.getString("telefone"));
+                obj.setEndereco(rs.getString("endereco"));
+                obj.setStatus(rs.getInt("status"));
+                obj.setLogin(rs.getString("login"));
+                obj.setSenha(rs.getString("senha"));
+                obj.setTipo(rs.getString("tipo"));
+                return obj;
+            }
+
+            return null;
+
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
 }

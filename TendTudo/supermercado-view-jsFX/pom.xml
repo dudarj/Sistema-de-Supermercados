@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>TendTudo</artifactId>
-    <groupId>com.mycompany</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+        <artifactId>TendTudo</artifactId>
+        <groupId>com.mycompany</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <groupId>application</groupId>
     <artifactId>supermercado-view-jsFX</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -22,11 +22,6 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>com.mycompany</groupId>
-            <artifactId>supermercadoNegocio</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>18</version>
@@ -36,6 +31,12 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>18</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.mycompany</groupId>
+            <artifactId>supermercadoNegocio</artifactId>
+            <version>1.0-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
     </dependencies>
@@ -86,11 +87,11 @@
                         <id>ide-profile</id>
                         <configuration>
                             <options>
-				<option>${profiler.jvmargs.arg1}</option>
-				<option>${profiler.jvmargs.arg2}</option>
-				<option>${profiler.jvmargs.arg3}</option>
-				<option>${profiler.jvmargs.arg4}</option>
-				<option>${profiler.jvmargs.arg5}</option>
+                                <option>${profiler.jvmargs.arg1}</option>
+                                <option>${profiler.jvmargs.arg2}</option>
+                                <option>${profiler.jvmargs.arg3}</option>
+                                <option>${profiler.jvmargs.arg4}</option>
+                                <option>${profiler.jvmargs.arg5}</option>
                             </options>
                         </configuration>
                     </execution>

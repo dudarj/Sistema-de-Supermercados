@@ -12,38 +12,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="468.0" prefWidth="708.0" style="-fx-background-color: #FCC328;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controller.TelaMenuFuncionarioViewController">
+<AnchorPane id="AnchorPane" prefHeight="468.0" prefWidth="708.0" style="-fx-background-color: #FCC328;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaMenuFuncionarioViewController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/Logo%20TendTudo2.png" />
          </image>
       </ImageView>
-      <HBox layoutX="49.0" layoutY="202.0" prefHeight="88.0" prefWidth="610.0">
+      <HBox layoutX="156.0" layoutY="200.0" prefHeight="88.0" prefWidth="397.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Vendedores">
-               <HBox.margin>
-                  <Insets left="20.0" top="5.0" />
-               </HBox.margin>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Blend>
-                     <topInput>
-                        <InnerShadow color="#657fa148">
-                           <input>
-                              <DropShadow />
-                           </input>
-                        </InnerShadow>
-                     </topInput>
-                  </Blend>
-               </effect>
-               <font>
-                  <Font name="Bookshelf Symbol 7" size="15.0" />
-               </font>
-            </Button>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Clientes">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -90,7 +67,7 @@
             </Button>
          </children>
       </HBox>
-      <HBox layoutX="156.0" layoutY="306.0" prefHeight="88.0" prefWidth="397.0">
+      <HBox layoutX="156.0" layoutY="305.0" prefHeight="88.0" prefWidth="397.0">
          <children>
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Estoque">
                <cursor>

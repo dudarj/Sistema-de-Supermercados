@@ -9,4 +9,6 @@ public interface ClienteDAO {
     void deleteById(Long id);
     Cliente findById(Long id);
     List<Cliente> ListarClientes();
+    Cliente validaUsuario(Cliente obj);
+    Cliente findByLogin(String login);
 }

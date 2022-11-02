@@ -9,7 +9,7 @@
   
   
   
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
                       
   
   
@@ -19,7 +19,7 @@
   
   
   
-  <groupId>com.mycompany</groupId>
+    <groupId>com.mycompany</groupId>
                       
   
   
@@ -29,7 +29,7 @@
   
   
   
-  <artifactId>TendTudo</artifactId>
+    <artifactId>TendTudo</artifactId>
                       
   
   
@@ -39,7 +39,7 @@
   
   
   
-  <version>1.0-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
                       
   
   
@@ -49,7 +49,7 @@
   
   
   
-  <packaging>pom</packaging>
+    <packaging>pom</packaging>
                       
   
   
@@ -59,7 +59,7 @@
   
   
   
-  <modules>
+    <modules>
                                             
     
     
@@ -69,17 +69,15 @@
     
     
     
-    <module>supermercadoNegocio</module>
+        <!--<module>supermercadoNegocio</module>-->
                   
-    
-    
-    
-    <module>supermercado-view-jsFX</module>
+ 
+        <module>supermercado-view-jsFX</module>
           
     
-    <module>supermercado-view-web</module>
+        <module>supermercado-view-web</module>
       
-  </modules>
+    </modules>
                   
   
   
@@ -87,7 +85,7 @@
   
   
   
-  <dependencies>
+    <dependencies>
                                     
     
     
@@ -95,7 +93,7 @@
     
     
     
-    <dependency>
+        <dependency>
                                                       
       
       
@@ -103,7 +101,7 @@
       
       
       
-      <groupId>mysql</groupId>
+            <groupId>mysql</groupId>
                                                       
       
       
@@ -111,7 +109,7 @@
       
       
       
-      <artifactId>mysql-connector-java</artifactId>
+            <artifactId>mysql-connector-java</artifactId>
                                                       
       
       
@@ -119,7 +117,7 @@
       
       
       
-      <version>8.0.30</version>
+            <version>8.0.30</version>
                                                   
     
     
@@ -127,7 +125,7 @@
     
     
     
-    </dependency>
+        </dependency>
                                 
   
   
@@ -135,7 +133,7 @@
   
   
   
-  </dependencies>
+    </dependencies>
                   
   
   
@@ -143,7 +141,7 @@
   
   
   
-  <properties>
+    <properties>
                                             
     
     
@@ -153,7 +151,7 @@
     
     
     
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                                         
   
   
@@ -163,7 +161,7 @@
   
   
   
-  </properties>
+    </properties>
                   
 
 

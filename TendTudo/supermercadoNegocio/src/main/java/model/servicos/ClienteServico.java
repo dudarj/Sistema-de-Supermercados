@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.servicos;
 
-/**
- *
- * @author Aluno
- */
+import model.DAO.ClienteDAO;
+import model.DAO.DAOFactory;
+import model.DTO.Cliente;
+
+
 public class ClienteServico {
     
+    private ClienteDAO dao = DAOFactory.createClienteDao();
+    
+    public Cliente validaUsuario(Cliente obj) {
+        return dao.validaUsuario(obj);
+    }
+    
+    public Cliente findByLogin(String login) {
+        return dao.findByLogin(login);
+    }
 }

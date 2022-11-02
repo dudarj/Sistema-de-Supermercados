@@ -6,14 +6,17 @@ import java.util.Objects;
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     private Long codigo;
     private String nome;
     private String cpf;
     private String telefone;
     private String endereco;
-    private int status; 
-    
+    private int status;
+    private String login;
+    private String senha;
+    private String tipo;
+
     public Cliente() {
     }
 
@@ -74,15 +77,42 @@ public class Cliente implements Serializable {
         this.status = status;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 3;
         hash = 97 * hash + Objects.hashCode(this.codigo);
         hash = 97 * hash + Objects.hashCode(this.nome);
         hash = 97 * hash + Objects.hashCode(this.cpf);
         hash = 97 * hash + Objects.hashCode(this.telefone);
         hash = 97 * hash + Objects.hashCode(this.endereco);
         hash = 97 * hash + this.status;
+        hash = 97 * hash + Objects.hashCode(this.login);
+        hash = 97 * hash + Objects.hashCode(this.senha);
+        hash = 97 * hash + Objects.hashCode(this.tipo);
         return hash;
     }
 
@@ -113,14 +143,21 @@ public class Cliente implements Serializable {
         if (!Objects.equals(this.endereco, other.endereco)) {
             return false;
         }
-        if (!Objects.equals(this.codigo, other.codigo)) {
+        if (!Objects.equals(this.login, other.login)) {
             return false;
         }
-        return true;
+        if (!Objects.equals(this.senha, other.senha)) {
+            return false;
+        }
+        if (!Objects.equals(this.tipo, other.tipo)) {
+            return false;
+        }
+        return Objects.equals(this.codigo, other.codigo);
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone + ", endereco=" + endereco + ", status=" + status + '}';
+        return "Cliente{" + "codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone + ", endereco=" + endereco + ", status=" + status + ", login=" + login + ", senha=" + senha + ", tipo=" + tipo + '}';
     }
+
 }
