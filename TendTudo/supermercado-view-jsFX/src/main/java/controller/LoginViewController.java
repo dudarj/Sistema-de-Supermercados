@@ -12,45 +12,52 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.DTO.Cliente;
+import model.servicos.ClienteServico;
 import util.Alerts;
 import util.Utils;
 
 public class LoginViewController implements Initializable {
-    
+
     @FXML
     private TextField login;
-    
+
     @FXML
     private TextField senha;
-    
+
     @FXML
     private Button btnLogar;
-    
-    //private ClienteServico servico = new ClienteServico();
 
+    private ClienteServico servico = new ClienteServico();
+
+    
     
     @FXML
     public void onCaminhoLogarAction(ActionEvent event) {
+        String loginInput = login.getText().trim();
+        String senhaInput = senha.getText().trim();
 
-        String loginInput = login.getText();
-        String senhaInput = senha.getText();
+        Cliente c = servico.findByLogin(loginInput);
 
-        //Cliente c = servico.findByLogin(loginInput);
-
-       if (loginInput == "") {
+        if (loginInput.equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
             System.out.println("Usuário não encontrado.");
             return;
         }
-        if (loginInput == "admin" && senhaInput == "123") {
-            Stage parentStage = Utils.currentStage(event);
-            loadView("/view/TelaMenuFuncionarioView.fxml", parentStage);
+        if (c != null) {
+            if (loginInput.equals(c.getLogin()) && (senhaInput.equals(c.getSenha())) && (c.getTipo().equals("g"))) {
+                Stage parentStage = Utils.currentStage(event);
+                loadView("/view/TelaMenuFuncionarioView.fxml", parentStage);
+            } else if (loginInput.equals(c.getLogin()) && (senhaInput.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
+                Stage parentStage = Utils.currentStage(event);
+                loadView("/view/TelaMenuClienteView.fxml", parentStage);
+            } else {
+                Alerts.showAlert("Autenticação", "Acesso Negado", "Informações não registradas.", Alert.AlertType.WARNING);
+            }
         } else {
-             Stage parentStage = Utils.currentStage(event);
-            loadView("/view/TelaMenuClienteView.fxml", parentStage);
-        } 
-       
+            Alerts.showAlert("Autenticação", "Acesso Negado", "Informações não registradas.", Alert.AlertType.WARNING);
+        }
     }
 
     private void loadView(String absoluteName, Stage parentStage) {

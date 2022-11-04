@@ -24,8 +24,8 @@ public class ClienteDAOJDBC implements ClienteDAO {
     @Override
     public void insert(Cliente obj) {
         String sqlInsert = "INSERT INTO cliente "
-                + "(nome, cpf, telefone, endereco, status) "
-                + "VALUES (?,?,?,?,?)";
+                + "(nome, cpf, telefone, endereco, status, login, senha) "
+                + "VALUES (?,?,?,?,?,?,?)";
         try {
             PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, obj.getNome());
@@ -33,6 +33,8 @@ public class ClienteDAOJDBC implements ClienteDAO {
             st.setString(3, obj.getTelefone());
             st.setString(4, obj.getEndereco());
             st.setInt(5, obj.getStatus());
+            st.setString(6, obj.getLogin());
+            st.setString(7, obj.getSenha());
 
             int linhasAfetadas = st.executeUpdate();
 

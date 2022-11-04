@@ -16,4 +16,10 @@ public class ClienteServico {
     public Cliente findByLogin(String login) {
         return dao.findByLogin(login);
     }
+    
+    public void cadastrar(Cliente obj) {
+        if (obj.getCodigo() == null) {
+            dao.insert(obj);
+        }
+    }
 }
