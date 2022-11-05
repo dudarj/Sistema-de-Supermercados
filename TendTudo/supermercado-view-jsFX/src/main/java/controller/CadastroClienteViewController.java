@@ -44,44 +44,33 @@ public class CadastroClienteViewController implements Initializable {
     @FXML
     private Button btnCadastro;
 
-    @FXML
-    private Button btnLogin;
 
     private Cliente entidade;
-    private ClienteServico servico;
-
-    public void setCliente(Cliente entidade) {
-        this.entidade = entidade;
-    }
-
-    public void setServicos(ClienteServico servico) {
-        this.servico = servico;
-    }
+    private ClienteServico servico = new ClienteServico();
+    
 
     @FXML
     public void onCaminhoCadastrarAction(ActionEvent event) {
-        if (entidade == null) {
-            throw new IllegalStateException("A entidade é nula");
-        }
-
-        if (servico == null) {
-            throw new IllegalStateException("O serviço é nulo");
-        }
-
         try {
             entidade = retornaDadosDeFormulario();
+
+            if (entidade == null) {
+                throw new IllegalStateException("A entidade é nula");
+            }
+            
             servico.cadastrar(entidade);
+            
+            Alerts.showAlert("Cadastro", null, "Cadastrado com sucesso!", AlertType.INFORMATION);
             Utils.currentStage(event).close();
         } catch (DbException e) {
-            Alerts.showAlert("Erro ao salvar objeto", null, e.getMessage(), AlertType.ERROR);
+            Alerts.showAlert("Erro ao salvar objeto", null, e.getMessage(), AlertType.WARNING);
         }
-
     }
 
     private Cliente retornaDadosDeFormulario() {
 
         Cliente obj = new Cliente();
-        ValidationException exception = new ValidationException("Validation error");
+        ValidationException exception = new ValidationException("Erro de validação.");
 
         if (nome.getText() == null || nome.getText().trim().equals("")) {
             exception.addError("nome", "O campo não pode estar vazio.");
@@ -114,12 +103,6 @@ public class CadastroClienteViewController implements Initializable {
         obj.setSenha(senha.getText());
 
         return obj;
-    }
-
-    @FXML
-    public void onCaminhoLogarAction(ActionEvent event) {
-        Stage parentStage = Utils.currentStage(event);
-        loadView("/view/LoginView.fxml", parentStage);
     }
 
     private void loadView(String absoluteName, Stage parentStage) {
