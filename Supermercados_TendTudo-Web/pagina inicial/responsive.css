@@ -1,0 +1,102 @@
+
+@media (max-width: 1200px){
+
+    html{
+        font-size: 55%;
+    }
+
+}
+
+/* -- Resolução de 991px - (Largura Máxima de: 991px) --  */
+
+@media (max-width: 991px){
+
+    .cabecalho-1,
+    .cabecalho-2 {
+        padding: 2rem;
+    }
+
+    .cabecalho-2 #barra_menu {
+        display: initial;
+    }
+
+    .cabecalho-2 .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 1rem 2rem;
+        display: none;
+        display: none;
+    }
+
+    .cabecalho-2 .nav.active {
+        display: initial;
+        
+    }
+
+    .cabecalho-2 .nav a {
+        font-size: 1.7rem;
+        display: block;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border: .1rem solid #fafafa;
+        border-left: 1rem solid var(--green);
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .conteudo {
+        grid-template-columns: .7fr 2fr;
+    }
+
+    .conteudo .left-col .caixa_produto a {
+        justify-content: space-between;
+    }
+
+    .conteudo .right-col {
+        margin-top: 2rem;
+    }
+
+}
+
+/* -- Resolução de 768px - (Largura Máxima de: 768px) --  */
+
+@media (max-width: 768px){
+    
+    .cabecalho-1 .caixa_de_pesquisa {
+        width: 30rem;
+    }
+
+}
+
+/* -- Resolução de 450px - (Largura Máxima de: 450px) -- ATÉ AQUI ELE NÃO FUNCIONA TÃO BEM ARRUMAR  */
+
+@media (max-width: 450px){
+
+    html {
+        font-size: 50%;
+    }
+
+    .cabecalho-1 {
+        flex-flow: column;
+    }
+
+    .cabecalho-1 .caixa_de_pesquisa {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+
+    .rodape .box-container .caixa_produto .icones a{
+        font-size: 1.5rem;
+    }
+
+    .creditos_finais , .creditos_finais span{
+        font-size: 1.5rem;
+    }
+
+}

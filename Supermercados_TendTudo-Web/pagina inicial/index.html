@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercados TendTudo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="icon" type="imagem/png" href="/images/tendtudo.png" />
+
+
+    <!-- Links dos bootstraps e css usados  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <!-- Início do Cabeçalho  -->
+
+    <header class="cabecalho">
+
+        <div class="cabecalho-1"> <!--Imagem principal-->
+            <a href="#home" class="logo"><img id="logo_home" src="/images/tendtudo.png" alt=""></a>
+
+            <form action="" class="caixa_de_pesquisa">
+                <input type="search" id="pesquisa" placeholder="Procure o seu produto!">
+                <label for="pesquisa" class="fas fa-search"></label>
+            </form>
+
+        </div>
+
+        <div class="cabecalho-2">
+
+            <div id="barra_menu" class="fas fa-bars"></div>
+
+            <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="/About page/about.html">Sobre nós</a>
+                    <a href="/shope page source code/shop.html">Ofertas</a>
+                    <a href="/blog page/blogs.html">Lojas</a>
+            </nav>
+
+            <div class="icones">
+                <a href="#"><i class="fas fa-map-marker-alt"></i>Sua localização</a>
+                <a href="#"><i class="fad fa-lock-alt"></i>Entrar</a>
+                <a href="#"><i class="fas fa-user-circle"></i>Inscreva-se</a>
+            </div>
+            <!-- Janela Modal para Entrar e Inscrever-se e Póssivel Localização do maps  -->
+        </div>
+
+    </header>
+
+    <!-- Final do Cabeçalho  -->
+
+    <!-- Início da Página Principal  -->
+
+    <section class="principal" id="home">
+
+        <div class="conteudo">
+
+            <div class="painel_esquerdo">
+                <h2 id="titulo">Categorias</h2>
+                <div class="caixa_produto">
+                    <a href="#"><img src="/images/icon-1.png" alt=""> <p>Açougue</p>  <span>1</span></a>
+                    <a href="#"><img src="/images/icon-2.png" alt=""> <p>Bebidas</p> <span>1</span></a>
+                    <a href="#"><img src="/images/icon-3.png" alt=""> <p>Comidas</p> <span>7</span></a>
+                    <a href="#"><img src="/images/icon-4.png" alt=""> <p>Salada</p> <span>1</span></a>
+                    <a href="#"><img src="/images/icon-5.png" alt=""> <p>Molhos</p> <span>6</span></a>
+                    <a href="#"><img src="/images/icon-6.png" alt=""> <p>Chocolates</p> <span>2</span></a>
+                    <a href="#"><img src="/images/icon-7.png" alt=""> <p>Cozinha</p>  <span>1</span></a>
+                    <a href="#"><img src="/images/icon-8.png" alt=""> <p>Receitas</p>  <span>1</span></a>
+                    <a href="#"><img src="/images/icon-9.png" alt=""> <p>Congelados</p>  <span>1</span></a>
+                </div>
+            </div>
+            <!-- Início do Bootstrap do carousel  -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="/images//carousel/cocacola_banner.jpg" alt="Slide Coca Cola">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/images//carousel//sadia_banner.jpg" alt="Slide Sadia">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/images/carousel/ype_banner.jpg" alt="Slide YPE">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/images/carousel/nestle_banner.jpg" alt="Slide Nestle">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            <!-- Final do Bootstrap do carousel  -->
+        </div>
+
+    </section>
+
+    <!-- Final da Página Inicial  -->
+
+    <!-- Ínicio Sessão de Produtos  -->
+
+    <section class="produtos">
+
+        <div class="cabecalho_produtos">
+            <h2>Melhores Ofertas do Dia <span>COM 20% DE DESCONTO</span></h2>
+            <a href="#">Todos os produtos</a>
+        </div>
+
+        <div class="conteudo">
+
+            <div class="caixa_produto">
+                <span class="desconto">-30%</span>
+                <img class="produto" src="/images/p1_oreo.png" alt="Produto">
+                <h3>Biscoito Rechado Oreo Original</h3>
+                <p> 327 Unidades - 90g</p>
+                <div class="preco"><span>R$4,99</span>R$3,49</div>
+                
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-34%</span>
+                <img src="/images/p2_vilma.png" alt="Produto">
+                <h3>Macarrão Vilma Espaguete</h3>
+                <p> 890 Unidades - 500g</p>
+                <div class="preco"><span>R$5,99</span>R$3,99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-8%</span>
+                <img src="/images/p3_batata.png" alt="Produto">
+                <h3>Batata Cong McCain</h3>
+                <p> 145 Unidades - 1,7Kg</p>
+                <div class="preco"><span>R$25.99</span>R$23.99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-15%</span>
+                <img src="/images/p4_vodka.png" alt="Produto">
+                <h3>Vodka Francesa GREY GOOSE Original</h3>
+                <p> 145 Unidades - 750ml</p>
+                <div class="preco"><span>R$199,00</span>R$169.99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-20%</span>
+                <img src="/images/p5_nescau.png" alt="Produto">
+                <h3>Cereal Matinal Duo, NESCAU,</h3>
+                <p> 306 Unidades - 750ml</p>
+                <div class="preco"><span>R$9,99</span>R$7,99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto"> -11%</span>
+                <img id="picanha" src="/images/p6_picanha.png" alt="Produtos">
+                <h3>Picanha Prata Swift</h3>
+                <p> 110 Unidades - 1,3Kg</p>
+                <div class="preco"><span>R$89.99</span>R$79.99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-24%</span>
+                <img src="/images/p7_arroz5kg.png" alt="Produtos">
+                <h3>Arroz Prato Fino</h3>
+                <p> 442 Unidades - 5Kg</p>
+                <div class="preco"><span>R$24,99</span>R$18,99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-33%</span>
+                <img src="/images/p8_gulao.png" alt="Produtos">
+                <h3>Salgadinho Gulão Assado Churrasco</h3>
+                <p> 442 Unidades - 120g</p>
+                <div class="preco"><span>R$5,99</span>R$3,99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Final Sessão de Produtos  -->
+
+    <section class="container">
+
+        <div class="conteudo"></div>
+
+    </section>
+
+    <!-- Ínicio dos Produtos com Os Melhores Descontos   -->
+
+    <section class="ultimos-produtos produtos">
+
+        <div class="cabecalho_produtos">
+            <h2>As Melhores Ofertas da Nossa Loja <span>40% DE DESCONTO</span></h2>
+            <a href="#">Ver Todas</a>
+        </div>
+
+        <div class="conteudo">
+
+            <div class="caixa_produto">
+                <span class="desconto">-33%</span>
+                <img src="/images/p10_cafemaffort3.png" alt="Produto">
+                <h3>Café Maffort Três Corações - Quentinho para Alegrar o Programador</h3>
+                <p> ∞ Unidades - 103</p>
+                <div class="preco"><span>R$5,99</span>R$3,99</div>
+                
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-14%</span>
+                <img src="/images/p13_cocacola.png" alt="Produto">
+                <h3>Refrigerante Coca-Cola Sabor Original 3L</h3>
+                <p> 150 Unidades - 3L</p>
+                <div class="preco"><span>R$ 29,99</span>R$ 24,99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-21%</span>
+                <img src="/images/p11_fralda.png" alt="Produto">
+                <h3>Fralda Pampers Confort Sec Giga XXG</h3>
+                <p> 120 Unidades</p>
+                <div class="preco"><span>R$ 179,90</span>R$ 142,59</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-16%</span>
+                <img src="/images/p12_facas.png" alt="Produto">
+                <h3>Conjunto de Facas 9 Peças Tramontina Plenus em Aço Inox</h3>
+                <p> 30 Unidades</p>
+                <div class="preco"><span>R$ 69,90</span>R$ 59,00</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="caixa_produto">
+                <span class="desconto">-33%</span>
+                <img src="/images/p9_banana.png" alt="Produto">
+                <h3>Banana Prata</h3>
+                <p> 100 Unidades - 1Kg</p>
+                <div class="preco"><span>R$ 8,99</span>R$ 5,99</div>
+
+                <button type="button" class="butao">Adicionar ao carrinho</button>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- Final dos Produtos com Os Melhores Descontos   -->
+
+    <!-- Ínicio Seção de Rodapé  -->
+
+    <section class="rodape">
+
+       <div class="conversor">
+
+        <div class="caixa_divulgacao">
+            <i class="fad fa-truck"></i> <!-- Icone da divulgação  -->
+            <div class="divulgacao">
+                <h3>Peça os nossos produtos, entregaremos em sua casa!</h3>
+                <p>A melhor opção caso você não possa buscar no nosso supermercado!
+                </p>
+            </div>
+        </div>
+
+        <div class="caixa_divulgacao">
+            <i class="fas fa-shopping-basket"></i> <!-- Icone da divulgação  -->
+            <div class="divulgacao">
+                <h3>Produtos com a melhor qualidade dos Centros Federais!</h3>
+                <p>Entre todos os supermercados o TendTudo tem a melhor qualidade de produtos da região.</p>
+            </div>
+        </div>
+
+        <div class="caixa_divulgacao">
+            <i class="fas fa-tag"></i> <!-- Icone da divulgação  -->
+            <div class="divulgacao">
+                <h3>Com os melhores descontos da região!</h3>
+                <p>Com os melhores preços para fazer a compra da semana.</p>
+            </div>
+        </div>
+       </div>
+
+       <div class="conteudo">
+
+        <div class="caixa_produto">
+            <img id="logo_rodape" src="/images/tendtudo.png" alt="Contatos com o TendTudo">
+            <div class="icones icone1">
+                <a href="#"><img id="iconwpp" src="/images/whatsapp.png" alt="Icone do Whatsapp"> +31 984360707</a>
+                <a href="#"><img id="icongmail" src="/images/gmail.png" alt="Icone Gmail"> supertendtudo@gmail.com</a>
+                <a href="#"><img id="iconwww" src="/images/world-wide-web.png" alt="Icone da World Wide Web">  www.tendtudo.com</a>
+            </div>
+        </div>
+
+        <div class="caixa_produto">
+            <h2>SETORES</h2>
+            <div class="icones">
+                <a href="#">Vegetais</a>
+                <a href="#">Açougue</a>
+                <a href="#">Bebidas</a>
+                <a href="#">Biscoitos e Salgadinhos</a>
+                <a href="#">Cozinha</a>
+            </div>
+        </div>
+
+        <div class="caixa_produto">
+            <h2>Sobre Nós</h2>
+            <div class="icones">
+                <a href="#">Mais informações</a>
+                <a href="#">Integrantes</a>
+                <a href="#">Localização das lojas</a>
+                <a href="#">Versão Desktop</a>
+                <a href="#">Direitos</a>
+            </div>
+        </div>
+
+        <div class="caixa_produto">
+            <h2>Baixe a nossa versão desktop!</h2>
+            <div class="image">
+                <img src="/images/tendtudo.png" alt="Logo do Supermercado TendTudo">
+            </div>
+        </div>
+       </div>
+
+    </section>
+
+    <div class="creditos_finais"> CEFET-MG <span> Supermercados TendTudo  </span> Direitos Reservados a Enzo Bambirra, Maria Eduarda e Samuel Pereira</div>
+
+    <!-- Final do código Rodapé  -->
+
+    <!-- Arquivo JavaScript  -->
+    <script src="javascript.js"></script>
+    <!--Bootstraps JavaScripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
