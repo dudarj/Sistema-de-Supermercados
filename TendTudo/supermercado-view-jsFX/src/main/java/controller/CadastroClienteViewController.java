@@ -19,6 +19,8 @@ import model.DTO.Cliente;
 import model.exceptions.ValidationException;
 import model.servicos.ClienteServico;
 import util.Alerts;
+import util.MaskFieldUtil;
+import util.MaskFormatter;
 import util.Utils;
 
 public class CadastroClienteViewController implements Initializable {
@@ -44,25 +46,22 @@ public class CadastroClienteViewController implements Initializable {
     @FXML
     private Button btnCadastro;
 
-
     private Cliente entidade;
     private ClienteServico servico = new ClienteServico();
-    
 
     @FXML
     public void onCaminhoCadastrarAction(ActionEvent event) {
-        try {         
+        try {
             entidade = retornaDadosDeFormulario();
 
             if (entidade == null) {
                 throw new IllegalStateException("A entidade é nula");
+            } else {
+                servico.cadastrar(entidade);
+                Alerts.showAlert("Cadastro", null, "Cadastrado com sucesso!", AlertType.INFORMATION);
+                Utils.currentStage(event).close();
             }
-            
-            servico.cadastrar(entidade);
-            
-            Alerts.showAlert("Cadastro", null, "Cadastrado com sucesso!", AlertType.INFORMATION);
-            
-            Utils.currentStage(event).close();
+
         } catch (DbException e) {
             Alerts.showAlert("Erro ao salvar objeto", null, e.getMessage(), AlertType.WARNING);
         }
@@ -103,7 +102,23 @@ public class CadastroClienteViewController implements Initializable {
         }
         obj.setSenha(senha.getText());
 
-        return obj;
+        if (nome.getText() == null || nome.getText().trim().equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
+        } else if (telefone.getText() == null || telefone.getText().trim().equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
+        } else if (endereco.getText() == null || endereco.getText().trim().equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
+        } else if (cpf.getText() == null || cpf.getText().trim().equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
+        } else if (login.getText() == null || login.getText().trim().equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
+        } else if (senha.getText() == null || senha.getText().trim().equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
+        } else {
+            return obj;
+        }
+
+        return null;
     }
 
     private void loadView(String absoluteName, Stage parentStage) {
@@ -126,7 +141,18 @@ public class CadastroClienteViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        initializeNodes();
+    }
+
+    private void initializeNodes() {
+        MaskFieldUtil.numericField(cpf);
+        MaskFieldUtil.numericField(telefone);
+        MaskFieldUtil.cpfCnpjField(cpf);
+        MaskFormatter formatter = new MaskFormatter(telefone);
+        MaskFieldUtil.maxField(telefone, 14);
+        MaskFormatter.mascaraTelefone(telefone);
+        formatter.showMask();
+
     }
 
 }

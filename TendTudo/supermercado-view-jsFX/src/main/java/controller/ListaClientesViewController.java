@@ -16,6 +16,7 @@ import listeners.DataChangeListener;
 import model.DTO.Cliente;
 import model.servicos.ClienteServico;
 
+
 public class ListaClientesViewController implements Initializable, DataChangeListener {
     
     
@@ -48,6 +49,7 @@ public class ListaClientesViewController implements Initializable, DataChangeLis
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        AlterarTabelaVisualizacao();
         initializeNodes();
     }
 

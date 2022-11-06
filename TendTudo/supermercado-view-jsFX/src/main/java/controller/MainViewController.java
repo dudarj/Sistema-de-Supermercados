@@ -75,7 +75,6 @@ public class MainViewController implements Initializable {
 
     private void loadView(String absoluteName, Stage parentStage) {
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
             

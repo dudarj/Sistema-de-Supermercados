@@ -20,24 +20,28 @@ import javafx.stage.Stage;
 import util.Alerts;
 import util.Utils;
 
-
 public class TelaMenuGerenciaViewController implements Initializable {
 
     @FXML
     private Button btnTabelacliente;
-    
-    
-    
+
+    @FXML
+    private Button btnTabelaprodutos;
+
     @FXML
     public void onCaminhoClienteAction(ActionEvent event) {
         Stage parentStage = Utils.currentStage(event);
         loadView("/view/ListaClientesView.fxml", parentStage);
     }
-    
-    
+
+    @FXML
+    public void onCaminhoProdutosAction(ActionEvent event) {
+        Stage parentStage = Utils.currentStage(event);
+        loadView("/view/ListaProdutosView.fxml", parentStage);
+    }
+
     private void loadView(String absoluteName, Stage parentStage) {
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
 
@@ -56,6 +60,5 @@ public class TelaMenuGerenciaViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TODO
-    }   
+    }
 }
-
