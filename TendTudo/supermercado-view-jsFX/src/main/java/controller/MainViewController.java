@@ -58,7 +58,7 @@ public class MainViewController implements Initializable {
                 Stage parentStage = Utils.currentStage(event);
                 login.setText("");
                 senha.setText("");
-                loadView("/view/TelaMenuClienteView.fxml", parentStage);
+                loadView("/view/TelaClienteSupermercadoView.fxml", parentStage);
             } else {
                 Alerts.showAlert("Autenticação", "Acesso Negado", "Informações não registradas.", Alert.AlertType.WARNING);
             }
@@ -78,7 +78,8 @@ public class MainViewController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
-
+            
+            
             Stage dialogStage = new Stage();
             dialogStage.setScene(new Scene(pane));
             dialogStage.setResizable(false);
