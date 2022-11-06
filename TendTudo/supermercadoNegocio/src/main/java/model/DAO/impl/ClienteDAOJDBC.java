@@ -133,6 +133,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
                 obj.setTelefone(rs.getString("telefone"));
                 obj.setEndereco(rs.getString("endereco"));
                 obj.setStatus(rs.getInt("status"));
+                obj.setTipo(rs.getString("tipo"));
                 lista.add(obj);
             }
             return lista;

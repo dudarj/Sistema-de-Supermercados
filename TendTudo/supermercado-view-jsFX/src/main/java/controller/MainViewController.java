@@ -53,7 +53,7 @@ public class MainViewController implements Initializable {
                 Stage parentStage = Utils.currentStage(event);
                 login.setText("");
                 senha.setText("");
-                loadView("/view/TelaMenuFuncionarioView.fxml", parentStage);
+                loadView("/view/TelaMenuGerenciaView.fxml", parentStage);
             } else if (loginInput.equals(c.getLogin()) && (senhaInput.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
                 Stage parentStage = Utils.currentStage(event);
                 login.setText("");
@@ -93,6 +93,6 @@ public class MainViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        //TODO
     }
 }

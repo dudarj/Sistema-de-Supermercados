@@ -51,7 +51,7 @@ public class CadastroClienteViewController implements Initializable {
 
     @FXML
     public void onCaminhoCadastrarAction(ActionEvent event) {
-        try {
+        try {         
             entidade = retornaDadosDeFormulario();
 
             if (entidade == null) {
@@ -61,6 +61,7 @@ public class CadastroClienteViewController implements Initializable {
             servico.cadastrar(entidade);
             
             Alerts.showAlert("Cadastro", null, "Cadastrado com sucesso!", AlertType.INFORMATION);
+            
             Utils.currentStage(event).close();
         } catch (DbException e) {
             Alerts.showAlert("Erro ao salvar objeto", null, e.getMessage(), AlertType.WARNING);
@@ -111,6 +112,7 @@ public class CadastroClienteViewController implements Initializable {
             Pane pane = loader.load();
 
             Stage dialogStage = new Stage();
+            dialogStage.setTitle("Cadastro");
             dialogStage.setScene(new Scene(pane));
             dialogStage.setResizable(false);
             dialogStage.initOwner(parentStage);

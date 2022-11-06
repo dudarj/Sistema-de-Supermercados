@@ -9,7 +9,7 @@ public class TipoPagamento implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private Long codigo;
-    private String descricao;//Samuel alterou a tipagem da descrição para String
+    private String descricao;
 
     public TipoPagamento() {
     }
