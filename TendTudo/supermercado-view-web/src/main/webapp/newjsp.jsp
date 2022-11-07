@@ -12,13 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            for(int i = 1; i<10;i++){
-                out.println("Teste 1 2 3"+ "<br>");
-            }
-        %>
         
-        <%@ include file="index.html" %>
-        
+       <%-- <%@ include file="index.html" %> --%>
+       <%@ include file="index.html" %>
+       
     </body>
 </html>

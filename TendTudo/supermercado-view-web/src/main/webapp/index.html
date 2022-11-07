@@ -4,12 +4,105 @@
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <style>
+            body{
+                background-color: #ffcc99;
+            }
+            .card-header{
+                background-color: #FCC328;
+                display: flex;
+            }
+            #logo{
+                width: 100px;
+                height: 100px;
+                margin-left: 990px;
+            }
+            .card-body{
+            }
+        </style>
     </head>
     <body>
-        <br>
-        <div class="border border-success p-2 mb-2" >
-            <p>Aqui e o Html que sera importado para o JSP</p>
-            <a href="newjsp.jsp">Clique</a>        
+
+        <div class="card">
+            <div class="card-header">
+                <h2 style="padding-top: 27px;">TendTudo</h2>
+                <div>
+                    <img src="imgs/Logo TendTudo.png" id="logo"/>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">O melhor de BH</h5>
+                <p class="card-text"></p>
+
+                <a href="newjsp.jsp" class="btn btn-primary">Ir para JSP</a>
+                <form action="ControllerServlet">
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
         </div>
+        <div class="card text-bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Arroz</div>
+            <div class="card-body">
+                <h5 class="card-title" style="margin-left: 100px;">R$10.50</h5>
+                <p class="card-text"> <img src="https://o.remove.bg/downloads/4a550b66-5f54-4f15-b20b-27f66b451ebc/0636983cb26bb9378559f5ed6494300b-removebg-preview.png" style="width:100px;margin-left:100px;"/></p>
+                <button type="button" class="btn btn-light" style="margin-left: 100px;">Comprar</button>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <p></p>
+        </div>
+        <span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
+            Make a request
+        </span>
+        <label>Your name:
+            <input type="text" id="ajaxTextbox" />
+        </label>
+        <p id="demo"></p>
+        <script type="text/javascript">
+            (function () {
+                var httpRequest;
+                document.getElementById("ajaxButton").onclick = function () {
+                    var userName = document.getElementById("ajaxTextbox").value;
+                    var demo = document.getElementById("demo").innerHTML = userName;
+                    makeRequest('index.html');
+                };
+
+                function makeRequest(url,userName) {
+                    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+                        httpRequest = new XMLHttpRequest();
+                    } else if (window.ActiveXObject) { // IE
+                        try {
+                            httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                        } catch (e) {
+                            try {
+                                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                            } catch (e) {
+                            }
+                        }
+                    }
+
+                    if (!httpRequest) {
+                        alert('Giving up :( Cannot create an XMLHTTP instance');
+                        return false;
+                    }
+                    httpRequest.onreadystatechange = alertContents;
+                    httpRequest.open('POST', url);
+                    httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    httpRequest.send('userName=' + encodeURIComponent(userName));
+                }
+
+                function alertContents() {
+                    if (httpRequest.readyState === 4) {
+                        if (httpRequest.status === 200) {
+                            alert(httpRequest.responseText);
+                        } else {
+                            alert('There was a problem with the request.');
+                        }
+                    }
+                }
+            })();
+        </script>
+
     </body>
 </html>
