@@ -34,7 +34,7 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
             st.setString(1, obj.getDescricao());
             st.setDouble(2, obj.getPreco());
             st.setInt(3, obj.getQuantidade());
-            
+
             int linhasAfetadas = st.executeUpdate();
 
             if (linhasAfetadas > 0) {
@@ -54,16 +54,22 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
 
     @Override
     public void update(Produto obj) {
-        String sqlUpdate = "UPDATE produto SET descricao=?, preco=?, quantidade=? WHERE codigo = ? ";
+        PreparedStatement st = null;
         try {
-            PreparedStatement st = conn.prepareStatement(sqlUpdate);
+            st = conn.prepareStatement("UPDATE produto " + "SET descricao = ?, preco = ?, quantidade = ? WHERE codigo = ? ");
+
             st.setString(1, obj.getDescricao());
             st.setDouble(2, obj.getPreco());
             st.setInt(3, obj.getQuantidade());
+            st.setLong(4, obj.getCodigo());
+
             st.executeUpdate();
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
         }
+
     }
 
     @Override

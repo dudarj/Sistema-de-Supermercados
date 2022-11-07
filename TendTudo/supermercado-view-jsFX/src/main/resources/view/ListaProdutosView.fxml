@@ -23,6 +23,8 @@
           <TableColumn fx:id="tbcDescricao" prefWidth="238.0" text="Descrição" />
             <TableColumn fx:id="tbcPreco" minWidth="-Infinity" prefWidth="201.0" text="Preço (R$)" />
             <TableColumn fx:id="tbcQuantidade" prefWidth="209.0" text="Quantidade" />
+            <TableColumn fx:id="tbcEDIT" minWidth="0.0" prefWidth="87.0" />
+            <TableColumn fx:id="tbcREMOVE" minWidth="0.0" prefWidth="112.0" />
         </columns>
       </TableView>
       <ToolBar layoutY="52.0" prefHeight="54.0" prefWidth="1050.0" style="-fx-background-color: #c6c6c6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

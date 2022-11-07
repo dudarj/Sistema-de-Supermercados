@@ -65,10 +65,10 @@ public class TelaProdutosViewController implements Initializable {
             if (entidade == null) {
                 throw new IllegalStateException("A Entidade não pode estar nula");
             }
-            
+
             servico = new ProdutoServico();
             servico.salvar(entidade);
-            
+
             if (servico == null) {
                 throw new IllegalStateException("Serviço nulo");
             }
@@ -130,4 +130,17 @@ public class TelaProdutosViewController implements Initializable {
             listener.onDataChanged();
         }
     }
+
+    public void updateFormData() {
+        if (entidade == null) {
+            throw new IllegalStateException("Entidade não pode estar nula");
+        }
+        codigo.setText(String.valueOf(entidade.getCodigo()));
+        descricao.setText(entidade.getDescricao());
+        preco.setText(String.valueOf(entidade.getPreco()));
+        quantidade.setText(String.valueOf(entidade.getQuantidade()));
+        
+        initializeNodes();
+    }
+
 }

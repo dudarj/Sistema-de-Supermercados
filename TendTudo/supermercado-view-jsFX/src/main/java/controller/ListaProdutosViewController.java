@@ -1,10 +1,13 @@
 package controller;
 
 import application.Main;
+import conexao.DbIntegrityException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +17,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -46,6 +51,12 @@ public class ListaProdutosViewController implements Initializable, DataChangeLis
     @FXML
     private TableColumn<Produto, Integer> tbcQuantidade;
 
+    @FXML
+    private TableColumn<Produto, Produto> tbcEDIT;
+
+    @FXML
+    private TableColumn<Produto, Produto> tbcREMOVE;
+
     private ProdutoServico servico = new ProdutoServico();
     private ObservableList<Produto> obLista;
 
@@ -64,6 +75,8 @@ public class ListaProdutosViewController implements Initializable, DataChangeLis
             TelaProdutosViewController controller = loader.getController();
             controller.setEntidade(obj);
             controller.setServico(new ProdutoServico());
+            controller.subscribeDataChangeListener(this);
+            controller.updateFormData();
 
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Produtos");
@@ -96,15 +109,70 @@ public class ListaProdutosViewController implements Initializable, DataChangeLis
 
     public void AlterarTabelaVisualizacao() {
         if (servico == null) {
-            throw new IllegalStateException("Servico é nulo");
+            throw new IllegalStateException("Serviço é nulo");
         }
         List<Produto> list = servico.ListarProdutos();
         obLista = FXCollections.observableArrayList(list);
         tbvProduto.setItems(obLista);
+        initEditaBotao();
+        initRemoveBotao();
     }
 
     @Override
     public void onDataChanged() {
         AlterarTabelaVisualizacao();
     }
+
+    private void initEditaBotao() {
+        tbcEDIT.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+        tbcEDIT.setCellFactory(param -> new TableCell<Produto, Produto>() {
+            private final Button button = new Button("Editar");
+
+            @Override
+            protected void updateItem(Produto obj, boolean empty) {
+                super.updateItem(obj, empty);
+                if (obj == null) {
+                    setGraphic(null);
+                    return;
+                }
+                setGraphic(button);
+                button.setOnAction(event -> loadView(obj, "/view/TelaProdutosView.fxml", Utils.currentStage(event)));
+            }
+        });
+    }
+
+    private void initRemoveBotao() {
+        tbcREMOVE.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+        tbcREMOVE.setCellFactory(param -> new TableCell<Produto, Produto>() {
+            private final Button button = new Button("Remover");
+
+            @Override
+            protected void updateItem(Produto obj, boolean empty) {
+                super.updateItem(obj, empty);
+                if (obj == null) {
+                    setGraphic(null);
+                    return;
+                }
+                setGraphic(button);
+                button.setOnAction(event -> removeEntity(obj));
+            }
+        });
+    }
+
+    private void removeEntity(Produto obj) {
+        Optional<ButtonType> result = Alerts.showConfirmation("Confimação", "Deseja realmente deletar?");
+
+        if (result.get() == ButtonType.OK) {
+            if (servico == null) {
+                throw new IllegalStateException("Serviço Nulo");
+            }
+            try {
+                servico.remove(obj);
+                AlterarTabelaVisualizacao();
+            } catch (DbIntegrityException e) {
+                Alerts.showAlert("Erro ao remover objeto", null, e.getMessage(), AlertType.ERROR);
+            }
+        }
+    }
+
 }
