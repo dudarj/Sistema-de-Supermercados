@@ -13,22 +13,18 @@ public class ConexaoJdbc {
 
     private static Connection conn = null;
 
-    /* private static String usuario = "root";
-    private static String senha = "951753";
-    private static String url = "jdbc:mysql://localhost:3306/tendtudo";*/
 
     public static Connection getConnection() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e1) {
             e1.printStackTrace();
         }
         if (conn == null) {
             try {
-                Properties props = loadProperties();
-                String url = props.getProperty("dburl");
+                 Properties props = loadProperties();
+                  String url = props.getProperty("dburl");
                 conn = DriverManager.getConnection(url, props);
-                /*conn = DriverManager.getConnection(url, usuario, senha);*/
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
             }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO;
 
 import conexao.ConexaoJdbc;
@@ -14,31 +9,34 @@ import model.DAO.impl.TipoPagamentoDAOJDBC;
 import model.DAO.impl.VendaDAOJDBC;
 import model.DAO.impl.VendedorDAOJDBC;
 
-/**
- *
- * @author Aluno
- */
+
 public class DAOFactory {
-    
-    public static ClienteDAOJDBC createClienteDao()  {
-		return new ClienteDAOJDBC(ConexaoJdbc.getConnection());
-	}
-    public static ProdutoDAOJDBC createProdutoDao()  {
-		return new ProdutoDAOJDBC(ConexaoJdbc.getConnection());
-	}
-    public static VendaDAOJDBC createVendaDao()  {
-		return new VendaDAOJDBC(ConexaoJdbc.getConnection());
-	}
-    public static PagamentoDAOJDBC createPagamentoDao()  {
-		return new PagamentoDAOJDBC(ConexaoJdbc.getConnection());
-	}
-    public static VendedorDAOJDBC createVendedorDao()  {
-		return new VendedorDAOJDBC(ConexaoJdbc.getConnection());
-	}
-    public static ItemDAOJDBC createItemDao()  {
-		return new ItemDAOJDBC(ConexaoJdbc.getConnection());
-	}
-    public static TipoPagamentoDAOJDBC createTipoPagamentoDao()  {
-		return new TipoPagamentoDAOJDBC(ConexaoJdbc.getConnection());
-	}  
+
+    public static ClienteDAOJDBC createClienteDao() {
+        return new ClienteDAOJDBC(ConexaoJdbc.getConnection());
+    }
+
+    public static ProdutoDAOJDBC createProdutoDao() {
+        return new ProdutoDAOJDBC(ConexaoJdbc.getConnection());
+    }
+
+    public static VendaDAOJDBC createVendaDao() {
+        return new VendaDAOJDBC(ConexaoJdbc.getConnection());
+    }
+
+    public static PagamentoDAOJDBC createPagamentoDao() {
+        return new PagamentoDAOJDBC(ConexaoJdbc.getConnection());
+    }
+
+    public static VendedorDAOJDBC createVendedorDao() {
+        return new VendedorDAOJDBC(ConexaoJdbc.getConnection());
+    }
+
+    public static ItemDAOJDBC createItemDao() {
+        return new ItemDAOJDBC(ConexaoJdbc.getConnection());
+    }
+
+    public static TipoPagamentoDAOJDBC createTipoPagamentoDao() {
+        return new TipoPagamentoDAOJDBC(ConexaoJdbc.getConnection());
+    }
 }

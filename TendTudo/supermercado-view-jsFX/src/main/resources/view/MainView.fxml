@@ -19,7 +19,7 @@
         </ImageView>
       <TextField fx:id="login" layoutX="305.0" layoutY="288.0" prefHeight="25.0" prefWidth="192.0" />
       <TextField fx:id="senha" layoutX="305.0" layoutY="317.0" prefHeight="25.0" prefWidth="192.0" />
-      <Label layoutX="236.0" layoutY="287.0" prefHeight="27.0" prefWidth="58.0" text="Login:">
+      <Label layoutX="222.0" layoutY="287.0" prefHeight="27.0" prefWidth="72.0" text="Usuário:">
          <font>
             <Font name="Yu Gothic Medium" size="17.0" />
          </font>

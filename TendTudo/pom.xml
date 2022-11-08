@@ -71,9 +71,6 @@
                   
  
         <module>supermercado-view-jsFX</module>
-          
-    
-        <module>supermercado-view-web</module>
         <module>supermercadoNegocio</module>
     </modules>
                   

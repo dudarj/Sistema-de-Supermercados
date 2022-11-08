@@ -34,7 +34,7 @@
       </Label>
       <TextField fx:id="nome" layoutX="106.0" layoutY="117.0" prefHeight="25.0" prefWidth="288.0" />
       <TextField fx:id="telefone" layoutX="106.0" layoutY="147.0" prefHeight="25.0" prefWidth="288.0" />
-      <TextField fx:id="endereco" layoutX="106.0" layoutY="177.0" prefHeight="25.0" prefWidth="288.0" />
+      <TextField fx:id="endereco" layoutX="106.0" layoutY="177.0" prefHeight="25.0" prefWidth="288.0" promptText="rua, número, bairro" />
       <Label layoutX="44.0" layoutY="204.0" prefHeight="27.0" prefWidth="62.0" text="CPF:">
          <font>
             <Font name="Yu Gothic Medium" size="17.0" />
@@ -49,13 +49,13 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Label layoutX="44.0" layoutY="262.0" prefHeight="27.0" prefWidth="62.0" text="Login:">
+      <Label layoutX="29.0" layoutY="262.0" prefHeight="27.0" prefWidth="71.0" text="Usuário:">
          <font>
             <Font name="Yu Gothic Medium" size="17.0" />
          </font>
       </Label>
       <TextField fx:id="login" layoutX="106.0" layoutY="263.0" prefHeight="25.0" prefWidth="191.0" />
-      <Label layoutX="44.0" layoutY="302.0" prefHeight="27.0" prefWidth="62.0" text="Senha:">
+      <Label layoutX="33.0" layoutY="302.0" prefHeight="27.0" prefWidth="62.0" text="Senha:">
          <font>
             <Font name="Yu Gothic Medium" size="17.0" />
          </font>
