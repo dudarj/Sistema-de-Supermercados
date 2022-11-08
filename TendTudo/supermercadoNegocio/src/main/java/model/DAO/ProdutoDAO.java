@@ -10,5 +10,7 @@ public interface ProdutoDAO {
     void deleteById(Long id);
     Produto findById(Long id);
     List<Produto> ListarProdutos();
+    List<Produto> findByNome(String nome);
+    List<Produto> findAll();
     
 }

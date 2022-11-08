@@ -139,4 +139,39 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
             ConexaoJdbc.closeResultSet(rs);
         }
     }
+
+    @Override
+    public List<Produto> findByNome(String nome) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            String sql = "select * "
+                    + " from produto p "
+                    + " where p.descricao LIKE '%" + nome + "%' ";
+            st = conn.prepareStatement(sql);
+            List<Produto> list = new ArrayList<>();
+
+            //st.setString(1, nome);
+            rs = st.executeQuery();
+            while (rs.next()) {
+                Produto obj = new Produto();
+                obj.setCodigo(rs.getLong("codigo"));
+                obj.setDescricao(rs.getString("descricao"));
+                obj.setPreco(rs.getDouble("preco"));
+                obj.setQuantidade(rs.getInt("quantidade"));
+                list.add(obj);
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
+
+    @Override
+    public List<Produto> findAll() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

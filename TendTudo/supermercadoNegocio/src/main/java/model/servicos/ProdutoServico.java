@@ -24,4 +24,12 @@ public class ProdutoServico {
     public void remove(Produto obj) {
         dao.deleteById(obj.getCodigo());
     }
+
+    public List<Produto> findAll() {
+        return dao.findAll();
+    }
+
+    public List<Produto> findByNome(String nome) {
+        return dao.findByNome(nome);
+    }
 }
