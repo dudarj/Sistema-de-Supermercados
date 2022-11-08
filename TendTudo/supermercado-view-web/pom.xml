@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>TendTudo</artifactId>
-        <groupId>com.mycompany</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <artifactId>TendTudo</artifactId>
+    <groupId>com.mycompany</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
     <groupId>com.mycompany</groupId>
     <artifactId>supermercado-view-web</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -18,20 +18,19 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <jakartaee>9.0.0</jakartaee>
+        <jakartaee>8.0</jakartaee>
     </properties>
     
     <dependencies>
         <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
     
-    
-    <build>
+     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -68,8 +67,8 @@
                             <silent>true</silent>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>jakarta.platform</groupId>
-                                    <artifactId>jakarta.jakartaee-api</artifactId>
+                                    <groupId>javax</groupId>
+                                    <artifactId>javaee-api</artifactId>
                                     <version>${jakartaee}</version>
                                     <type>jar</type>
                                 </artifactItem>
