@@ -11,6 +11,8 @@ public class Produto implements Serializable {
     private String descricao;
     private double preco;
     private int quantidade;
+    private Integer qtdeItem;
+    
 
     public Produto() {
     }
@@ -54,6 +56,14 @@ public class Produto implements Serializable {
         this.quantidade = quantidade;
     }
 
+    public Integer getQtdeItem() {
+        return qtdeItem;
+    }
+
+    public void setQtdeItem(Integer qtdeItem) {
+        this.qtdeItem = qtdeItem;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
@@ -93,7 +103,9 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "Produto{" + "codigo=" + codigo + ", Descricao=" + descricao + ", preco=" + preco + ", quantidade=" + quantidade + '}';
+        return "Produto{" + "codigo=" + codigo + ", descricao=" + descricao + ", preco=" + preco + ", quantidade=" + quantidade + ", qtdeItem=" + qtdeItem + '}';
     }
+
+    
     
 }

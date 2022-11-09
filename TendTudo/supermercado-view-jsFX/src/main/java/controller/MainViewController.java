@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -32,7 +33,7 @@ public class MainViewController implements Initializable {
     private TextField login;
 
     @FXML
-    private TextField senha;
+    private PasswordField senha;
     
      private ClienteServico servico = new ClienteServico();
      

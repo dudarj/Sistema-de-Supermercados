@@ -2,14 +2,18 @@ package controller;
 
 import application.Main;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -21,6 +25,8 @@ import javafx.stage.Stage;
 import listeners.DataChangeListener;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
+import util.Alerts;
+import util.MaskFieldUtil;
 import util.Utils;
 
 public class TelaClienteSupermercadoViewController implements Initializable, DataChangeListener {
@@ -45,7 +51,7 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     private TableColumn<Produto, String> tbcEstoqueVenda;
 
     @FXML
-    private TableColumn<Integer, Integer> tbcQuantidadeVenda;
+    private TableColumn<String, String> tbcQuantidadeVenda;
 
     @FXML
     private TableColumn<Produto, Integer> tbcQuantidadeCompra;
@@ -62,11 +68,14 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
 
     private ProdutoServico servico = new ProdutoServico();
     private ObservableList<Produto> obLista;
+    private ObservableList<Produto> obListaVenda;
+    Set<Produto> listaProduto = new HashSet<>();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         AlterarTabelaVisualizacao();
         initializeNodes();
+        //onAdicionaCarrinho();
     }
 
     private void initializeNodes() {
@@ -74,10 +83,6 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         tbcPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
         Utils.formatTableColumnDouble(tbcPrecoVenda, 2);
         tbcEstoqueVenda.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
-        /*TableColumn qtde = new TableColumn("qtdeItem");
-        qtde.setCellFactory(TextFieldTableCell.forTableColumn());
-        qtde.setCellFactory(new PropertyValueFactory(tbcQuantidadeVenda));*/
-        
         Stage stage = (Stage) Main.getMainScene().getWindow();
         tbvLoja.prefHeightProperty().bind(stage.heightProperty());
     }
@@ -89,14 +94,19 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         List<Produto> list = servico.ListarProdutos();
         obLista = FXCollections.observableArrayList(list);
         tbvLoja.setItems(obLista);
+        tbvLoja.setEditable(true);
+        tbcQuantidadeVenda.setCellFactory(TextFieldTableCell.forTableColumn());
         initAdicionaBotao();
+
+        /*obListaVenda = FXCollections.observableArrayList(listaProduto);
+        tbvCompra.setItems(obListaVenda);*/
     }
 
     @Override
     public void onDataChanged() {
         AlterarTabelaVisualizacao();
+        //onAdicionaCarrinho();
     }
-
 
     private void initAdicionaBotao() {
 
@@ -112,6 +122,9 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
                     return;
                 }
                 setGraphic(button);
+                button.setOnAction(event -> {
+                    listaProduto.add(obj);
+                });
             }
         });
     }
@@ -131,6 +144,26 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         list = FXCollections.observableArrayList(objList);
         tbvLoja.setItems(list);
     }
-    
-    
+
+    @FXML
+    public void onquantidadeCompra(TableColumn.CellEditEvent<Produto, String> prod) {
+        Produto p = tbvLoja.getSelectionModel().getSelectedItem();
+        p.setQtdeItem(Integer.parseInt(prod.getNewValue()));
+
+        if ((p.getQuantidade() < p.getQtdeItem()) || (p.getQuantidade() == 0)) {
+            p.setQtdeItem(0);
+            Alerts.showAlert("Estoque", "Estoque Insuficiente", "Não existe produto o suficiente em estoque.", Alert.AlertType.INFORMATION);
+        }
+    }
+
+    /*@FXML
+    public void onAdicionaCarrinho() {
+
+        tbcItemCompra.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        tbcPrecoCompra.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        Utils.formatTableColumnDouble(tbcPrecoCompra, 2);
+        tbcQuantidadeVenda.setCellValueFactory(new PropertyValueFactory<>("qtdeItem"));
+        Stage stage = (Stage) Main.getMainScene().getWindow();
+        tbvCompra.prefHeightProperty().bind(stage.heightProperty());
+    }*/
 }

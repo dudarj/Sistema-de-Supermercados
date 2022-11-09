@@ -25,7 +25,7 @@
                 <TableColumn fx:id="tbcItemVenda" editable="false" prefWidth="140.0" text="Produto" />
                 <TableColumn fx:id="tbcPrecoVenda" editable="false" prefWidth="115.0" text="Preço (R$)" />
                 <TableColumn fx:id="tbcEstoqueVenda" editable="false" prefWidth="132.0" text="Estoque" />
-            <TableColumn fx:id="tbcQuantidadeVenda" prefWidth="132.0" text="Quantidade" />
+            <TableColumn fx:id="tbcQuantidadeVenda" onEditCommit="#onquantidadeCompra" prefWidth="132.0" text="Quantidade" />
             <TableColumn fx:id="tbcADICIONA" editable="false" prefWidth="140.0" text="Comprar" />
             </columns>
         </TableView>
@@ -37,11 +37,11 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
-      <TableView layoutY="371.0" prefHeight="176.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="371.0">
+      <TableView fx:id="tbvCompra" layoutY="371.0" prefHeight="176.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="371.0">
         <columns>
-          <TableColumn prefWidth="204.0" text="Item" />
-          <TableColumn prefWidth="141.0" text="Preço (R$)" />
-            <TableColumn prefWidth="148.0" text="Quantidade" />
+          <TableColumn fx:id="tbcItemCompra" prefWidth="204.0" text="Item" />
+          <TableColumn fx:id="tbcPrecoCompra" prefWidth="141.0" text="Preço (R$)" />
+            <TableColumn fx:id="tbcQuantidadeVenda" prefWidth="148.0" text="Quantidade" />
         </columns>
       </TableView>
       <HBox alignment="CENTER" layoutX="-1.0" layoutY="352.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.94" prefHeight="22.0" prefWidth="889.0" style="-fx-background-color: #783c00;">
