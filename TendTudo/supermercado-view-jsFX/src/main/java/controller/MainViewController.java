@@ -35,7 +35,7 @@ public class MainViewController implements Initializable {
     @FXML
     private PasswordField senha;
     
-     private ClienteServico servico = new ClienteServico();
+    private ClienteServico servico = new ClienteServico();
      
     @FXML
     public void onCaminhoLogarAction(ActionEvent event) {

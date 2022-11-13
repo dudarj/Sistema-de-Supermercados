@@ -1,5 +1,6 @@
 package conexao;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -16,12 +17,13 @@ public class ConexaoJdbc {
 
     public static Connection getConnection() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");    
         } catch (ClassNotFoundException e1) {
             e1.printStackTrace();
         }
         if (conn == null) {
             try {
+                System.out.println(new File(".").getAbsolutePath());
                  Properties props = loadProperties();
                   String url = props.getProperty("dburl");
                 conn = DriverManager.getConnection(url, props);
