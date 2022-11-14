@@ -25,17 +25,16 @@ public class MainViewController extends HttpServlet {
         if (login != null && !login.isEmpty()) {
             if (senha != null && !senha.isEmpty()) {
                 Cliente c = servico.findByLogin(login);
-                
+
                 if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("g"))) {
+
+                    request.getSession().setAttribute("UsuarioLogado", c);
                     RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
                     rd.forward(request, response);
-                } 
-                else if (login.equals("maduda") && (senha.equals("756")) && (tipo.equals("c"))) {
+                } else if (login.equals("maduda") && (senha.equals("756")) && (tipo.equals("c"))) {
                     RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
                     rd.forward(request, response);
                 }
-                
-                
 
             }
         } else {
