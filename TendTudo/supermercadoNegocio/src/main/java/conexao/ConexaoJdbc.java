@@ -1,6 +1,5 @@
 package conexao;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -14,18 +13,16 @@ public class ConexaoJdbc {
 
     private static Connection conn = null;
 
-
     public static Connection getConnection() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");    
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e1) {
             e1.printStackTrace();
         }
         if (conn == null) {
             try {
-                System.out.println(new File(".").getAbsolutePath());
-                 Properties props = loadProperties();
-                  String url = props.getProperty("dburl");
+                Properties props = loadProperties();
+                String url = props.getProperty("dburl");
                 conn = DriverManager.getConnection(url, props);
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
@@ -45,7 +42,7 @@ public class ConexaoJdbc {
     }
 
     private static Properties loadProperties() {
-        try ( FileInputStream fs = new FileInputStream("conexao.properties")) {
+        try (FileInputStream fs = new FileInputStream("conexao.properties")) {
             Properties props = new Properties();
             props.load(fs);
             return props;
