@@ -7,6 +7,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import model.DTO.Cliente;
 import model.servicos.ClienteServico;
 
@@ -21,6 +23,10 @@ public class MainViewController extends HttpServlet {
 
         String login = request.getParameter("usuario");
         String senha = request.getParameter("senhaL");
+        FileInputStream fs;
+        fs = new FileInputStream("conexao.properties");
+        System.out.println(fs);
+        System.out.println(login);
         String tipo = "c";
         if (login != null && !login.isEmpty()) {
             if (senha != null && !senha.isEmpty()) {
