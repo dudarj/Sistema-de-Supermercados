@@ -22,9 +22,7 @@ public class ConexaoJdbc {
         }
         if (conn == null) {
             try {
-                Properties props = loadProperties();
-                String url = props.getProperty("dburl");
-                conn = DriverManager.getConnection(url, props);
+                conn = DriverManager.getConnection("jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_4f92f1c6b3d797c?autoReconnect=true&useSSL=false", "b327b7745da4e4", "789cfcce");
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
             }

@@ -23,11 +23,7 @@ public class MainViewController extends HttpServlet {
 
         String login = request.getParameter("usuario");
         String senha = request.getParameter("senhaL");
-        FileInputStream fs;
-        fs = new FileInputStream("conexao.properties");
-        System.out.println(fs);
-        System.out.println(login);
-        String tipo = "c";
+ 
         if (login != null && !login.isEmpty()) {
             if (senha != null && !senha.isEmpty()) {
                 Cliente c = servico.findByLogin(login);
@@ -37,7 +33,7 @@ public class MainViewController extends HttpServlet {
                     request.getSession().setAttribute("UsuarioLogado", c);
                     RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
                     rd.forward(request, response);
-                } else if (login.equals("maduda") && (senha.equals("756")) && (tipo.equals("c"))) {
+                } else if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
                     RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
                     rd.forward(request, response);
                 }
