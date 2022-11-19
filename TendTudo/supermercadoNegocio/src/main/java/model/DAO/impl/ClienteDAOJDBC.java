@@ -184,7 +184,8 @@ public class ClienteDAOJDBC implements ClienteDAO {
         ResultSet rs = null;
         try {
             st = conn.prepareStatement("SELECT * FROM cliente "
-                    + "WHERE login like '%?%'");
+                    + "WHERE login = ?");
+                    
 
             st.setString(1, login);
             rs = st.executeQuery();
