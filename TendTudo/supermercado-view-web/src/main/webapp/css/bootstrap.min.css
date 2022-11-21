@@ -422,13 +422,11 @@ pre code{
     overflow-y:scroll
 }
 .container{
-    display:-ms-flexbox;
-    -ms-flex-wrap:wrap;
-    flex-wrap:wrap;
-    -ms-flex-align:center;
-    align-items:center;
-    -ms-flex-pack:justify;
-    justify-content:space-between
+    width:100%;
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto
 }
 @media (min-width:576px){
     .container{
@@ -463,7 +461,8 @@ pre code{
     -ms-flex-wrap:wrap;
     flex-wrap:wrap;
     margin-right:-15px;
-    margin-left:-15px
+    margin-left:-15px;
+    margin-top: 100px;
 }
 .no-gutters{
     margin-right:0;
@@ -3937,6 +3936,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
     position:relative;
     padding:.75rem 1.25rem;
     margin-bottom:1rem;
+    border:1px solid transparent;
     border-radius:.25rem
 }
 .alert-heading{

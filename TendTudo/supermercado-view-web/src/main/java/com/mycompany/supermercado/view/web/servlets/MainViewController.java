@@ -40,9 +40,9 @@ public class MainViewController extends HttpServlet {
 
             }
         } else {
-            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+            /*RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
             request.setAttribute("Mensagem", "Usuário e Senha inválidos.");
-            rd.forward(request, response);
+            rd.forward(request, response);*/
 
         }
     }
