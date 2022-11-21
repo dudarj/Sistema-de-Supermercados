@@ -3,7 +3,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Supermercados TendTudo </title>
 
@@ -54,32 +54,6 @@
                             <li class="nav-item"><a class="nav-link" href="contact-us.jsp">Fale Conosco</a></li>
                         </ul>
                     </div>
-                    <!-- Inícios dos atributos de navegação - (Conta do usúario e carrinho) -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="side-menu">
-                                <a href="#">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span> <!-- Número do Carrinho -->
-                                    <p style="margin-left: 10px;">Meu carrinho</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Final dos atributos de navegação - (Conta do usúario e carrinho) -->
-                    <!-- Início para buscar produto -->
-                    <div class="top-search">
-                        <div class="container">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                <input type="text" class="form-control" placeholder="Search">
-                                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Final para buscar produto -->
-                </div>
             </nav>
         </header>
         <!-- Final do cabeçalho e navegação -->
@@ -94,7 +68,7 @@
                             <div class="col-md-12">
                                 <h1 class="m-b-20"><strong>Bem-vindo ao <br> Supermercados TendTudo</strong></h1>
                                 <p class="m-b-40">O supermercado que TendTudo que você precisa <br> Com as melhores promoções, produtos e valores para a sua família!</p>
-                                <p><a class="btn hvr-hover" href="#">Produtos</a></p>
+                                <p><a class="btn hvr-hover" href="shop.jsp">Produtos</a></p>
                             </div>
                         </div>
                     </div>

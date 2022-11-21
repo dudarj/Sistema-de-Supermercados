@@ -88,22 +88,7 @@
                             <li class="nav-item"><a class="nav-link" href="contact-us.jsp">Fale Conosco</a></li>
                         </ul>
                     </div>
-                    <!-- /.navbar-collapse -->
-
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="side-menu">
-                                <a href="#">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span> <!-- Número do Carrinho -->
-                                    <p style="margin-left: 10px;">Meu carrinho</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- End Atribute Navigation -->
+                    <!-- /.navbar-collapse -->                 
                 </div>
                 <!-- Start Side Menu -->
                 <div class="side">

@@ -72,20 +72,7 @@
                     </div>
                     <!-- /.navbar-collapse -->
 
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="side-menu">
-                                <a href="#">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span> <!-- Número do Carrinho -->
-                                    <p style="margin-left: 10px;">Meu carrinho</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- End Atribute Navigation -->
+               
                 </div>
                 <!-- Start Side Menu -->
                 <div class="side">
@@ -137,7 +124,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Cart</h2>
+                        <h2>Carrinho</h2>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Shop</a></li>
                             <li class="breadcrumb-item active">Carrinho</li>
