@@ -35,26 +35,23 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fa fa-bars"></i><!-- i bootstrap -->
                         </button>
-                        <a class="navbar-brand" href="index.html"><img src="images/tendtudo.png" class="logo" alt="" style="width: 200px; margin-bottom: -30px; margin-top: -40px;"></a>
+                        <a class="navbar-brand" href="mainCliente.jsp"><img src="images/tendtudo.png" class="logo" alt="" style="width: 200px; margin-bottom: -30px; margin-top: -40px;"></a>
                     </div>
                     <!-- Links das outras páginas html, pesquisa, e o carrinho do cliente -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Sobre nós</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="mainCliente.jsp">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.jsp">Sobre nós</a></li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Produtos</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="shop.html">Produtos</a></li>
-                                    <li><a href="shop-detail.html">Detalhe dos produtos</a></li>
-                                    <li><a href="cart.html">Carrinho</a></li>
-                                    <li><a href="checkout.html">Retirar Produto</a></li>
-                                    <li><a href="my-account.html">Minha conta</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="shop.jsp">Produtos</a></li>
+                                    <li><a href="cart.jsp">Carrinho</a></li>
+                                    <li><a href="my-account.jsp">Minha conta</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="gallery.html">Espaço</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Fale Conosco</a></li>
+                            <li class="nav-item"><a class="nav-link" href="gallery.jsp">Espaço</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact-us.jsp">Fale Conosco</a></li>
                         </ul>
                     </div>
                     <!-- Inícios dos atributos de navegação - (Conta do usúario e carrinho) -->
@@ -227,7 +224,7 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#">Add ao carrinho</a>
                                 </div>
                             </div>
                             <div class="why-text">
@@ -250,7 +247,7 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#">Add ao carrinho</a>
                                 </div>
                             </div>
                             <div class="why-text">
@@ -273,7 +270,7 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#">Add ao carrinho</a>
                                 </div>
                             </div>
                             <div class="why-text">
@@ -296,7 +293,7 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#">Add ao carrinho</a>
                                 </div>
                             </div>
                             <div class="why-text">
