@@ -53,7 +53,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a class="navbar-brand" href="mainGerencia.jsp"><img src="images/tendtudo.png" class="logo" alt="" style="width: 200px; margin-bottom: -30px; margin-top: -40px;"><h2 style="text-align: center">TendTudo - Clientes</h2></a>
-                      
+
                     </div>
                     <!-- End Header Navigation -->
 
@@ -63,73 +63,30 @@
         </header>
         <!-- End Main Top -->
 
-        <div class="container-tabela">
-            <table class="table">
+        <div class="container">
+            <table class="table table-fixed">
                 <thead>
                     <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Tipo</th>
+                        <th class="col-xs-3">Código</th>
+                        <th class="col-xs-3">Nome</th>
+                        <th class="col-xs-6">CPF</th>
+                        <th class="col-xs-6">Telefone</th>
+                        <th class="col-xs-6">Endereço</th>
+                        <th class="col-xs-3">Status</th>
+                        <th class="col-xs-3">Tipo</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">8</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <td class="col-xs-3">Duda</td>
+                        <td class="col-xs-6">165.504.446-08</td>
+                        <td class="col-xs-6">(31)9 9862-7302</td>
+                        <td class="col-xs-6">Rua das Rosas</td>
+                        <td class="col-xs-3">0</td>
+                        <td class="col-xs-3">c</td>
+                    
+                        
                     </tr>
                 </tbody>
             </table>
@@ -137,14 +94,12 @@
 
 
 
-        <!-- Final Instagram Feed  -->
-        <!-- Start copyright  -->
-        <footer class="content-fluid" style="position: absolute; bottom: 0; width: 100%;">
+        <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%;">
             <div class="footer-copyright">
                 <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
             </div>
         </footer>
-        <!-- End copyright  -->
+
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
@@ -164,6 +119,13 @@
         <script src="js/form-validator.min.js"></script>
         <script src="js/contact-form-script.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/table.js"></script>
     </body>
 
 </html>
+
+<!--  <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%;">
+            <div class="footer-copyright">
+                <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
+            </div>
+        </footer> -->

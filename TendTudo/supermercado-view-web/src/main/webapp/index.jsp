@@ -8,9 +8,9 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link rel="stylesheet" href="css/index.css"/>
-     
+
         <script src="js/index.js"></script>
-        
+
 
         <link rel="shortcut icon" href="imgs/tendtudo.png" >
 
@@ -43,10 +43,6 @@
                                         </div>
                                         <div>
                                             <h6>${Mensagem}</h6>
-                                        </div>      
-                                        <div class="form-group text-center">
-                                            <input type="checkbox" tabindex="3" class="" name="Relembrar" id="remember">
-                                            <label for="remember"> Lembrar-me</label>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
@@ -74,9 +70,6 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="Cpf" id="Cpf" tabindex="1" class="form-control" placeholder="CPF" value="">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="login" id="username" tabindex="1" class="form-control" placeholder="Usuário" value="">
