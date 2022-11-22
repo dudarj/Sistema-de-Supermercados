@@ -59,7 +59,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                                    <form id="register-form" action="CadastroViewController" method="post" role="form" style="display: none;">
                                         <div class="form-group">
                                             <input type="text" name="nome" id="nome" tabindex="1" class="form-control" placeholder="Nome" value="">
                                         </div>
