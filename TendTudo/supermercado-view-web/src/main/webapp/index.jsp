@@ -81,6 +81,7 @@
                                         <div class="form-group">
                                             <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar Senha">
                                         </div>
+                                        <h6>${MensagemC}</h6>
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
