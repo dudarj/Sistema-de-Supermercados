@@ -15,7 +15,9 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <!-- Site Icons -->
         <link rel="shortcut icon" href="images/tendtudo.png" >
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">

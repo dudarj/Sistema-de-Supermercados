@@ -7,8 +7,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import model.DTO.Cliente;
 import model.servicos.ClienteServico;
 
@@ -23,26 +21,27 @@ public class MainViewController extends HttpServlet {
 
         String login = request.getParameter("usuario");
         String senha = request.getParameter("senhaL");
- 
-        if (login != null && !login.isEmpty()) {
-            if (senha != null && !senha.isEmpty()) {
-                Cliente c = servico.findByLogin(login);
 
-                if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("g"))) {
+        if (login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) {
+            Cliente c = servico.findByLogin(login);
 
-                    request.getSession().setAttribute("UsuarioLogado", c);
-                    RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
-                    rd.forward(request, response);
-                } else if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
-                    RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
-                    rd.forward(request, response);
-                }
+            if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("g"))) {
 
+                request.getSession().setAttribute("UsuarioLogado", c);
+                RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
+                rd.forward(request, response);
+            } else if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
+                RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
+                rd.forward(request, response);
+            } else {
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                request.setAttribute("Mensagem", "Usuário ou Senha inválidos.");
+                rd.forward(request, response);
             }
         } else {
-            /*RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-            request.setAttribute("Mensagem", "Usuário e Senha inválidos.");
-            rd.forward(request, response);*/
+            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+            request.setAttribute("Mensagem", "Obrigatório preencher os campos.");
+            rd.forward(request, response);
 
         }
     }
@@ -89,35 +88,3 @@ public class MainViewController extends HttpServlet {
 }
 
 
-/*//private ClienteServico servico = new ClienteServico();
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-        String login = request.getParameter("usuario");
-        String senha = request.getParameter("senhaL");
-        String tipo = "c";
-        if (login != null && !login.isEmpty()) {
-            if (senha != null && !senha.isEmpty()) {
-                //Cliente c = servico.findByLogin(login);
-                
-                if (login.equals("admin") && (senha.equals("123")) && (tipo.equals("g"))) {
-                    RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
-                    rd.forward(request, response);
-                } 
-                else if (login.equals("maduda") && (senha.equals("756")) && (tipo.equals("c"))) {
-                    RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
-                    rd.forward(request, response);
-                }
-                
-                
-
-            }
-        } else {
-            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-            request.setAttribute("Mensagem", "Usuário e Senha inválidos.");
-            rd.forward(request, response);
-
-        }
-    }*/

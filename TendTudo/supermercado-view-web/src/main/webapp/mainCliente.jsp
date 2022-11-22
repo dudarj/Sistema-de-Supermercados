@@ -6,7 +6,9 @@
         <meta http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Supermercados TendTudo </title>
-
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <!-- Icones do site -->
         <link rel="shortcut icon" href="images/tendtudo.png" >
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -19,7 +21,8 @@
         <link rel="stylesheet" href="css/responsive.css">
         <!-- CSS Personalizado -->
         <link rel="stylesheet" href="css/custom.css">
-
+        
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <!-- Página pronta -->
     </head>
 
@@ -80,7 +83,7 @@
                             <div class="col-md-12">
                                 <h1 class="m-b-20"><strong>Bem-vindo ao <br> Supermercados TendTudo</strong></h1>
                                 <p class="m-b-40">O supermercado que TendTudo que você precisa <br> Com as melhores promoções, produtos e valores para a sua família!</p>
-                                <p><a class="btn hvr-hover" href="#">Produtos</a></p>
+                                <p><a class="btn hvr-hover" href="shop.jsp">Produtos</a></p>
                             </div>
                         </div>
                     </div>
@@ -92,14 +95,14 @@
                             <div class="col-md-12">
                                 <h1 class="m-b-20"><strong>Bem-vindo ao <br> Supermercados TendTudo</strong></h1>   
                                 <p class="m-b-40">O supermercado que TendTudo que você precisa <br> Com as melhores promoções, produtos e valores para a sua família!</p>
-                                <p><a class="btn hvr-hover" href="#">Produtos</a></p>
+                                <p><a class="btn hvr-hover" href="shop.jsp">Produtos</a></p>
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
             <div class="slides-navigation">
-                <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <a href="#" class="next"><i class="fas fa-angle-right" aria-hidden="true"></i></a>
                 <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
             </div>
         </div>

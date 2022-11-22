@@ -9,7 +9,7 @@
 
         <!-- Mobile Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <!-- Site Metas -->
         <title>Gerência - TendTudo</title>
         <meta name="keywords" content="">
@@ -19,7 +19,9 @@
         <!-- Site Icons -->
         <link rel="shortcut icon" href="images/tendtudo.png" >
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Site CSS -->
@@ -28,6 +30,8 @@
         <link rel="stylesheet" href="css/responsive.css">
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/custom.css">
+        
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -66,7 +70,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="#"></a>
+                                        <a href="clientesSistema.jsp"><i style="color: white" class='fas fa-users'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Clientes</h4>
@@ -78,7 +82,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="#"></a>
+                                        <a href="#"><i style="color: white" class='fas fa-shopping-cart'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Vendas</h4>
@@ -90,7 +94,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="#"></a>
+                                        <a href="#"><i style="color: white" class='far fa-credit-card'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Pagamento</h4>
@@ -102,7 +106,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="#"></a>
+                                        <a href="#"><i style="color: white" class='fas fa-hamburger'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Produtos</h4>
@@ -114,7 +118,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="#"></a>
+                                        <a href="#"><i style="color: white" class='far fa-clipboard'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Relatório</h4>
