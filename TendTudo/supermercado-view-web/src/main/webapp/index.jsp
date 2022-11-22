@@ -7,6 +7,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="js/mascaras.js"></script>
         <link rel="stylesheet" href="css/index.css"/>
 
         <script src="js/index.js"></script>
@@ -63,13 +64,13 @@
                                             <input type="text" name="nome" id="nome" tabindex="1" class="form-control" placeholder="Nome" value="">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="telefone" id="telefone" tabindex="1" class="form-control" placeholder="Telefone" value="">
+                                            <input type="text" name="telefone" id="telefone" tabindex="1" class="form-control" placeholder="Telefone" value="" maxlength="15">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="endereco" id="endereco" tabindex="1" class="form-control" placeholder="Endereço" value="">
+                                            <input type="text" name="endereco" id="endereco" tabindex="1" class="form-control" placeholder="Endereço: rua, número, bairro" value="">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="Cpf" id="Cpf" tabindex="1" class="form-control" placeholder="CPF" value="">
+                                            <input oninput="mascara(this)" type="text" name="Cpf" id="Cpf" tabindex="1" class="form-control" placeholder="CPF" value="">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="login" id="username" tabindex="1" class="form-control" placeholder="Usuário" value="">
