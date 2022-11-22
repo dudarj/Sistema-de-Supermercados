@@ -66,7 +66,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="shop.jsp">Produtos</a></li>
                                     <li><a href="cart.jsp">Carrinho</a></li>
-                                    <li><a href="my-account.jsp">Minha conta</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="gallery.jsp">Espaço</a></li>
@@ -147,12 +146,12 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Images</th>
-                                        <th>Product Name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
+                                        <th>Imagem</th>
+                                        <th>Nome do Produto</th>
+                                        <th>Preço</th>
+                                        <th>Quantidade</th>
                                         <th>Total</th>
-                                        <th>Remove</th>
+                                        <th>Remover</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -285,7 +284,7 @@
                             </div>
                             <hr> </div>
                     </div>
-                    <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                    <div class="col-12 d-flex shopping-box"><a href="checkout.jsp" class="ml-auto btn hvr-hover">Finalizar Compra</a> </div>
                 </div>
 
             </div>

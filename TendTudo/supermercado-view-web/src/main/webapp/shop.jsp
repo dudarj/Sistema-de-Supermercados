@@ -63,7 +63,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="shop.jsp">Produtos</a></li>
                                     <li><a href="cart.jsp">Carrinho</a></li>
-                                    <li><a href="my-account.jsp">Minha conta</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="gallery.jsp">Espaço</a></li>
@@ -106,17 +105,7 @@
         </header>
         <!-- End Main Top -->
 
-        <!-- Start Top Search -->
-        <div class="top-search">
-            <div class="container">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                </div>
-            </div>
-        </div>
-        <!-- End Top Search -->
+        
         <!-- Start Shop Page  -->
         <div class="shop-box-inner">
             <div class="container">

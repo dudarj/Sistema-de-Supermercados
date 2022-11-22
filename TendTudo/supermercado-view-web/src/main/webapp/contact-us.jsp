@@ -84,7 +84,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="shop.jsp">Produtos</a></li>
                                     <li><a href="cart.jsp">Carrinho</a></li>
-                                    <li><a href="my-account.jsp">Minha conta</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="gallery.jsp">Espaço</a></li>
