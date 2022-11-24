@@ -89,31 +89,9 @@
             </Button>
          </children>
       </HBox>
-      <HBox layoutX="156.0" layoutY="305.0" prefHeight="88.0" prefWidth="397.0">
+      <HBox layoutX="254.0" layoutY="304.0" prefHeight="72.0" prefWidth="201.0">
          <children>
             <Button fx:id="btnTabelaprodutos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCaminhoProdutosAction" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Produtos">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Blend>
-                     <topInput>
-                        <InnerShadow color="#657fa148">
-                           <input>
-                              <DropShadow />
-                           </input>
-                        </InnerShadow>
-                     </topInput>
-                  </Blend>
-               </effect>
-               <HBox.margin>
-                  <Insets left="20.0" top="5.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Bookshelf Symbol 7" size="15.0" />
-               </font>
-            </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Relatório">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

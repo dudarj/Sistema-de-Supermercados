@@ -114,18 +114,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-icon">
-                                        <a href="#"><i style="color: white" class='far fa-clipboard'></i></a>
-                                    </div>
-                                    <div class="service-desc">
-                                        <h4>Relatório</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

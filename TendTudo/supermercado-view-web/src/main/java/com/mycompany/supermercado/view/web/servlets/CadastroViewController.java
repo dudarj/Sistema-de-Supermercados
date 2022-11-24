@@ -11,10 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.DTO.Cliente;
 import model.servicos.ClienteServico;
 
-/**
- *
- * @author DUDA
- */
+
 @WebServlet(name = "CadastroViewController", urlPatterns = {"/CadastroViewController"})
 public class CadastroViewController extends HttpServlet {
 

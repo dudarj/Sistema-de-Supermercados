@@ -519,7 +519,7 @@ nav.navbar.bootsnav ul.nav > li > a{
 
 }
 nav.navbar.bootsnav ul.nav li.active > a{
-    color: red;
+    color: black;
 }
 nav.navbar.bootsnav ul.nav li.active > a:hover{
     color: red;
