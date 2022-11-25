@@ -87,11 +87,6 @@
                         <td class="col-xs-3">Entrega Premium</td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
-        
-        <div class="container">
-            <table class="table table-fixed">
                 <tbody>
                     <tr>
                         <th scope="row">2</th>
