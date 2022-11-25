@@ -82,7 +82,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="#"><i style="color: white" class='fas fa-shopping-cart'></i></a>
+                                        <a href="vendasSistema.jsp"><i style="color: white" class='fas fa-shopping-cart'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Vendas</h4>
