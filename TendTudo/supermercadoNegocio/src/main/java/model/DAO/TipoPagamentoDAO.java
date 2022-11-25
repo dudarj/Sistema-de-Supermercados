@@ -10,4 +10,6 @@ public interface TipoPagamentoDAO {
     void deleteById(Long id);
     TipoPagamento findById(Long id);
     List<TipoPagamento> ListarTiposPagamentos();
+    List<TipoPagamento> findByNome(String nome);
+    List<TipoPagamento> findAll();
 }

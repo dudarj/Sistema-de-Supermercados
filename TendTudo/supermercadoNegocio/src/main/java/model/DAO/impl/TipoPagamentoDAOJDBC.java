@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.DAO.impl;
 
 import conexao.ConexaoJdbc;
@@ -18,10 +13,7 @@ import java.util.List;
 import model.DAO.TipoPagamentoDAO;
 import model.DTO.TipoPagamento;
 
-/**
- *
- * @author Aluno
- */
+
 public class TipoPagamentoDAOJDBC implements TipoPagamentoDAO {
 
     TipoPagamento t = new TipoPagamento();
@@ -37,7 +29,7 @@ public class TipoPagamentoDAOJDBC implements TipoPagamentoDAO {
         try {
             PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, obj.getDescricao());
-            
+
             int linhasAfetadas = st.executeUpdate();
 
             if (linhasAfetadas > 0) {
@@ -56,15 +48,21 @@ public class TipoPagamentoDAOJDBC implements TipoPagamentoDAO {
     }
 
     @Override
-    public void update(TipoPagamento obj) {
-        String sqlUpdate = "UPDATE tipopagamento " + "SET descricao = ? WHERE codigo = ? ";
+    public void update(TipoPagamento obj) {     
+        PreparedStatement st = null;
         try {
-            PreparedStatement st = conn.prepareStatement(sqlUpdate);
+            st = conn.prepareStatement("UPDATE tipopagamento " + "SET descricao = ? WHERE codigo = ? ");
+
             st.setString(1, obj.getDescricao());
+            st.setLong(2, obj.getCodigo());
+
             st.executeUpdate();
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
         }
+
     }
 
     @Override
@@ -129,5 +127,37 @@ public class TipoPagamentoDAOJDBC implements TipoPagamentoDAO {
             ConexaoJdbc.closeStatement(st);
             ConexaoJdbc.closeResultSet(rs);
         }
+    }
+
+    @Override
+    public List<TipoPagamento> findByNome(String nome) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            String sql = "select * "
+                    + " from tipopagamento p "
+                    + " where p.descricao LIKE '%" + nome + "%' ";
+            st = conn.prepareStatement(sql);
+            List<TipoPagamento> list = new ArrayList<>();
+
+            rs = st.executeQuery();
+            while (rs.next()) {
+                TipoPagamento obj = new TipoPagamento();
+                obj.setCodigo(rs.getLong("codigo"));
+                obj.setDescricao(rs.getString("descricao"));
+                list.add(obj);
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
+
+    @Override
+    public List<TipoPagamento> findAll() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

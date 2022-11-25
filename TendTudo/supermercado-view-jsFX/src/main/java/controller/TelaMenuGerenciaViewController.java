@@ -27,6 +27,14 @@ public class TelaMenuGerenciaViewController implements Initializable {
 
     @FXML
     private Button btnTabelaprodutos;
+    
+    @FXML
+    private Button btnTabelavendas;
+    
+    @FXML
+    private Button btnTabelapagamento;
+    
+    
 
     @FXML
     public void onCaminhoClienteAction(ActionEvent event) {
@@ -39,6 +47,22 @@ public class TelaMenuGerenciaViewController implements Initializable {
         Stage parentStage = Utils.currentStage(event);
         loadView("/view/ListaProdutosView.fxml", parentStage);
     }
+    
+    @FXML
+    public void onCaminhoVendasAction(ActionEvent event) {
+        Stage parentStage = Utils.currentStage(event);
+        loadView("/view/ListaVendasView.fxml", parentStage);
+    }
+    
+    @FXML
+    public void onCaminhoPagamentoAction(ActionEvent event) {
+        Stage parentStage = Utils.currentStage(event);
+        loadView("/view/ListaPagamentoView.fxml", parentStage);
+    }
+    
+    
+    
+    
 
     private void loadView(String absoluteName, Stage parentStage) {
         try {

@@ -43,7 +43,7 @@
                   <Font name="Bookshelf Symbol 7" size="15.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Vendas">
+            <Button fx:id="btnTabelavendas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCaminhoVendasAction" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Vendas">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -65,7 +65,7 @@
                   <Font name="Bookshelf Symbol 7" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="223.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Pagamento">
+            <Button fx:id="btnTabelapagamento" layoutX="223.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCaminhoPagamentoAction" prefHeight="55.0" prefWidth="173.0" style="-fx-border-radius: 5;" text="Pagamento">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
