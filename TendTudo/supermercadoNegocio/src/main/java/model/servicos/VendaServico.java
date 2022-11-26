@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.servicos;
 
-/**
- *
- * @author Aluno
- */
+import java.util.List;
+import model.DAO.DAOFactory;
+import model.DAO.VendaDAO;
+import model.DTO.Venda;
+
+
 public class VendaServico {
+    
+    private VendaDAO dao = DAOFactory.createVendaDao();
+
+    public List<Venda> ListarVendas() {
+        return dao.ListarVendas();
+    }
     
 }

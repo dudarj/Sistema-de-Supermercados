@@ -1,5 +1,7 @@
 package util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -28,7 +30,7 @@ public class Utils {
             return null;
         }
     }
-    
+
     public static Integer tryParseToInt(String str) {
         try {
             return Integer.parseInt(str);
@@ -48,6 +50,25 @@ public class Utils {
                     } else {
                         Locale.setDefault(Locale.US);
                         setText(String.format("%." + decimalPlaces + "f", item));
+                    }
+                }
+            };
+            return cell;
+        });
+    }
+
+    public static <T> void formatTableColumnDate(TableColumn<T, Date> tableColumn, String format) {
+        tableColumn.setCellFactory(column -> {
+            TableCell<T, Date> cell = new TableCell<T, Date>() {
+                private SimpleDateFormat sdf = new SimpleDateFormat(format);
+
+                @Override
+                protected void updateItem(Date item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty) {
+                        setText(null);
+                    } else {
+                        setText(sdf.format(item));
                     }
                 }
             };

@@ -18,7 +18,7 @@ public class Venda implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private Long codigo;
-    private Date dataVenda;
+    private Date dataVenda = new Date();
     private double valorTotal;
 
     public Venda() {
