@@ -70,7 +70,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="clientesSistema.jsp"><i style="color: white" class='fas fa-users'></i></a>
+                                        <a href="TabelaClienteViewController"><i style="color: white" class='fas fa-users'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Clientes</h4>

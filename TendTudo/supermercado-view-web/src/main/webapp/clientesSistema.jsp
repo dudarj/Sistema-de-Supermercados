@@ -77,55 +77,102 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td class="col-xs-3">Duda</td>
-                        <td class="col-xs-6">165.504.446-08</td>
-                        <td class="col-xs-6">(31)9 9862-7302</td>
-                        <td class="col-xs-6">Rua das Rosas</td>
-                        <td class="col-xs-3">0</td>
-                        <td class="col-xs-3">c</td>
-                    
-                        
-                    </tr>
+
+
+                ${tabela1}
+                ${tabela2}
+                ${tabela3}
+                ${tabela4}
+                ${tabela5}
+                ${tabela6}
+                ${tabela7}
+                ${tabela8}
+                ${tabela9}
+                ${tabela10}
+                ${tabela11}
+                ${tabela12}
+                ${tabela13}
+                ${tabela14}
+                ${tabela15}
+                ${tabela16}
+                ${tabela17}
+                ${tabela18}
+                ${tabela19}
+                ${tabela20}
+                ${tabela21}
+                ${tabela22}
+                ${tabela23}
+                ${tabela24}
+                ${tabela25}
+                ${tabela26}
+                ${tabela27}
+                ${tabela28}
+                ${tabela29}
+                ${tabela30}
+                ${tabela31}
+                ${tabela32}
+                ${tabela33}
+                ${tabela34}
+                ${tabela35}
+                ${tabela36}
+                ${tabela37}
+                ${tabela38}
+                ${tabela39}
+                ${tabela40}
+                ${tabela41}
+                ${tabela42}
+                ${tabela43}
+                ${tabela44}
+                ${tabela45}
+                ${tabela46}
+                ${tabela47}
+                ${tabela48}
+                ${tabela49}
+                ${tabela50}
+                ${tabela51}
+                ${tabela52}
+                ${tabela53}
+                ${tabela54}
+                ${tabela55}
+                ${tabela56}
+                ${tabela57}
+
                 </tbody>
-            </table>
-        </div>
+
+
+                  </table>
+                  </div>
 
 
 
-        <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%;">
-            <div class="footer-copyright">
-                <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
-            </div>
-        </footer>
 
 
-        <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-        <!-- ALL JS FILES -->
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- ALL PLUGINS -->
-        <script src="js/jquery.superslides.min.js"></script>
-        <script src="js/bootstrap-select.js"></script>
-        <script src="js/inewsticker.js"></script>
-        <script src="js/bootsnav.js."></script>
-        <script src="js/images-loded.min.js"></script>
-        <script src="js/isotope.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/baguetteBox.min.js"></script>
-        <script src="js/form-validator.min.js"></script>
-        <script src="js/contact-form-script.js"></script>
-        <script src="js/custom.js"></script>
-        <script src="js/table.js"></script>
-    </body>
+                  <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-</html>
+                  <!-- ALL JS FILES --> 
+                  <script src="js/jquery-3.2.1.min.js"></script>
+                  <script src="js/popper.min.js"></script>
+                  <script src="js/bootstrap.min.js"></script>
+                  <!-- ALL PLUGINS -->
+                  <script src="js/jquery.superslides.min.js"></script>
+                  <script src="js/bootstrap-select.js"></script>
+                  <script src="js/inewsticker.js"></script>
+                  <script src="js/bootsnav.js."></script>
+                  <script src="js/images-loded.min.js"></script>
+                  <script src="js/isotope.min.js"></script>
+                  <script src="js/owl.carousel.min.js"></script>
+                  <script src="js/baguetteBox.min.js"></script>
+                  <script src="js/form-validator.min.js"></script>
+                  <script src="js/contact-form-script.js"></script>
+                  <script src="js/custom.js"></script>
+                  <script src="js/table.js"></script>
+                  </body>
 
-<!--  <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%;">
-            <div class="footer-copyright">
-                <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
-            </div>
-        </footer> -->
+                  </html>
+
+                  <!--  <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%;">
+                  <div class="footer-copyright">
+                  <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
+                  </div>
+                  </footer> -->

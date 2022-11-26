@@ -21,6 +21,10 @@ public class ClienteDAOJDBC implements ClienteDAO {
         this.conn = conn;
     }
 
+    public ClienteDAOJDBC() {
+    }
+
+
     @Override
     public void insert(Cliente obj) {
         String sqlInsert = "INSERT INTO cliente "
