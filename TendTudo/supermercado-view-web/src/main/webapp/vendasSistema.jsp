@@ -71,6 +71,7 @@
                         <th class="col-xs-3">Cliente</th>
                         <th class="col-xs-6">Valor</th>
                         <th class="col-xs-6">Quantidade Produtos</th>
+                        <th class="col-xs-6">Data de saída</th>
                         <th class="col-xs-6">Endereço</th>
                         <th class="col-xs-3">Status Cliente</th>
                         <th class="col-xs-3">Tipo Entrega</th>
@@ -82,6 +83,7 @@
                         <td class="col-xs-3">Duda</td>
                         <td class="col-xs-6">R$ 170,00</td>
                         <td class="col-xs-6">30 Unidades</td>
+                        <td class="col-xs-6">21/11/22</td>
                         <td class="col-xs-6">Rua das Rosas</td>
                         <td class="col-xs-3">Bom</td>
                         <td class="col-xs-3">Entrega Premium</td>
@@ -93,6 +95,7 @@
                         <td class="col-xs-3">Enzo</td>
                         <td class="col-xs-6">R$ 50,00</td>
                         <td class="col-xs-6">5 Unidades</td>
+                        <td class="col-xs-6">27/11/22</td>
                         <td class="col-xs-6">Carlos Prates</td>
                         <td class="col-xs-3">Bom</td>
                         <td class="col-xs-3">Entrega Black Premium</td>

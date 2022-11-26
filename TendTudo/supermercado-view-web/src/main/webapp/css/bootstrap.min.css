@@ -137,7 +137,6 @@ a:hover{
     text-decoration:underline
 }
 a:not([href]):not([tabindex]){
-    color:inherit;
     text-decoration:none
 }
 a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{
@@ -1931,8 +1930,16 @@ select.form-control:focus::-ms-value{
     opacity:.65
 }
 .btn:not(:disabled):not(.disabled){
-    cursor:pointer
+    cursor: pointer;
 }
+
+.div1 {
+    float: right;
+    padding-top: 397px;
+    padding-right: 387px;
+    border-radius: 5px;
+}
+
 .btn:not(:disabled):not(.disabled).active,.btn:not(:disabled):not(.disabled):active{
     background-image:none
 }
