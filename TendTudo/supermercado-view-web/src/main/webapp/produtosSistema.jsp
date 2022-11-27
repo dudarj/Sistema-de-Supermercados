@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Site Metas -->
-        <title>Gerência - TendTudo</title>
+        <title>Gerï¿½ncia - TendTudo</title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -40,6 +40,43 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+          <style>
+            @media (max-width: 1440px) {
+                .modal__content{
+                  padding: 0!important;
+                }
+
+                .form-control{
+                  margin-bottom: 0!important;
+                  width: 50%;
+                }
+
+                .form{
+                  padding: 0!important;
+                }
+
+                .headerzao{
+                  padding-bottom: 0!important;
+                }
+
+                .info{
+                  display: none!important;
+                }
+
+                .form button{
+                  margin-top: 1rem;
+                  margin-bottom: 1rem;
+                }
+
+                #form-wrap{
+                  display: flex;
+                  flex-wrap: wrap;
+                }
+
+
+            }
+          </style>
 
     </head>
 
@@ -71,7 +108,7 @@
             <table class="table table-fixed">
                 <thead>
                     <tr>
-                        <th class="col-xs-3">Código</th>
+                        <th class="col-xs-3">Cï¿½digo</th>
                         <th class="col-xs-6">Produto</th>
                         <th class="col-xs-6">Valor Produto</th>
                         <th class="col-xs-6">Quantidade</th>
@@ -136,7 +173,6 @@
                     ${tabelaProduto54}
                     ${tabelaProduto55}
                     ${tabelaProduto56}
-                
                 </tbody>
             </table>
         </div>
@@ -144,10 +180,11 @@
         <!-- JANELA MODAL -->  
     <div id="modal_1" class="modal">
         <div class="modal__content">
+          <div class="info">
             <h2 class="modal__title">Adicione o Produto</h2>
             <p class="modal__description">
-                Essa página está destinada para o cadastro de produtos, por favor preencha os campos!
-            </p>
+                Essa pï¿½gina estï¿½ destinada para o cadastro de produtos, por favor preencha os campos!
+            </p></div>
             <!-- FORMULARIO -->  
             <div class="container_1 form">
                 <div class="headerzao">
@@ -155,8 +192,9 @@
                 </div>
           
                 <form id="form" class="form" action="CadastrarProdutoViewController" method="post">
+                <div id="form-wrap">
                   <div class="form-control">
-                    <label for="username">Código do Produto</label>
+                    <label for="username">Cï¿½digo do Produto</label>
                     <input placeholder="" disabled/>
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
@@ -164,19 +202,19 @@
                   </div>
           
                   <div class="form-control">
-                    <label for="email">Descrição do Produto</label>
-                    <input type="text" id="email" placeholder="Digite a descrição do produto..." />
+                    <label for="email">Descriï¿½ï¿½o do Produto</label>
+                    <input type="text" id="email" placeholder="Digite a descriï¿½ï¿½o do produto..." />
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
                     <small>Mensagem de erro</small>
                   </div>
           
                   <div class="form-control">
-                    <label for="password">Preço do Produto</label>
+                    <label for="password">Preï¿½o do Produto</label>
                     <input
                       type="text"
                       id="password"
-                      placeholder="Digite o Preço do Produto..."
+                      placeholder="Digite o Preï¿½o do Produto..."
                     />
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
@@ -195,7 +233,7 @@
                     <small>Mensagem de erro</small>
                   </div>
 
-                  <div class="form-control">
+                  <div class="form-control" style="width: 100%!important;">
                     <label for="password">Imagem do Produto</label>
                     <input
                       type="url"
@@ -206,7 +244,7 @@
                     <i class="fas fa-check-circle"></i>
                     <small>Mensagem de erro</small>
                   </div>
-          
+                </div>
                    <button type="submit">Adicionar Produto</button>
                   <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
 
