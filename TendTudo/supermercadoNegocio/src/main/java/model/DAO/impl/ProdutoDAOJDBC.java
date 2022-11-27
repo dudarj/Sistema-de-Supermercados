@@ -28,12 +28,13 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
 
     @Override
     public void insert(Produto obj) {
-        String sqlInsert = "INSERT INTO produto(descricao, preco, quantidade) VALUES (?,?,?)";
+        String sqlInsert = "INSERT INTO produto(descricao, preco, quantidade, url_img) VALUES (?,?,?,?)";
         try {
             PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, obj.getDescricao());
             st.setDouble(2, obj.getPreco());
             st.setInt(3, obj.getQuantidade());
+            st.setString(4, obj.getImg());
 
             int linhasAfetadas = st.executeUpdate();
 
@@ -56,12 +57,13 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
     public void update(Produto obj) {
         PreparedStatement st = null;
         try {
-            st = conn.prepareStatement("UPDATE produto " + "SET descricao = ?, preco = ?, quantidade = ? WHERE codigo = ? ");
+            st = conn.prepareStatement("UPDATE produto " + "SET descricao = ?, preco = ?, quantidade = ?, url_img = ? WHERE codigo = ? ");
 
             st.setString(1, obj.getDescricao());
             st.setDouble(2, obj.getPreco());
             st.setInt(3, obj.getQuantidade());
-            st.setLong(4, obj.getCodigo());
+            st.setString(4, obj.getImg());
+            st.setLong(5, obj.getCodigo());
 
             st.executeUpdate();
         } catch (SQLException e) {

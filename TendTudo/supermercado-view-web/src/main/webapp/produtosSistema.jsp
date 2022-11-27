@@ -78,30 +78,7 @@
                         <th class="col-xs-3">Foto Produto</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td class="col-xs-6">Batata Palha Vilma</td>
-                        <td class="col-xs-6">R$ 4.29</td>
-                        <td class="col-xs-6">(No Estoque)</td>
-                        <td class="col-xs-3">(Link Imagem)</td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td class="col-xs-6">Cereal Matinal Duo, NESCAU</td>
-                        <td class="col-xs-6">R$7.99</td>
-                        <td class="col-xs-6">(No Estoque)</td>
-                        <td class="col-xs-3">(Link Imagem)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td class="col-xs-6">Picanha Prata Swift</td>
-                        <td class="col-xs-6">R$79.99</td>
-                        <td class="col-xs-6">(No Estoque)</td>
-                        <td class="col-xs-3">(Link Imagem)</td>
-                    </tr>
+                <tbody> 
                     ${tabelaProduto0}
                     ${tabelaProduto1}
                     ${tabelaProduto2}
@@ -230,7 +207,7 @@
                     <small>Mensagem de erro</small>
                   </div>
           
-                    <input type="submit" value="Submit">
+                   <button type="submit">Adicionar Produto</button>
                   <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
 
                 </form>

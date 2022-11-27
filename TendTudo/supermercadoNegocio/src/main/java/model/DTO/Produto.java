@@ -4,24 +4,26 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Produto implements Serializable {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     private Long codigo;
     private String descricao;
     private double preco;
     private int quantidade;
     private Integer qtdeItem;
-    
+    private String img;
 
     public Produto() {
     }
 
-    public Produto(Long codigo, String Descricao, double preco, int quantidade) {
+    public Produto(Long codigo, String descricao, double preco, int quantidade, Integer qtdeItem, String img) {
         this.codigo = codigo;
-        this.descricao = Descricao;
+        this.descricao = descricao;
         this.preco = preco;
         this.quantidade = quantidade;
+        this.qtdeItem = qtdeItem;
+        this.img = img;
     }
 
     public Long getCodigo() {
@@ -36,8 +38,8 @@ public class Produto implements Serializable {
         return descricao;
     }
 
-    public void setDescricao(String Descricao) {
-        this.descricao = Descricao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public double getPreco() {
@@ -64,13 +66,23 @@ public class Produto implements Serializable {
         this.qtdeItem = qtdeItem;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 47 * hash + Objects.hashCode(this.codigo);
-        hash = 47 * hash + Objects.hashCode(this.descricao);
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.preco) ^ (Double.doubleToLongBits(this.preco) >>> 32));
-        hash = 47 * hash + this.quantidade;
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.codigo);
+        hash = 97 * hash + Objects.hashCode(this.descricao);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.preco) ^ (Double.doubleToLongBits(this.preco) >>> 32));
+        hash = 97 * hash + this.quantidade;
+        hash = 97 * hash + Objects.hashCode(this.qtdeItem);
+        hash = 97 * hash + Objects.hashCode(this.img);
         return hash;
     }
 
@@ -95,17 +107,18 @@ public class Produto implements Serializable {
         if (!Objects.equals(this.descricao, other.descricao)) {
             return false;
         }
+        if (!Objects.equals(this.img, other.img)) {
+            return false;
+        }
         if (!Objects.equals(this.codigo, other.codigo)) {
             return false;
         }
-        return true;
+        return Objects.equals(this.qtdeItem, other.qtdeItem);
     }
 
     @Override
     public String toString() {
-        return "Produto{" + "codigo=" + codigo + ", descricao=" + descricao + ", preco=" + preco + ", quantidade=" + quantidade + ", qtdeItem=" + qtdeItem + '}';
+        return "Produto{" + "codigo=" + codigo + ", descricao=" + descricao + ", preco=" + preco + ", quantidade=" + quantidade + ", qtdeItem=" + qtdeItem + ", img=" + img + '}';
     }
 
-    
-    
 }
