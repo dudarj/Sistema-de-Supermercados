@@ -41,42 +41,42 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-          <style>
+        <style>
             @media (max-width: 1440px) {
                 .modal__content{
-                  padding: 0!important;
+                    padding: 0!important;
                 }
 
                 .form-control{
-                  margin-bottom: 0!important;
-                  width: 50%;
+                    margin-bottom: 0!important;
+                    width: 50%;
                 }
 
                 .form{
-                  padding: 0!important;
+                    padding: 0!important;
                 }
 
                 .headerzao{
-                  padding-bottom: 0!important;
+                    padding-bottom: 0!important;
                 }
 
                 .info{
-                  display: none!important;
+                    display: none!important;
                 }
 
                 .form button{
-                  margin-top: 1rem;
-                  margin-bottom: 1rem;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
                 }
 
                 #form-wrap{
-                  display: flex;
-                  flex-wrap: wrap;
+                    display: flex;
+                    flex-wrap: wrap;
                 }
 
 
             }
-          </style>
+        </style>
 
     </head>
 
@@ -92,7 +92,7 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fa fa-bars"></i>
                         </button>
-                         
+
                         <a class="navbar-brand" href="mainGerencia.jsp"><img src="images/tendtudo.png" class="logo" alt="" style="width: 200px; margin-bottom: -30px; margin-top: -40px;"><h2 style="text-align: center">TendTudo - Produtos</h2></a>
                     </div>
                     <a onclick="teste()" id="add_produto" class="ml-auto btn hvr-hover">Adicionar Produto</a>
@@ -177,92 +177,92 @@
             </table>
         </div>
         <div class="div1">
-        <!-- JANELA MODAL -->  
-    <div id="modal_1" class="modal">
-        <div class="modal__content">
-          <div class="info">
-            <h2 class="modal__title">Adicione o Produto</h2>
-            <p class="modal__description">
-                Essa página é destinada para o cadastro de produtos, por favor preencha os campos!
-            </p></div>
-            <!-- FORMULARIO -->  
-            <div class="container_1 form">
-                <div class="headerzao">
-                  <h2>Adicionar Produto</h2>
-                </div>
-          
-                <form id="form" class="form" action="CadastrarProdutoViewController" method="post">
-                <div id="form-wrap">
-                  <div class="form-control">
-                    <label for="username">Código do Produto</label>
-                    <input placeholder="" disabled/>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <i class="fas fa-check-circle"></i>
-                    <small>Mensagem de erro</small>
-                  </div>
-          
-                  <div class="form-control">
-                    <label for="email">Descrição do Produto</label>
-                    <input type="text" id="email" placeholder="Digite a descrição do produto..." />
-                    <i class="fas fa-exclamation-circle"></i>
-                    <i class="fas fa-check-circle"></i>
-                    <small>Mensagem de erro</small>
-                  </div>
-          
-                  <div class="form-control">
-                    <label for="password">Preço do Produto</label>
-                    <input
-                      type="text"
-                      id="password"
-                      placeholder="Digite o Preço do Produto..."
-                    />
-                    <i class="fas fa-exclamation-circle"></i>
-                    <i class="fas fa-check-circle"></i>
-                    <small>Mensagem de erro</small>
-                  </div>
-          
-                  <div class="form-control">
-                    <label for="password-confirmation">Unidades no Estoque</label>
-                    <input
-                      type="number"
-                      id="password-confirmation"
-                      placeholder="Digite quantas unidades tem no Estoque..."
-                    />
-                    <i class="fas fa-exclamation-circle"></i>
-                    <i class="fas fa-check-circle"></i>
-                    <small>Mensagem de erro</small>
-                  </div>
+            <!-- JANELA MODAL -->  
+            <div id="modal_1" class="modal">
+                <div class="modal__content">
+                    <div class="info">
+                        <h2 class="modal__title">Adicione o Produto</h2>
+                        <p class="modal__description">
+                            Essa página é destinada para o cadastro de produtos, por favor preencha os campos!
+                        </p></div>
+                    <!-- FORMULARIO -->  
+                    <div class="container_1 form">
+                        <div class="headerzao">
+                            <h2>Adicionar Produto</h2>
+                        </div>
 
-                  <div class="form-control" style="width: 100%!important;">
-                    <label for="password">Imagem do Produto</label>
-                    <input
-                      type="url"
-                      id="link"
-                      placeholder="Cole o link da imagem do produto..."
-                    />
-                    <i class="fas fa-exclamation-circle"></i>
-                    <i class="fas fa-check-circle"></i>
-                    <small>Mensagem de erro</small>
-                  </div>
-                </div>
-                   <button type="submit">Adicionar Produto</button>
-                  <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
+                        <form id="form" class="form" action="CadastrarProdutoViewController" method="post">
+                            <div id="form-wrap">
+                                <div class="form-control">
+                                    <label for="username">Código do Produto</label>
+                                    <input placeholder="" disabled/>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-check-circle"></i>
+                                    <small>Mensagem de erro</small>
+                                </div>
 
-                </form>
-              </div>
+                                <div class="form-control">
+                                    <label for="email">Descrição do Produto</label>
+                                    <input type="text" id="email" placeholder="Digite a descrição do produto..." />
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-check-circle"></i>
+                                    <small>Mensagem de erro</small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="password">Preço do Produto</label>
+                                    <input
+                                        type="text"
+                                        id="password"
+                                        placeholder="Digite o Preço do Produto..."
+                                        />
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-check-circle"></i>
+                                    <small>Mensagem de erro</small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="password-confirmation">Unidades no Estoque</label>
+                                    <input
+                                        type="number"
+                                        id="password-confirmation"
+                                        placeholder="Digite quantas unidades tem no Estoque..."
+                                        />
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-check-circle"></i>
+                                    <small>Mensagem de erro</small>
+                                </div>
+
+                                <div class="form-control" style="width: 100%!important;">
+                                    <label for="password">Imagem do Produto</label>
+                                    <input
+                                        type="url"
+                                        id="link"
+                                        placeholder="Cole o link da imagem do produto..."
+                                        />
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <i class="fas fa-check-circle"></i>
+                                    <small>Mensagem de erro</small>
+                                </div>
+                            </div>
+                            <button type="submit">Adicionar Produto</button>
+                            <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div id="modal_2" class="modal modal--2">
-        <div class="modal__content">
-            <h2 class="modal__title">Meu primeiro modal</h2>
-            <p class="modal__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis id error accusamus pariatur quasi
-                est amet maiores tempore, eum beatae expedita fugiat modi, ipsum commodi laborum voluptatem, assumenda
-                et quod?
-            </p>
-            <a href="produtosSistema.jsp" class="modal__link">OK</a>
-        </div>
-    </div>
+        <div id="modal_2" class="modal modal--2">
+            <div class="modal__content">
+                <h2 class="modal__title">Meu primeiro modal</h2>
+                <p class="modal__description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis id error accusamus pariatur quasi
+                    est amet maiores tempore, eum beatae expedita fugiat modi, ipsum commodi laborum voluptatem, assumenda
+                    et quod?
+                </p>
+                <a href="produtosSistema.jsp" class="modal__link">OK</a>
+            </div>
         </div>
 
 
@@ -290,17 +290,17 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
         <script>
-            jQuery(function() {
-                
-                jQuery("#password").maskMoney({
-                prefix:'R$ ', 
-                thousands:'.', 
-                decimal:','
-            })
-            });
-            function teste() {
-                document.getElementById('modal_1').classList.toggle('visivel');
-            }
-            </script>              
+                      jQuery(function () {
+
+                          jQuery("#password").maskMoney({
+                              prefix: 'R$ ',
+                              thousands: '.',
+                              decimal: ','
+                          })
+                      });
+                      function teste() {
+                          document.getElementById('modal_1').classList.toggle('visivel');
+                      }
+        </script>              
     </body>
 </html>
