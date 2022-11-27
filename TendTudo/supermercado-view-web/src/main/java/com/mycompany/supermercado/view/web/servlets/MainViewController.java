@@ -30,9 +30,13 @@ public class MainViewController extends HttpServlet {
                 request.getSession().setAttribute("UsuarioLogado", c);
                 RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
                 rd.forward(request, response);
+                request.setAttribute("", login);
+                request.setAttribute("", senha);
             } else if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
                 RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
                 rd.forward(request, response);
+                request.setAttribute("", login);
+                request.setAttribute("", senha);
             } else {
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                 request.setAttribute("Mensagem", "Usuário ou Senha inválidos.");

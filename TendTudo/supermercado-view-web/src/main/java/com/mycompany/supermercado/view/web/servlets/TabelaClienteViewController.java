@@ -76,8 +76,8 @@ public class TabelaClienteViewController extends HttpServlet {
                         + "                        <td>" + list.get(i).getCpf() + "</td>\n"
                         + "                        <td >" + list.get(i).getTelefone() + "</td>\n"
                         + "                        <td>" + list.get(i).getEndereco() + "</td>\n"
-                        + "                        <td>0</td>\n"
-                        + "                        <td>0</td>\n"
+                        + "                        <td>" + list.get(i).getStatus() + "</td>\n"
+                        + "                        <td>" + list.get(i).getTipo() + "</td>\n"
                         + "                    </tr>");
 
 

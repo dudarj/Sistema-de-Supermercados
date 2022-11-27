@@ -106,12 +106,6 @@
 
 
 
-        <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%;">
-            <div class="footer-copyright">
-                <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
-            </div>
-        </footer>
-
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 

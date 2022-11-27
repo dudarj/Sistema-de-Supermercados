@@ -17,17 +17,20 @@
 
     </head>
     <body>
+        <div id="logoDiv" style="background-color: red;padding: 52px;margin-top: -91px;"></div><div id="logoDiv" style="background-color: red;padding: 52px;margin-top: -100px;"> </div>
+        <img src="images/tendtudo.png" class="logo" alt="" style="width: 277px;margin-bottom: -1px;margin-top: -138px;margin-left: 40%;">       
         <div class="container">
+
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="panel panel-login">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <a href="#" class="active" id="login-form-link">Login</a>
+                                    <a href="#" class="active" id="login-form-link" style="color: red">Login</a>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a href="#" id="register-form-link">Cadastrar</a>
+                                    <a href="#" id="register-form-link" style="color: red">Cadastrar</a>
                                 </div>
                             </div>
                             <hr>

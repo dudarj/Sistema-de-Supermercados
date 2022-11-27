@@ -66,47 +66,17 @@
                 <thead>
                     <tr>
                         <th class="col-xs-3">Código</th>
-                        <th class="col-xs-3">Cliente</th>
-                        <th class="col-xs-6">Valor</th>
-                        <th class="col-xs-6">Data Pagamento</th>
-                        <th class="col-xs-6">Endereço</th>
-                        <th class="col-xs-3">Met de Pagamento</th>
-                        <th class="col-xs-3">Tipo Entrega</th>
-                        <th class="col-xs-3">Total</th>
+                        <th class="col-xs-3">Descrição</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td class="col-xs-3">Duda</td>
-                        <td class="col-xs-6">R$ 170,00</td>
-                        <td class="col-xs-6">22/11/22</td>
-                        <td class="col-xs-6">Rua das Rosas</td>
-                        <td class="col-xs-3">Cartão de Crédito</td>
-                        <td class="col-xs-3">Entrega Premium R$ 10,00</td>
-                        <td class="col-xs-3">R$ 180,00</td>
+                        <td class="col-xs-3">Boleto</td>
                     </tr>
-                </tbody>
-                <tbody>
                     <tr>
                         <th scope="row">2</th>
-                        <td class="col-xs-3">Enzo</td>
-                        <td class="col-xs-6">R$ 50,00</td>
-                        <td class="col-xs-6">27/11/22</td>
-                        <td class="col-xs-6">Carlos Prates</td>
                         <td class="col-xs-3">Dinheiro</td>
-                        <td class="col-xs-3">Entrega Black Premium R$ 20,00</td>
-                        <td class="col-xs-3">R$ 70,00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td class="col-xs-3">Samuel</td>
-                        <td class="col-xs-6">R$ 80,00</td>
-                        <td class="col-xs-6">24/11/22</td>
-                        <td class="col-xs-6">Confins</td>
-                        <td class="col-xs-3">Pix</td>
-                        <td class="col-xs-3">Entrega Normal</td>
-                        <td class="col-xs-3">R$ 80,00</td>
                     </tr>
                 </tbody>
             </table>
@@ -116,34 +86,23 @@
         <!-- INICIO JANELA MODAL --> 
     <div id="modal_1" class="modal">
         <div class="modal__content form">
-            <h2 class="modal__title">Adicione o Pagamento</h2>
+            <h2 class="modal__title">Adicione o Tipo de Pagamento</h2>
             <p class="modal__description">
-                Essa página está destinada para o cadastro de produtos, por favor preencha os campos!
+                Essa página está destinada para o cadastro de tipo de pagamento, por favor preencha os campos!
             </p>
             <!-- FORMULARIO -->  
             <div class="container_1 form>"
                 <div class="headerzao">
-                  <h2>Adicione Pagamento</h2>
+                  <h2>Adicione o Tipo de Pagamento</h2>
                 </div>
-          
+                
+            <form id="form" class="form">
                 <div class="form-control">
-                    <label for="email">Código Pagamento</label>
-                    <input type="text" id="email" placeholder="Digite o código do pagamento..." />
+                    <label for="username">Código do Produto</label>
+                    <input placeholder="" disabled/>
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
                     <small>Mensagem de erro</small>
-                  </div>
-                
-                <div class="col-md-4 mb-3">
-                    <label for="state">Tipo Pagamento</label>
-                    <select class="wide w-100" id="state">
-                        <option data-display="Select">Escolha.  ..</option>
-                        <option value="Acre">Pix</option>
-                        <option value="Alagoas">Cartão Crédito</option>
-                        <option value="Amapá">Cartão Débito</option>
-                        <option value="Amapá">Paypal</option>
-                        <option value="Amapá">Dinheiro</option>
-                    </select>
                   </div>
           
                   <div class="form-control">
@@ -151,7 +110,7 @@
                     <input
                       type="text"
                       id="password"
-                      placeholder="Digite a descrição do pagamento..."
+                      placeholder="Digite a descrição do tipo de pagamento..."
                     />
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>

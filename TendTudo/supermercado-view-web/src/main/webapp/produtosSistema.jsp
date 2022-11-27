@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Site Metas -->
-        <title>GerÃªncia - TendTudo</title>
+        <title>Gerência - TendTudo</title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -71,7 +71,7 @@
             <table class="table table-fixed">
                 <thead>
                     <tr>
-                        <th class="col-xs-3">CÃ³digo</th>
+                        <th class="col-xs-3">Código</th>
                         <th class="col-xs-6">Produto</th>
                         <th class="col-xs-6">Valor Produto</th>
                         <th class="col-xs-6">Quantidade</th>
@@ -111,7 +111,7 @@
         <div class="modal__content">
             <h2 class="modal__title">Adicione o Produto</h2>
             <p class="modal__description">
-                Essa pÃ¡gina estÃ¡ destinada para o cadastro de produtos, por favor preencha os campos!
+                Essa página está destinada para o cadastro de produtos, por favor preencha os campos!
             </p>
             <!-- FORMULARIO -->  
             <div class="container_1 form">
@@ -121,31 +121,27 @@
           
                 <form id="form" class="form">
                   <div class="form-control">
-                    <label for="username">CÃ³digo do Produto</label>
-                    <input
-                      type="number"
-                      id="username"
-                      placeholder=""
-                    />
+                    <label for="username">Código do Produto</label>
+                    <input placeholder="" disabled/>
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
                     <small>Mensagem de erro</small>
                   </div>
           
                   <div class="form-control">
-                    <label for="email">Descricao do Produto</label>
-                    <input type="text" id="email" placeholder="Digite a descriÃ§Ã£o do produto..." />
+                    <label for="email">Descrição do Produto</label>
+                    <input type="text" id="email" placeholder="Digite a descrição do produto..." />
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
                     <small>Mensagem de erro</small>
                   </div>
           
                   <div class="form-control">
-                    <label for="password">Preco do Produto</label>
+                    <label for="password">Preço do Produto</label>
                     <input
                       type="text"
                       id="password"
-                      placeholder="Digite o PreÃ§o do Produto..."
+                      placeholder="Digite o Preço do Produto..."
                     />
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
