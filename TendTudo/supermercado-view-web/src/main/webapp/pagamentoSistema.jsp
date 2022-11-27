@@ -70,71 +70,122 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td class="col-xs-3">Boleto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td class="col-xs-3">Dinheiro</td>
-                    </tr>
+                    ${tabelaPagamento0}
+                    ${tabelaPagamento1}
+                    ${tabelaPagamento2}
+                    ${tabelaPagamento3}
+                    ${tabelaPagamento4}
+                    ${tabelaPagamento5}
+                    ${tabelaPagamento6}
+                    ${tabelaPagamento7}
+                    ${tabelaPagamento8}
+                    ${tabelaPagamento9}
+                    ${tabelaPagamento10}
+                    ${tabelaPagamento11}
+                    ${tabelaPagamento12}
+                    ${tabelaPagamento13}
+                    ${tabelaPagamento14}
+                    ${tabelaPagamento15}
+                    ${tabelaPagamento16}
+                    ${tabelaPagamento17}
+                    ${tabelaPagamento18}
+                    ${tabelaPagamento19}
+                    ${tabelaPagamento20}
+                    ${tabelaPagamento21}
+                    ${tabelaPagamento22}
+                    ${tabelaPagamento23}
+                    ${tabelaPagamento24}
+                    ${tabelaPagamento25}
+                    ${tabelaPagamento26}
+                    ${tabelaPagamento27}
+                    ${tabelaPagamento28}
+                    ${tabelaPagamento29}
+                    ${tabelaPagamento30}
+                    ${tabelaPagamento31}
+                    ${tabelaPagamento32}
+                    ${tabelaPagamento33}
+                    ${tabelaPagamento34}
+                    ${tabelaPagamento35}
+                    ${tabelaPagamento36}
+                    ${tabelaPagamento37}
+                    ${tabelaPagamento38}
+                    ${tabelaPagamento39}
+                    ${tabelaPagamento40}
+                    ${tabelaPagamento41}
+                    ${tabelaPagamento42}
+                    ${tabelaPagamento43}
+                    ${tabelaPagamento44}
+                    ${tabelaPagamento45}
+                    ${tabelaPagamento46}
+                    ${tabelaPagamento47}
+                    ${tabelaPagamento48}
+                    ${tabelaPagamento49}
+                    ${tabelaPagamento50}
+                    ${tabelaPagamento51}
+                    ${tabelaPagamento52}
+                    ${tabelaPagamento53}
+                    ${tabelaPagamento54}
+                    ${tabelaPagamento55}
+                    ${tabelaPagamento56}
                 </tbody>
             </table>
         </div>
 
         <div class="div1">
-        <!-- INICIO JANELA MODAL --> 
-    <div id="modal_1" class="modal">
-        <div class="modal__content form">
-            <h2 class="modal__title">Adicione o Tipo de Pagamento</h2>
-            <p class="modal__description">
-                Essa página está destinada para o cadastro de tipo de pagamento, por favor preencha os campos!
-            </p>
-            <!-- FORMULARIO -->  
-            <div class="container_1 form>"
-                <div class="headerzao">
-                  <h2>Adicione o Tipo de Pagamento</h2>
-                </div>
-                
-            <form id="form" class="form">
-                <div class="form-control">
-                    <label for="username">Código do Produto</label>
-                    <input placeholder="" disabled/>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <i class="fas fa-check-circle"></i>
-                    <small>Mensagem de erro</small>
-                  </div>
-          
-                  <div class="form-control">
-                    <label for="password">Descrição Pagamento</label>
-                    <input
-                      type="text"
-                      id="password"
-                      placeholder="Digite a descrição do tipo de pagamento..."
-                    />
-                    <i class="fas fa-exclamation-circle"></i>
-                    <i class="fas fa-check-circle"></i>
-                    <small>Mensagem de erro</small>
-                  </div>
-          
-                  <button type="submit">Adicionar Pagamento</button>
-                  <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
+            <!-- INICIO JANELA MODAL --> 
+            <div id="modal_1" class="modal">
+                <div class="modal__content form">
+                    <h2 class="modal__title">Adicione o Tipo de Pagamento</h2>
+                    <p class="modal__description">
+                        Essa página está destinada para o cadastro de tipo de pagamento, por favor preencha os campos!
+                    </p>
+                    <!-- FORMULARIO -->  
+                    <div class="container_1 form>"
+                         <div class="headerzao">
+                        <h2>Adicione o Tipo de Pagamento</h2>
+                    </div>
 
-                </form>
-              </div>
+                    <form id="form" class="form" action="CadastrarPagamentoViewController" method="post">
+                        <div class="form-control">
+                            <label for="username">Código do Produto</label>
+                            <input placeholder="" disabled/>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <i class="fas fa-check-circle"></i>
+                            <small>Mensagem de erro</small>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="password">Descrição Pagamento</label>
+                            <input
+                                type="text"
+                                id="password"
+                                placeholder="Digite a descrição do tipo de pagamento..."
+                                name="descricaoPagamento"
+                                
+                                />
+                            <i class="fas fa-exclamation-circle"></i>
+                            <i class="fas fa-check-circle"></i>
+                            <small>Mensagem de erro</small>
+                        </div>
+
+                        <button type="submit">Adicionar Pagamento</button>
+                        <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
+
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-    <div id="modal_2" class="modal modal--2">
-        <div class="modal__content">
-            <h2 class="modal__title">Meu primeiro modal</h2>
-            <p class="modal__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis id error accusamus pariatur quasi
-                est amet maiores tempore, eum beatae expedita fugiat modi, ipsum commodi laborum voluptatem, assumenda
-                et quod?
-            </p>
-            <a href="produtosSistema.jsp" class="modal__link">OK</a>
+        <div id="modal_2" class="modal modal--2">
+            <div class="modal__content">
+                <h2 class="modal__title">Meu primeiro modal</h2>
+                <p class="modal__description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis id error accusamus pariatur quasi
+                    est amet maiores tempore, eum beatae expedita fugiat modi, ipsum commodi laborum voluptatem, assumenda
+                    et quod?
+                </p>
+                <a href="produtosSistema.jsp" class="modal__link">OK</a>
+            </div>
         </div>
-    </div>
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 

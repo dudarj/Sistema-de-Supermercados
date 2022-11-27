@@ -102,6 +102,64 @@
                         <td class="col-xs-6">(No Estoque)</td>
                         <td class="col-xs-3">(Link Imagem)</td>
                     </tr>
+                    ${tabelaProduto0}
+                    ${tabelaProduto1}
+                    ${tabelaProduto2}
+                    ${tabelaProduto3}
+                    ${tabelaProduto4}
+                    ${tabelaProduto5}
+                    ${tabelaProduto6}
+                    ${tabelaProduto7}
+                    ${tabelaProduto8}
+                    ${tabelaProduto9}
+                    ${tabelaProduto10}
+                    ${tabelaProduto11}
+                    ${tabelaProduto12}
+                    ${tabelaProduto13}
+                    ${tabelaProduto14}
+                    ${tabelaProduto15}
+                    ${tabelaProduto16}
+                    ${tabelaProduto17}
+                    ${tabelaProduto18}
+                    ${tabelaProduto19}
+                    ${tabelaProduto20}
+                    ${tabelaProduto21}
+                    ${tabelaProduto22}
+                    ${tabelaProduto23}
+                    ${tabelaProduto24}
+                    ${tabelaProduto25}
+                    ${tabelaProduto26}
+                    ${tabelaProduto27}
+                    ${tabelaProduto28}
+                    ${tabelaProduto29}
+                    ${tabelaProduto30}
+                    ${tabelaProduto31}
+                    ${tabelaProduto32}
+                    ${tabelaProduto33}
+                    ${tabelaProduto34}
+                    ${tabelaProduto35}
+                    ${tabelaProduto36}
+                    ${tabelaProduto37}
+                    ${tabelaProduto38}
+                    ${tabelaProduto39}
+                    ${tabelaProduto40}
+                    ${tabelaProduto41}
+                    ${tabelaProduto42}
+                    ${tabelaProduto43}
+                    ${tabelaProduto44}
+                    ${tabelaProduto45}
+                    ${tabelaProduto46}
+                    ${tabelaProduto47}
+                    ${tabelaProduto48}
+                    ${tabelaProduto49}
+                    ${tabelaProduto50}
+                    ${tabelaProduto51}
+                    ${tabelaProduto52}
+                    ${tabelaProduto53}
+                    ${tabelaProduto54}
+                    ${tabelaProduto55}
+                    ${tabelaProduto56}
+                
                 </tbody>
             </table>
         </div>
@@ -119,7 +177,7 @@
                   <h2>Adicionar Produto</h2>
                 </div>
           
-                <form id="form" class="form">
+                <form id="form" class="form" action="CadastrarProdutoViewController" method="post">
                   <div class="form-control">
                     <label for="username">Código do Produto</label>
                     <input placeholder="" disabled/>
@@ -172,7 +230,7 @@
                     <small>Mensagem de erro</small>
                   </div>
           
-                  <button type="submit">Cadastrar</button>
+                    <input type="submit" value="Submit">
                   <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
 
                 </form>

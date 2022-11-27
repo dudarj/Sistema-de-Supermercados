@@ -94,7 +94,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="pagamentoSistema.jsp"><i style="color: white" class='far fa-credit-card'></i></a>
+                                        <a href="TabelaPagamentoViewController"><i style="color: white" class='far fa-credit-card'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Pagamento</h4>
@@ -106,7 +106,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="produtosSistema.jsp"><i style="color: white" class='fas fa-hamburger'></i></a>
+                                        <a href="TabelaProdutoView"><i style="color: white" class='fas fa-hamburger'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Produtos</h4>
