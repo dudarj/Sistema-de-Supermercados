@@ -53,10 +53,10 @@
 
 .modal__content{
     background-color: #ffffff;
-    width: 79.875rem;
+    width: 45.875rem;
     padding:  2rem 2rem 1rem;
     border-radius: 4px;
-    border-top: .5rem solid var(--clr-green);
+    border-top: 0.5rem solid var(--clr-green);
 }
 
 .modal__title{

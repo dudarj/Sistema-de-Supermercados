@@ -54,7 +54,7 @@
 
                     </div>
                     <!-- End Header Navigation -->
-
+                    <a onclick="document.getElementById('modal_1').classList.toggle('visivel')" id="add_produto" class="ml-auto btn hvr-hover">Adicionar Pagamento</a>
                     <!-- /.navbar-collapse -->
             </nav>
             <!-- End Navigation -->
@@ -113,8 +113,7 @@
         </div>
 
         <div class="div1">
-        <!-- INICIO JANELA MODAL -->  
-        <a onclick="document.getElementById('modal_1').classList.toggle('visivel')" id="add_produto" class="ml-auto btn hvr-hover">Adicionar Pagamento</a>
+        <!-- INICIO JANELA MODAL --> 
     <div id="modal_1" class="modal">
         <div class="modal__content form">
             <h2 class="modal__title">Adicione o Pagamento</h2>
@@ -177,14 +176,6 @@
             <a href="produtosSistema.jsp" class="modal__link">OK</a>
         </div>
     </div>
-
-
-        <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%; left: 0;">
-            <div class="footer-copyright">
-                <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
-            </div>
-        </footer>
-
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 

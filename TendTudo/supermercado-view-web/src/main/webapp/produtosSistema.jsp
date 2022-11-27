@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="css/custom.css">
         <!-- CSS Janela Modal -->
         <link rel="stylesheet" href="css/modal.css">
-        <!-- CSS Formulário-->
+        <!-- CSS Formulï¿½rio-->
         <link rel="stylesheet" href="css/styles.css">
 
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -55,9 +55,10 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fa fa-bars"></i>
                         </button>
+                         
                         <a class="navbar-brand" href="mainGerencia.jsp"><img src="images/tendtudo.png" class="logo" alt="" style="width: 200px; margin-bottom: -30px; margin-top: -40px;"><h2 style="text-align: center">TendTudo - Produtos</h2></a>
-
                     </div>
+                    <a onclick="teste()" id="add_produto" class="ml-auto btn hvr-hover">Adicionar Produto</a>
                     <!-- End Header Navigation -->
 
                     <!-- /.navbar-collapse -->
@@ -106,7 +107,6 @@
         </div>
         <div class="div1">
         <!-- JANELA MODAL -->  
-        <a onclick="teste()" id="add_produto" class="ml-auto btn hvr-hover">Adicionar Produto</a>
     <div id="modal_1" class="modal">
         <div class="modal__content">
             <h2 class="modal__title">Adicione o Produto</h2>
@@ -133,7 +133,7 @@
                   </div>
           
                   <div class="form-control">
-                    <label for="email">Descrição do Produto</label>
+                    <label for="email">Descricao do Produto</label>
                     <input type="text" id="email" placeholder="Digite a descriÃ§Ã£o do produto..." />
                     <i class="fas fa-exclamation-circle"></i>
                     <i class="fas fa-check-circle"></i>
@@ -141,7 +141,7 @@
                   </div>
           
                   <div class="form-control">
-                    <label for="password">Preço do Produto</label>
+                    <label for="password">Preco do Produto</label>
                     <input
                       type="text"
                       id="password"
@@ -194,14 +194,7 @@
             <a href="produtosSistema.jsp" class="modal__link">OK</a>
         </div>
     </div>
-            
-        </div>                
-
-        <footer class="footer navbar-fixed-bottom" style="position: fixed; bottom: 0; width: 100%;">
-            <div class="footer-copyright">
-                <p class="footer-company">Todos os direitos reservados para Enzo Bambirra, Maria Eduarda e Samuel Pereira &copy; 2022 <a href="#">Supermercados TendTudo</a>
-            </div>
-        </footer>
+        </div>
 
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
