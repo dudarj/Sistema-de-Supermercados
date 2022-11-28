@@ -67,6 +67,7 @@
                     <tr>
                         <th class="col-xs-3">Código</th>
                         <th class="col-xs-3">Descrição</th>
+                        <th class="col-xs-3"></th>
                     </tr>
                 </thead>
                 <tbody>

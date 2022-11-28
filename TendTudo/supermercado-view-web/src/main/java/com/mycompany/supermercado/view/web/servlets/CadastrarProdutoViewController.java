@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.mycompany.supermercado.view.web.servlets;
 
 import jakarta.servlet.RequestDispatcher;
@@ -16,10 +12,6 @@ import java.util.List;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
-/**
- *
- * @author Samuel
- */
 @WebServlet(name = "CadastrarProdutoViewController", urlPatterns = {"/CadastrarProdutoViewController"})
 public class CadastrarProdutoViewController extends HttpServlet {
 
@@ -44,18 +36,15 @@ public class CadastrarProdutoViewController extends HttpServlet {
             int unidades = Integer.parseInt(request.getParameter("unidades"));
             String imagem = request.getParameter("imgUrl");
 
-            if ((descricao != null && !descricao.isEmpty())) {
+            produto.setDescricao(descricao);
+            produto.setPreco(preco);
+            produto.setQuantidade(unidades);
+            produto.setImg(imagem);
+            servico.salvar(produto);
+            RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
+            request.setAttribute("Mensagem", "Cadastro realizado com sucesso");
+            rd.forward(request, response);
 
-                produto.setDescricao(descricao);
-                produto.setPreco(preco);
-                produto.setQuantidade(unidades);
-                produto.setImg(imagem);
-                servico.salvar(produto);
-                RequestDispatcher rd = request.getRequestDispatcher("CadastrarProdutoViewController");
-                request.setAttribute("Mensagem", "Cadastro realizado com sucesso");
-                rd.forward(request, response);
-
-            }
         }
     }
 

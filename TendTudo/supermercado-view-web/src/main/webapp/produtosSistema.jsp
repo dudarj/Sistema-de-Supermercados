@@ -113,6 +113,8 @@
                         <th class="col-xs-6">Valor Produto</th>
                         <th class="col-xs-6">Quantidade</th>
                         <th class="col-xs-3">Foto Produto</th>
+                        <th class="col-xs-3"></th>
+                        <th class="col-xs-3"></th>
                     </tr>
                 </thead>
                 <tbody> 
@@ -191,44 +193,40 @@
                             <h2>Adicionar Produto</h2>
                         </div>
 
-                            <form action="CadastrarProdutoViewController" method="post" id="form" class="form">
+                            <form action="CadastrarProdutoViewController" method="post" class="form">
                             <div id="form-wrap">
                                 <div class="form-control">
-                                    <label for="username">Código do Produto</label>
+                                    <label>Código do Produto</label>
                                     <input placeholder="" disabled/>
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
-                                    <small>Mensagem de erro</small>
                                 </div>
 
                                 <div class="form-control">
-                                    <label for="email">Descrição do Produto</label>
+                                    <label>Descrição do Produto</label>
                                     <input 
                                         type="text" 
-                                        id="email" 
                                         placeholder="Digite a descrição do produto..." 
                                         name="descricao"
                                         />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
-                                    <small>Mensagem de erro</small>
                                 </div>
 
                                 <div class="form-control">
-                                    <label for="password">Preço do Produto</label>
+                                    <label>Preço do Produto</label>
                                     <input
                                         type="text"
-                                        id="password"
+                                        id="preco"
                                         placeholder="Digite o Preço do Produto..."
                                         name="preco"
                                         />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
-                                    <small>Mensagem de erro</small>
                                 </div>
 
                                 <div class="form-control">
-                                    <label for="password-confirmation">Unidades no Estoque</label>
+                                    <label>Unidades no Estoque</label>
                                     <input
                                         type="number"
                                         id="password-confirmation"
@@ -237,11 +235,10 @@
                                         />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
-                                    <small>Mensagem de erro</small>
                                 </div>
 
                                 <div class="form-control" style="width: 100%!important;">
-                                    <label for="img">Imagem do Produto</label>
+                                    <label>Imagem do Produto</label>
                                     <input
                                         type="url"
                                         id="link"
@@ -250,7 +247,6 @@
                                         />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
-                                    <small>Mensagem de erro</small>
                                 </div>
                             </div>
                             <button type="submit">Adicionar Produto</button>
@@ -312,7 +308,7 @@
         <script>
                                 jQuery(function () {
 
-                                    jQuery("#password").maskMoney({
+                                    jQuery("#preco").maskMoney({
                                         prefix: 'R$ ',
                                         thousands: '.',
                                         decimal: ','

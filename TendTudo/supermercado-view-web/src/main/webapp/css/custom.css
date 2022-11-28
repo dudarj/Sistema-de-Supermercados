@@ -24,3 +24,14 @@
         }
     }
 }
+
+.apagar {
+    cursor: pointer;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.editar {
+    cursor: pointer;
+    padding-left: 6px;
+    padding-right: 6px;
+}

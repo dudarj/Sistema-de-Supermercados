@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.mycompany.supermercado.view.web.servlets;
 
 import jakarta.servlet.RequestDispatcher;
@@ -15,10 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.DTO.TipoPagamento;
 import model.servicos.TipoPagamentoServico;
 
-/**
- *
- * @author Samuel
- */
+
 @WebServlet(name = "CadastrarPagamentoViewController", urlPatterns = {"/CadastrarPagamentoViewController"})
 public class CadastrarPagamentoViewController extends HttpServlet {
 

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.mycompany.supermercado.view.web.servlets;
 
 import jakarta.servlet.RequestDispatcher;
@@ -16,10 +12,7 @@ import java.util.List;
 import model.DTO.TipoPagamento;
 import model.servicos.TipoPagamentoServico;
 
-/**
- *
- * @author Samuel
- */
+
 @WebServlet(name = "TabelaPagamentoViewController", urlPatterns = {"/TabelaPagamentoViewController"})
 public class TabelaPagamentoViewController extends HttpServlet {
 
@@ -46,10 +39,12 @@ public class TabelaPagamentoViewController extends HttpServlet {
                 request.setAttribute("descricao" + i, list.get(i).getDescricao());
                 request.setAttribute("tabelaPagamento" + i, "<tr>\n"
                         + "                        <td>" + list.get(i).getCodigo() + "</td>\n"
-                        + "                        <td>" + list.get(i).getDescricao()+ "</td>\n"
+                        + "                        <td>" + list.get(i).getDescricao() + "</td>\n"
+                        + "                <td><button class=\"apagar\">Deletar</button></td>\n"
                         + "                    </tr>");
 
             }
+
             rd.forward(request, response);
         }
     }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.mycompany.supermercado.view.web.servlets;
 
 import jakarta.servlet.RequestDispatcher;
@@ -16,12 +12,9 @@ import java.util.List;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
-/**
- *
- * @author Samuel
- */
-@WebServlet(name = "TabelaProdutoView", urlPatterns = {"/TabelaProdutoView"})
-public class TabelaProdutoView extends HttpServlet {
+
+@WebServlet(name = "TabelaProdutoViewController", urlPatterns = {"/TabelaProdutoView"})
+public class TabelaProdutoViewController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,8 +35,8 @@ public class TabelaProdutoView extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("produtosSistema.jsp");
 
             int a = list.size();
-            
-            String [] v = new String[3];
+
+            String[] v = new String[3];
             v[0] = "";
             v[1] = "";
             v[2] = "";
@@ -52,12 +45,13 @@ public class TabelaProdutoView extends HttpServlet {
                 request.setAttribute("preco" + i, list.get(i).getPreco());
                 request.setAttribute("quantidade" + i, list.get(i).getQuantidade());
                 request.setAttribute("tabelaProduto" + i, "<tr>\n"
-                        + "                        <th>" + (i + 1)  + "</th>\n"
+                        + "                        <th>" + (i + 1) + "</th>\n"
                         + "                        <td>" + list.get(i).getDescricao() + "</td>\n"
                         + "                        <td> R$ " + list.get(i).getPreco() + "</td>\n"
                         + "                        <td >" + list.get(i).getQuantidade() + "</td>\n"
-                        + "                        <td class=\"col-xs-3\"> <img src=\"" + list.get(i).getImg() +"\" style=width:60px; height:30px/></td>"                                                     
-                                
+                        + "                        <td class=\"col-xs-3\"> <img src=\"" + list.get(i).getImg() + "\" style=width:60px; height:30px/></td>"
+                        + "                        <td><button class=\"apagar\">Deletar</button></td>\n"
+                        + "                        <td><button class=\"editar\">Editar</button></td>\n"
                         + "                    </tr>");
 
             }
