@@ -56,7 +56,7 @@ public class TabelaProdutoView extends HttpServlet {
                         + "                        <td>" + list.get(i).getDescricao() + "</td>\n"
                         + "                        <td> R$ " + list.get(i).getPreco() + "</td>\n"
                         + "                        <td >" + list.get(i).getQuantidade() + "</td>\n"
-                        + "                        <td class=\"col-xs-3\"> <img src=\"" + v[i] +"\"/></td>"        
+                        + "                        <td class=\"col-xs-3\"> <img src=\"" + list.get(i).getImg() +"\" style=width:60px; height:30px/></td>"                                                     
                                 
                         + "                    </tr>");
 

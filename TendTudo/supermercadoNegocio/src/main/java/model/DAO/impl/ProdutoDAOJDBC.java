@@ -64,6 +64,7 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
             st.setInt(3, obj.getQuantidade());
             st.setString(4, obj.getImg());
             st.setLong(5, obj.getCodigo());
+            
 
             st.executeUpdate();
         } catch (SQLException e) {
@@ -103,6 +104,8 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
                 obj.setDescricao(rs.getString("descricao"));
                 obj.setPreco(rs.getDouble("preco"));
                 obj.setQuantidade(rs.getInt("quantidade"));
+                obj.setImg(rs.getString("url_img"));
+
                 return obj;
             }
             return null;
@@ -131,6 +134,7 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
                 obj.setDescricao(rs.getString("descricao"));
                 obj.setPreco(rs.getDouble("preco"));
                 obj.setQuantidade(rs.getInt("quantidade"));
+                obj.setImg(rs.getString("url_img"));
                 lista.add(obj);
             }
             return lista;
@@ -161,6 +165,8 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
                 obj.setDescricao(rs.getString("descricao"));
                 obj.setPreco(rs.getDouble("preco"));
                 obj.setQuantidade(rs.getInt("quantidade"));
+                obj.setImg(rs.getString("url_img"));
+
                 list.add(obj);
             }
             return list;

@@ -39,17 +39,17 @@ public class CadastrarProdutoViewController extends HttpServlet {
             ProdutoServico servico = new ProdutoServico();
             Produto produto = new Produto();
 
-           String descricao = request.getParameter("descricao");
-            Double preco = Double.valueOf(request.getParameter("preco"));
-            int unidades = Integer.valueOf(request.getParameter("unidades"));
-//            String imagem = request.getParameter("imagem");
+            String descricao = request.getParameter("descricao");
+            Double preco = Double.parseDouble(request.getParameter("preco"));
+            int unidades = Integer.parseInt(request.getParameter("unidades"));
+            String imagem = request.getParameter("imgUrl");
             produto.setDescricao(descricao);
             produto.setPreco(preco);
             produto.setQuantidade(unidades);
+            produto.setImg(imagem);
             servico.salvar(produto);
-            
-//            rd = request.getRequestDispatcher("produtosSistema.jsp");
-            RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoView");
+            RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
+
             rd.forward(request, response);
 
         }

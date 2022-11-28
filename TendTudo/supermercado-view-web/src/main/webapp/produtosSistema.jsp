@@ -191,7 +191,7 @@
                             <h2>Adicionar Produto</h2>
                         </div>
 
-                        <form id="form" class="form" action="CadastrarProdutoViewController" method="post">
+                        <!--   <form id="form" class="form" action="CadastrarProdutoViewController" method="post">
                             <div id="form-wrap">
                                 <div class="form-control">
                                     <label for="username">Código do Produto</label>
@@ -203,7 +203,7 @@
 
                                 <div class="form-control">
                                     <label for="email">Descrição do Produto</label>
-                                    <input type="text" id="email" placeholder="Digite a descrição do produto..." />
+                                    <input type="text" id="email" placeholder="Digite a descrição do produto..." name="descricao" />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
                                     <small>Mensagem de erro</small>
@@ -215,6 +215,7 @@
                                         type="text"
                                         id="password"
                                         placeholder="Digite o Preço do Produto..."
+                                        name="preco"
                                         />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
@@ -227,6 +228,7 @@
                                         type="number"
                                         id="password-confirmation"
                                         placeholder="Digite quantas unidades tem no Estoque..."
+                                        name="unidades"
                                         />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
@@ -248,6 +250,18 @@
                             <button type="submit">Adicionar Produto</button>
                             <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
 
+                        </form>
+                        -->
+                        <form action="CadastrarProdutoViewController" method="post">
+                            <div style="margin-left: 20px;">
+                            <br>
+                            Descrição<input type="text" name="descricao"><br><br>
+                            Preço<input type="number" name="preco"><br><br>
+                            Unidades<input type="number" name="unidades"><br><br>
+                            URL Da Imagem<input type="url"  name="imgUrl"><br><br>
+                            <input type="submit" value="Cadastrar Produto"><br><br> 
+                            </div>
+                            
                         </form>
                     </div>
                 </div>
