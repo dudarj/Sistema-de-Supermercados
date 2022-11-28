@@ -82,7 +82,7 @@ function setErrorFor(input, message) {
 
 function fechar() {
     
-  fechamento = document.querySelector('#fechamento')
+  fechamento = document.querySelector('#fechamento');
 
   fechamento.style.display = 'none';
 }

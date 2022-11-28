@@ -8,7 +8,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
@@ -24,37 +23,35 @@ public class CadastrarProdutoViewController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             ProdutoServico servico = new ProdutoServico();
             Produto produto = new Produto();
-            
+
             String teste = request.getParameter("preco").substring(2);
-            Double v = Double.valueOf(teste);
-            
-            
+            Double preco = Double.valueOf(teste);
+
             String descricao = request.getParameter("descricao");
-            //Double preco = Double.valueOf(request.getParameter("preco"));
             Integer unidades = Integer.valueOf(request.getParameter("unidades"));
             String imagem = request.getParameter("imgUrl");
+
             
-            
-            System.out.println(v);
-            System.out.println(unidades);
-            System.out.println(imagem);
-            produto.setDescricao(descricao);
-            produto.setPreco(v);
-            produto.setQuantidade(unidades);
-            produto.setImg(imagem);
-            servico.salvar(produto);
-            RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
-            request.setAttribute("Mensagem", "Cadastro realizado com sucesso");
-            rd.forward(request, response);
+                if (descricao != null && !descricao.isEmpty() && imagem != null && !imagem.isEmpty()) {
+                produto.setDescricao(descricao);
+                produto.setPreco(preco);
+                produto.setQuantidade(unidades);
+                produto.setImg(imagem);
+                servico.salvar(produto);
+                RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
+                request.setAttribute("Mensagem", "Cadastro realizado com sucesso");
+                rd.forward(request, response);
+            } else {
+                RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
+                request.setAttribute("Mensagem", "Cadastro não foi realizado");
+                rd.forward(request, response);
+            }
 
         }
     }
