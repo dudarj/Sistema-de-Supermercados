@@ -308,11 +308,11 @@
         <script>
                                 jQuery(function () {
 
-                                    jQuery("#preco").maskMoney({
-                                        prefix: 'R$ ',
+                                   jQuery("#preco").maskMoney({
+                                       prefix: 'R$ ',
                                         thousands: '.',
-                                        decimal: ','
-                                    })
+                                        decimal: '.'
+                                    });
                                 });
                                 function teste() {
                                     document.getElementById('modal_1').classList.toggle('visivel');

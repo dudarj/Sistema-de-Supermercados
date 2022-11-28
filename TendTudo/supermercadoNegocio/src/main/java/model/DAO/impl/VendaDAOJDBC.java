@@ -112,7 +112,7 @@ public class VendaDAOJDBC implements VendaDAO {
         ResultSet rs = null;
         try {
             st = conn.prepareStatement(
-                    "SELECT * FROM venda v "
+                    "SELECT c.nome, p.parcelas, ti.descricao FROM venda v "
                     + "inner join cliente c on v.codigo_cliente = c.codigo "
                     + "inner join pagamento p on v.codigo_pagamento = v.codigo "
                     + "inner join tipopagamento ti on v.codigo_tipopagamento = ti.codigo "
@@ -128,6 +128,7 @@ public class VendaDAOJDBC implements VendaDAO {
                 obj.setCodigo(rs.getLong("codigo"));
                 obj.setDataVenda(new java.util.Date(rs.getTimestamp("datavenda").getTime()));
                 obj.setValorTotal(rs.getDouble("valortotal"));
+                
                 c.setCodigo(rs.getLong("codigo_cliente"));
                 c.setNome(rs.getString("nome"));
                 p.setCodigo(rs.getLong("codigo_pagamento"));

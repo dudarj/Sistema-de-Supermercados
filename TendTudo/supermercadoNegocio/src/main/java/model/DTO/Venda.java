@@ -20,7 +20,10 @@ public class Venda implements Serializable {
     private Long codigo;
     private Date dataVenda = new Date();
     private double valorTotal;
-
+    private Cliente c = new Cliente();
+    private Pagamento p = new Pagamento();
+    TipoPagamento ti = new TipoPagamento();
+    
     public Venda() {
     }
 
@@ -53,6 +56,32 @@ public class Venda implements Serializable {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+    public Cliente getC() {
+        return c;
+    }
+
+    public void setC(Cliente c) {
+        this.c = c;
+    }
+
+    public Pagamento getP() {
+        return p;
+    }
+
+    public void setP(Pagamento p) {
+        this.p = p;
+    }
+
+    public TipoPagamento getTi() {
+        return ti;
+    }
+
+    public void setTi(TipoPagamento ti) {
+        this.ti = ti;
+    }
+    
+    
 
     @Override
     public int hashCode() {

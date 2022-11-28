@@ -13,7 +13,7 @@ import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
 
-@WebServlet(name = "TabelaProdutoViewController", urlPatterns = {"/TabelaProdutoView"})
+@WebServlet(name = "TabelaProdutoViewController", urlPatterns = {"/TabelaProdutoViewController"})
 public class TabelaProdutoViewController extends HttpServlet {
 
     /**
@@ -49,30 +49,15 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "                        <td>" + list.get(i).getDescricao() + "</td>\n"
                         + "                        <td> R$ " + list.get(i).getPreco() + "</td>\n"
                         + "                        <td >" + list.get(i).getQuantidade() + "</td>\n"
-                        + "                        <td class=\"col-xs-3\"> <img src=\"" + list.get(i).getImg() + "\" style=width:60px; height:30px/></td>"
+                        + "                        <td class=\"col-xs-3\"> <img src="+"'"+ list.get(i).getImg() + "'"+" style=width:60px; height:30px/></td>"
                         + "                        <td><button class=\"apagar\">Deletar</button></td>\n"
                         + "                        <td><button class=\"editar\">Editar</button></td>\n"
                         + "                    </tr>");
 
-            }
+            } 
+            
+         
             rd.forward(request, response);
-
-            //Janela para cadastrar produto
-//            String descricao = request.getParameter("descricao");
-//            Double preco = Double.parseDouble(request.getParameter("preco"));
-//            int unidades = Integer.parseInt(request.getParameter("unidades"));
-//            String imagem = request.getParameter("imagem");
-//            Produto produto = new Produto();
-//
-//            if (descricao != null && !descricao.isEmpty() && preco != null && imagem != null && !imagem.isEmpty()) {
-//                produto.setDescricao(descricao);
-//                produto.setPreco(preco);
-//                produto.setQuantidade(unidades);
-//                servico.salvar(produto);
-//                rd = request.getRequestDispatcher("produtosSistema.jsp");
-//                rd.forward(request, response);
-//
-//            }
         }
     }
 

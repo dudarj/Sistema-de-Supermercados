@@ -24,20 +24,31 @@ public class CadastrarProdutoViewController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             ProdutoServico servico = new ProdutoServico();
             Produto produto = new Produto();
-
+            
+            String teste = request.getParameter("preco").substring(2);
+            Double v = Double.valueOf(teste);
+            
+            
             String descricao = request.getParameter("descricao");
-            Double preco = Double.parseDouble(request.getParameter("preco"));
-            int unidades = Integer.parseInt(request.getParameter("unidades"));
+            //Double preco = Double.valueOf(request.getParameter("preco"));
+            Integer unidades = Integer.valueOf(request.getParameter("unidades"));
             String imagem = request.getParameter("imgUrl");
-
+            
+            
+            System.out.println(v);
+            System.out.println(unidades);
+            System.out.println(imagem);
             produto.setDescricao(descricao);
-            produto.setPreco(preco);
+            produto.setPreco(v);
             produto.setQuantidade(unidades);
             produto.setImg(imagem);
             servico.salvar(produto);

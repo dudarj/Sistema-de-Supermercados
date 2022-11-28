@@ -106,7 +106,7 @@
                             <div class="account-box">
                                 <div class="service-box">
                                     <div class="service-icon">
-                                        <a href="TabelaProdutoView"><i style="color: white" class='fas fa-hamburger'></i></a>
+                                        <a href="TabelaProdutoViewController"><i style="color: white" class='fas fa-hamburger'></i></a>
                                     </div>
                                     <div class="service-desc">
                                         <h4>Produtos</h4>
