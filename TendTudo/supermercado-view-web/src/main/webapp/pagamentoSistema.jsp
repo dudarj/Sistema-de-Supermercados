@@ -147,7 +147,7 @@
 
                     <form id="form" class="form" action="CadastrarPagamentoViewController" method="post">
                         <div class="form-control">
-                            <label for="username">Código do Produto</label>
+                            <label for="username">Código do Tipo de Pagamento</label>
                             <input placeholder="" disabled/>
                             <i class="fas fa-exclamation-circle"></i>
                             <i class="fas fa-check-circle"></i>
@@ -161,7 +161,6 @@
                                 id="password"
                                 placeholder="Digite a descrição do tipo de pagamento..."
                                 name="descricaoPagamento"
-                                
                                 />
                             <i class="fas fa-exclamation-circle"></i>
                             <i class="fas fa-check-circle"></i>

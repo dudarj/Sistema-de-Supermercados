@@ -191,7 +191,7 @@
                             <h2>Adicionar Produto</h2>
                         </div>
 
-                        <!--   <form id="form" class="form" action="CadastrarProdutoViewController" method="post">
+                            <form action="CadastrarProdutoViewController" method="post" id="form" class="form">
                             <div id="form-wrap">
                                 <div class="form-control">
                                     <label for="username">Código do Produto</label>
@@ -203,7 +203,12 @@
 
                                 <div class="form-control">
                                     <label for="email">Descrição do Produto</label>
-                                    <input type="text" id="email" placeholder="Digite a descrição do produto..." name="descricao" />
+                                    <input 
+                                        type="text" 
+                                        id="email" 
+                                        placeholder="Digite a descrição do produto..." 
+                                        name="descricao"
+                                        />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
                                     <small>Mensagem de erro</small>
@@ -236,11 +241,12 @@
                                 </div>
 
                                 <div class="form-control" style="width: 100%!important;">
-                                    <label for="password">Imagem do Produto</label>
+                                    <label for="img">Imagem do Produto</label>
                                     <input
                                         type="url"
                                         id="link"
                                         placeholder="Cole o link da imagem do produto..."
+                                        name="imgUrl"
                                         />
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
@@ -251,8 +257,8 @@
                             <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" type="submit">Cancelar</button>
 
                         </form>
-                        -->
-                        <form action="CadastrarProdutoViewController" method="post">
+
+                        <!--<form action="CadastrarProdutoViewController" method="post">
                             <div style="margin-left: 20px;">
                             <br>
                             Descrição<input type="text" name="descricao"><br><br>
@@ -262,7 +268,7 @@
                             <input type="submit" value="Cadastrar Produto"><br><br> 
                             </div>
                             
-                        </form>
+                        </form>-->
                     </div>
                 </div>
             </div>
@@ -304,17 +310,17 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
         <script>
-                      jQuery(function () {
+                                jQuery(function () {
 
-                          jQuery("#password").maskMoney({
-                              prefix: 'R$ ',
-                              thousands: '.',
-                              decimal: ','
-                          })
-                      });
-                      function teste() {
-                          document.getElementById('modal_1').classList.toggle('visivel');
-                      }
+                                    jQuery("#password").maskMoney({
+                                        prefix: 'R$ ',
+                                        thousands: '.',
+                                        decimal: ','
+                                    })
+                                });
+                                function teste() {
+                                    document.getElementById('modal_1').classList.toggle('visivel');
+                                }
         </script>              
     </body>
 </html>

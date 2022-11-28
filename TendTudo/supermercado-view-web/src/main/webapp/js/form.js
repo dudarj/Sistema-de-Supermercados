@@ -2,6 +2,7 @@ const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const img = document.getElementById("img");
 const fechamento = document.getElementById("fechamento");
 const link = document.getElementById("link");
 const passwordConfirmation = document.getElementById("password-confirmation");
@@ -17,6 +18,7 @@ function checkInputs() {
   const emailValue = email.value;
   const passwordValue = password.value;
   const passwordConfirmationValue = passwordConfirmation.value;
+  const imgValue = img.value;
 
   if (usernameValue === "") {
     setErrorFor(username, "O código do produto é obrigatorio.");
@@ -27,7 +29,7 @@ function checkInputs() {
   if (emailValue === "") {
     setErrorFor(email, "A descrição do produto é obrigatoria.");
   } else if (!checkEmail(emailValue)) {
-    setErrorFor(email, "Por favor, ensira uma decrição.");
+    setErrorFor(email, "Por favor, insira uma decrição.");
   } else {
     setSuccessFor(email);
   }
@@ -48,9 +50,9 @@ function checkInputs() {
     setSuccessFor(passwordConfirmation);
   }
 
-  if (passwordValue === "") {
+  if (imgValue === "") {
     setErrorFor(link, "O link da imagem do produto é obrigatório.");
-  } else if (passwordValue.length < 7) {
+  } else if (imgValue.length < 7) {
     setErrorFor(link, "A senha precisa ter no mínimo 7 caracteres.");
   } else {
     setSuccessFor(link);

@@ -43,15 +43,19 @@ public class CadastrarProdutoViewController extends HttpServlet {
             Double preco = Double.parseDouble(request.getParameter("preco"));
             int unidades = Integer.parseInt(request.getParameter("unidades"));
             String imagem = request.getParameter("imgUrl");
-            produto.setDescricao(descricao);
-            produto.setPreco(preco);
-            produto.setQuantidade(unidades);
-            produto.setImg(imagem);
-            servico.salvar(produto);
-            RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
 
-            rd.forward(request, response);
+            if ((descricao != null && !descricao.isEmpty())) {
 
+                produto.setDescricao(descricao);
+                produto.setPreco(preco);
+                produto.setQuantidade(unidades);
+                produto.setImg(imagem);
+                servico.salvar(produto);
+                RequestDispatcher rd = request.getRequestDispatcher("CadastrarProdutoViewController");
+                request.setAttribute("Mensagem", "Cadastro realizado com sucesso");
+                rd.forward(request, response);
+
+            }
         }
     }
 
