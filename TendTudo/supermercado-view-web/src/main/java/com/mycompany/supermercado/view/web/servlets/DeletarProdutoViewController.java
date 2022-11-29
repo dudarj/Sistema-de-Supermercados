@@ -41,7 +41,7 @@ public class DeletarProdutoViewController extends HttpServlet {
             List<Produto> list = servico.ListarProdutos();
             Produto p = new Produto();
             String a = request.getParameter("deletar");
-            int b = Integer.parseInt(a.replace("Deletar Produto ", ""));
+            int b = Integer.parseInt(a.replace("Deletar ", ""));
             b = b - 1;
            servico.remove(list.get(b));
            RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");

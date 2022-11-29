@@ -37,21 +37,14 @@ public class CadastrarProdutoViewController extends HttpServlet {
             Integer unidades = Integer.valueOf(request.getParameter("unidades"));
             String imagem = request.getParameter("imgUrl");
 
-            
-                if (descricao != null && !descricao.isEmpty() && imagem != null && !imagem.isEmpty()) {
-                produto.setDescricao(descricao);
-                produto.setPreco(preco);
-                produto.setQuantidade(unidades);
-                produto.setImg(imagem);
-                servico.salvar(produto);
-                RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
-                request.setAttribute("Mensagem", "Cadastro realizado com sucesso");
-                rd.forward(request, response);
-            } else {
-                RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
-                request.setAttribute("Mensagem", "Cadastro não foi realizado");
-                rd.forward(request, response);
-            }
+            produto.setDescricao(descricao);
+            produto.setPreco(preco);
+            produto.setQuantidade(unidades);
+            produto.setImg(imagem);
+            servico.salvar(produto);
+            RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
+            request.setAttribute("Mensagem", "Cadastro realizado com sucesso");
+            rd.forward(request, response);
 
         }
     }
