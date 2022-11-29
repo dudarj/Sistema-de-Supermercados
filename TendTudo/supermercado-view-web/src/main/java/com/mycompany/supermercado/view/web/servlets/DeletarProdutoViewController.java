@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package com.mycompany.supermercado.view.web.servlets;
 
 import jakarta.servlet.RequestDispatcher;
@@ -12,9 +16,12 @@ import java.util.List;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
-
-@WebServlet(name = "TabelaProdutoViewController", urlPatterns = {"/TabelaProdutoViewController"})
-public class TabelaProdutoViewController extends HttpServlet {
+/**
+ *
+ * @author Samuel
+ */
+@WebServlet(name = "DeletarProdutoViewController", urlPatterns = {"/DeletarProdutoViewController"})
+public class DeletarProdutoViewController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -25,42 +32,20 @@ public class TabelaProdutoViewController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    @SuppressWarnings("empty-statement")
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-
-            ProdutoServico servico = new ProdutoServico();
+             ProdutoServico servico = new ProdutoServico();
             List<Produto> list = servico.ListarProdutos();
-            RequestDispatcher rd = request.getRequestDispatcher("produtosSistema.jsp");
-
-            int a = list.size();
-
-            String[] v = new String[3];
-            v[0] = "";
-            v[1] = "";
-            v[2] = "";
-            for (int i = 0; i < a; i++) {
-                request.setAttribute("codigo", list.get(i).getCodigo());
-                request.setAttribute("descriçao" + i, list.get(i).getDescricao());
-                request.setAttribute("preco" + i, list.get(i).getPreco());
-                request.setAttribute("quantidade" + i, list.get(i).getQuantidade());
-                request.setAttribute("tabelaProduto" + i, "<tr>\n"
-                        + "                        <th>" + (i + 1) + "</th>\n"
-                        + "                        <td>" + list.get(i).getDescricao() + "</td>\n"
-                        + "                        <td> R$ " + list.get(i).getPreco() + "</td>\n"
-                        + "                        <td >" + list.get(i).getQuantidade() + "</td>\n"
-                        + "                        <td class=\"col-xs-3\"> <img src="+"'"+ list.get(i).getImg() + "'"+" style=width:60px; height:30px/></td>"
-                        + "                        <td><form action=\"DeletarProdutoViewController\" method=\"post\" id=\"deletar\">\n" +
-"                            \n" +
-"                            <input type=\"submit\" value=\"Deletar Produto "+ (i + 1)+"\" name=\"deletar\" style = \"padding: 10px; id=\"btnDeletar\"\"><br></form></td>\n"
-                        + "                        <td><button class=\"editar\">Editar</button></td>\n"
-                        + "                    </tr>");
-
-            } 
-            
-         
-            rd.forward(request, response);
+            Produto p = new Produto();
+            String a = request.getParameter("deletar");
+            int b = Integer.parseInt(a.replace("Deletar Produto ", ""));
+            b = b - 1;
+           servico.remove(list.get(b));
+           RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
+          rd.forward(request, response);
         }
     }
 
