@@ -14,7 +14,6 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <!-- Site Icons -->
         <link rel="shortcut icon" href="images/tendtudo.png" >
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
