@@ -42,8 +42,7 @@ public class TabelaPagamentoViewController extends HttpServlet {
                         + "                        <td>" + list.get(i).getDescricao() + "</td>\n"
                         + "                        <td><form action=\"DeletarPagamentoViewController\" method=\"post\" id=\"deletar\">\n" +
 "                            \n" +
-"                            <input type=\"submit\" value=\"Deletar "+ (i + 1)+"\" name=\"deletar\" class=\"apagar\"\"><a style= \"position:relative; left:-9px\" >º</a><br></form></td>\n"
-                        + "                        <td><button class=\"editar\">Editar</button></td>\n"
+"                            <input type=\"submit\" value=\"Deletar "+ (i + 1)+"\" name=\"deletar\" class=\"apagar\"></form></td>\n"
                         + "                    </tr>");
 
             }

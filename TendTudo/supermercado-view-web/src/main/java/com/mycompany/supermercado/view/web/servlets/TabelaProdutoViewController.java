@@ -53,7 +53,7 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "                        <td class=\"col-xs-3\"> <img src="+"'"+ list.get(i).getImg() + "'"+" style=width:60px; height:30px/></td>"
                         + "                        <td><form action=\"DeletarProdutoViewController\" method=\"post\" id=\"deletar\">\n" +
 "                            \n" +
-"                            <input type=\"submit\" value=\"Deletar "+ (i + 1)+"\" name=\"deletar\" class=\"apagar\"\"><a style= \"position:relative; left:-9px\" >º</a><br></form></td>\n"
+"                            <input type=\"submit\" value=\"Deletar "+ (i + 1)+"\" name=\"deletar\" class=\"apagar\"></form></td>\n"
                         + "                        <td><button class=\"editar\">Editar</button></td>\n"
                         + "                    </tr>");
 
