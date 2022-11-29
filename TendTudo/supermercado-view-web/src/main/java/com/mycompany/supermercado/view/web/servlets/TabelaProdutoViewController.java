@@ -12,7 +12,6 @@ import java.util.List;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
-
 @WebServlet(name = "TabelaProdutoViewController", urlPatterns = {"/TabelaProdutoViewController"})
 public class TabelaProdutoViewController extends HttpServlet {
 
@@ -50,13 +49,13 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "                        <td>" + list.get(i).getDescricao() + "</td>\n"
                         + "                        <td> R$ " + list.get(i).getPreco() + "</td>\n"
                         + "                        <td >" + list.get(i).getQuantidade() + "</td>\n"
-                        + "                        <td class=\"col-xs-3\"> <img src="+"'"+ list.get(i).getImg() + "'"+" style=width:60px; height:30px/></td>"
-                        + "                        <td><form action=\"DeletarProdutoViewController\" method=\"post\" id=\"deletar\">\n" +
-"                            \n" +
-"                            <input type=\"submit\" value=\"Deletar "+ (i + 1)+"\" name=\"deletar\" class=\"apagar\"></form></td>\n"
-                        + "                        <td><input type=\"submit\" value=\"Editar\" class=\"editar\" onclick=\"modal2()\"></td>\n"
+                        + "                        <td class=\"col-xs-3\"> <img src=" + "'" + list.get(i).getImg() + "'" + " style=width:60px; height:30px/></td>"
+                        + "                        <td><form action=\"DeletarProdutoViewController\" method=\"post\" id=\"deletar\">\n"
+                        + "                            \n"
+                        + "                            <input type=\"submit\" value=\"Deletar " + (i + 1) + "\" name=\"deletar\" class=\"apagar\"></form></td>\n"
+                        + "                        <td><input type=\"submit\" value=\"Editar\" class=\"editar\" name=\"editar\" onclick=\"modal2()\"></td>\n"
                         + "                    </tr>"
-                                + "        <div id=\"modal_2\" class=\"modal\">\n" +
+                + "        <div id=\"modal_2\" class=\"modal\">\n" +
 "            <div class=\"modal__content\">\n" +
 "                <h2 class=\"modal__title\" style=\"margin-left: 15px; margin-top: 20px;\">Editar Produto</h2>\n" +
 "                <p class=\"modal__description\">\n" +
@@ -67,19 +66,19 @@ public class TabelaProdutoViewController extends HttpServlet {
 "                        Preço <input type=\"number\" name=\"preco\"><br><br>\n" +
 "                        Unidades <input type=\"number\" name=\"unidades\"><br><br>\n" +
 "                        URL Da Imagem <input type=\"url\"  name=\"imgUrl\"><br><br>\n" +
-"                        <input type=\"submit\" value=\"Editar Produto " +i+ "\" class=\"modal__link\" name=\"editar\" ><br>\n" +
+"                        <input type=\"submit\" value=\"Editar Produto " +i+ "\" class=\"modal__link\" name=\"editar\" style=\"cursor:pointer;\" ><br>\n" +
 "\n" +
 "                    </div>\n" +
 "\n" +
 "                </form>\n" +
-"                <button class=\"modal__link\"onclick=\"document.getElementById('modal_2').classList.toggle('visivel')\" style=\"position: relative;left: 67%;\n" +
+"                <button class=\"modal__link\"onclick=\"document.getElementById('modal_2').classList.toggle('visivel')\" style=\"position: relative;left: 67%; cursor: pointer;\n" +
 "                        margin-bottom: -20px;top: -68px;\">Cancelar</button>\n" +
 "            </div>\n" +
-"        </div>");
+"        </div>"
+                );
 
-            } 
-            
-         
+            }
+
             rd.forward(request, response);
         }
     }

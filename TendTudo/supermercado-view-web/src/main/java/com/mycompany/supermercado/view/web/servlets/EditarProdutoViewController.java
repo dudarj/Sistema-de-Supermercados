@@ -37,9 +37,12 @@ public class EditarProdutoViewController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
+            
             ProdutoServico servico = new ProdutoServico();
             List<Produto> list = servico.ListarProdutos();
+            
             Produto p = new Produto();
+            
             String a = request.getParameter("editar");
             String descricao = request.getParameter("descricao");
             int unidades = Integer.parseInt(request.getParameter("unidades"));

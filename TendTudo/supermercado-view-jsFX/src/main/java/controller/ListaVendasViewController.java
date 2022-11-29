@@ -36,7 +36,7 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     private TableColumn<Venda, Date> tbcData;
 
     @FXML
-    private TableColumn<Venda, String> tbcValorTotal;
+    private TableColumn<Venda, Double> tbcValorTotal;
 
     @FXML
     private TableColumn<Venda, TipoPagamento> tbcTipoPagamento;
@@ -54,11 +54,12 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     }
     
     private void initializeNodes() {
-        tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+       tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         tbcCliente.setCellValueFactory(new PropertyValueFactory<>("nome"));
         tbcData.setCellValueFactory(new PropertyValueFactory<>("datavenda"));
         Utils.formatTableColumnDate(tbcData, "dd/MM/yyyy");
         tbcValorTotal.setCellValueFactory(new PropertyValueFactory<>("valortotal"));
+        Utils.formatTableColumnDouble(tbcValorTotal, 2);
         tbcTipoPagamento.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         tbcParcelas.setCellValueFactory(new PropertyValueFactory<>("parcelas"));
 

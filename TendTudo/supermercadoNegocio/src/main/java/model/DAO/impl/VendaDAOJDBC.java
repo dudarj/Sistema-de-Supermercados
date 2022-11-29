@@ -68,7 +68,7 @@ public class VendaDAOJDBC implements VendaDAO {
 
     @Override
     public void deleteById(Long id) {
-        String sqlDelete = "DDELETE FROM venda WHERE codigo = ?";
+        String sqlDelete = "DELETE FROM venda WHERE codigo = ?";
         try {
             PreparedStatement st = conn.prepareStatement(sqlDelete);
             st.setLong(1, id);
@@ -128,14 +128,17 @@ public class VendaDAOJDBC implements VendaDAO {
                 Cliente c = new Cliente();
                 Pagamento p = new Pagamento();
                 TipoPagamento ti = new TipoPagamento();
+                
                 obj.setCodigo(rs.getLong("codigo"));
                 obj.setDataVenda(new java.util.Date(rs.getTimestamp("datavenda").getTime()));
                 obj.setValorTotal(rs.getDouble("valortotal"));
                 
                 c.setCodigo(rs.getLong("codigo_cliente"));
                 c.setNome(rs.getString("nome"));
+                
                 p.setCodigo(rs.getLong("codigo_pagamento"));
                 p.setParcelas(rs.getInt("parcelas"));
+                
                 ti.setCodigo(rs.getLong("codigo_tipopagamento"));
                 ti.setDescricao(rs.getString("descricao"));
                 

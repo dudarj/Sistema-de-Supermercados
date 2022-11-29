@@ -40,6 +40,7 @@ public class TelaProdutosViewController implements Initializable {
     private Button btnCancelar;
 
     private Produto entidade;
+    
     private ProdutoServico servico;
 
     private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
