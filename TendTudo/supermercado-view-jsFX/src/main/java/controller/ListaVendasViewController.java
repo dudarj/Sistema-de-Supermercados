@@ -14,6 +14,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import listeners.DataChangeListener;
+import model.DTO.Cliente;
+import model.DTO.Pagamento;
+import model.DTO.TipoPagamento;
 import model.DTO.Venda;
 import model.servicos.VendaServico;
 import util.Utils;
@@ -24,10 +27,10 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     private TableView<Venda> tbvVenda;
 
     @FXML
-    private TableColumn<Venda, Integer> tbcCodigo;
+    private TableColumn<Venda, Long> tbcCodigo;
 
     @FXML
-    private TableColumn<Venda, String> tbcCliente;
+    private TableColumn<Venda, Cliente> tbcCliente;
 
     @FXML
     private TableColumn<Venda, Date> tbcData;
@@ -36,10 +39,10 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     private TableColumn<Venda, String> tbcValorTotal;
 
     @FXML
-    private TableColumn<Venda, String> tbcTipoPagamento;
+    private TableColumn<Venda, TipoPagamento> tbcTipoPagamento;
 
     @FXML
-    private TableColumn<Venda, Integer> tbcParcelas;
+    private TableColumn<Venda, Pagamento> tbcParcelas;
 
     private VendaServico servico = new VendaServico();
     private ObservableList<Venda> obLista;
@@ -52,9 +55,12 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     
     private void initializeNodes() {
         tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        tbcCliente.setCellValueFactory(new PropertyValueFactory<>("nome"));
         tbcData.setCellValueFactory(new PropertyValueFactory<>("datavenda"));
         Utils.formatTableColumnDate(tbcData, "dd/MM/yyyy");
         tbcValorTotal.setCellValueFactory(new PropertyValueFactory<>("valortotal"));
+        tbcTipoPagamento.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        tbcParcelas.setCellValueFactory(new PropertyValueFactory<>("parcelas"));
 
         
         

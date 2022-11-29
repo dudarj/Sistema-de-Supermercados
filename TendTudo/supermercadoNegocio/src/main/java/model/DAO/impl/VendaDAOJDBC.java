@@ -25,13 +25,16 @@ public class VendaDAOJDBC implements VendaDAO {
     }
 
     @Override
-    public void insert(Venda obj) {
-        String sqlVenda = "INSERT INTO venda(datavenda, valortotal) VALUES (?,?)";
+    public void insert(Venda obj, Long Cliente, Long Pagamento, Long TipoPagamento) {
+        String sqlVenda = "INSERT INTO venda(datavenda, valortotal, codigo_cliente, codigo_pagamento, codigo_tipopagamento) VALUES (?,?,?,?,?)";
         try {
             PreparedStatement st = conn.prepareStatement(sqlVenda, Statement.RETURN_GENERATED_KEYS);
             st.setDate(1, new java.sql.Date(obj.getDataVenda().getTime()));
             st.setDouble(2, obj.getValorTotal());
-
+            st.setLong(3, obj.getC().getCodigo());
+            st.setLong(4, obj.getP().getCodigo());
+            st.setLong(5, obj.getTi().getCodigo());
+            
             int linhasAfetadas = st.executeUpdate();
 
             if (linhasAfetadas > 0) {
@@ -113,9 +116,9 @@ public class VendaDAOJDBC implements VendaDAO {
         try {
             st = conn.prepareStatement(
                     "SELECT c.nome, p.parcelas, ti.descricao FROM venda v "
-                    + "inner join cliente c on v.codigo_cliente = c.codigo "
-                    + "inner join pagamento p on v.codigo_pagamento = v.codigo "
-                    + "inner join tipopagamento ti on v.codigo_tipopagamento = ti.codigo "
+                    + "inner join cliente c on c.codigo = v.codigo_cliente "
+                    + "inner join pagamento p on p.codigo = v.codigo_pagamento "
+                    + "inner join tipopagamento ti on ti.codigo = v.codigo_tipopagamento "
                     + "ORDER BY datavenda");
 
             rs = st.executeQuery();
@@ -136,8 +139,10 @@ public class VendaDAOJDBC implements VendaDAO {
                 ti.setCodigo(rs.getLong("codigo_tipopagamento"));
                 ti.setDescricao(rs.getString("descricao"));
                 
-                
-                
+                obj.setC(c);
+                obj.setP(p);
+                obj.setTi(ti);
+              
                 lista.add(obj);
             }
             return lista;
@@ -150,28 +155,3 @@ public class VendaDAOJDBC implements VendaDAO {
     }
 }
 
-/*    @Override
-    public List<Venda> ListarVendas() {
-        List<Venda> lista = new ArrayList<>();
-
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        try {
-            st = conn.prepareStatement("SELECT * " + "FROM venda " + "ORDER BY datavenda");
-            rs = st.executeQuery();
-
-            while (rs.next()) {
-                Venda obj = new Venda();
-                obj.setCodigo(rs.getLong("codigo"));
-                obj.setDataVenda(new java.util.Date(rs.getTimestamp("datavenda").getTime()));
-                obj.setValorTotal(rs.getDouble("valortotal"));
-                lista.add(obj);
-            }
-            return lista;
-        } catch (SQLException e) {
-            throw new DbException(e.getMessage());
-        } finally {
-            ConexaoJdbc.closeStatement(st);
-            ConexaoJdbc.closeResultSet(rs);
-        }
-    }*/
