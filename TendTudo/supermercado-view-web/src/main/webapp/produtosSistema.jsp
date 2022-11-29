@@ -175,6 +175,8 @@
                     ${tabelaProduto54}
                     ${tabelaProduto55}
                     ${tabelaProduto56}
+                    ${tabelaProduto57}
+                    
                 </tbody>
             </table>
         </div>
