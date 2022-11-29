@@ -26,6 +26,9 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
         this.conn = conn;
     }
 
+    public ProdutoDAOJDBC() {
+    }
+
     @Override
     public void insert(Produto obj) {
         String sqlInsert = "INSERT INTO produto(descricao, preco, quantidade, url_img) VALUES (?,?,?,?)";

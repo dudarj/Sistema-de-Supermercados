@@ -54,8 +54,28 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "                        <td><form action=\"DeletarProdutoViewController\" method=\"post\" id=\"deletar\">\n" +
 "                            \n" +
 "                            <input type=\"submit\" value=\"Deletar "+ (i + 1)+"\" name=\"deletar\" class=\"apagar\"></form></td>\n"
-                        + "                        <td><button class=\"editar\">Editar</button></td>\n"
-                        + "                    </tr>");
+                        + "                        <td><input type=\"submit\" value=\"Editar\" class=\"editar\" onclick=\"modal2()\"></td>\n"
+                        + "                    </tr>"
+                                + "        <div id=\"modal_2\" class=\"modal\">\n" +
+"            <div class=\"modal__content\">\n" +
+"                <h2 class=\"modal__title\" style=\"margin-left: 15px; margin-top: 20px;\">Editar Produto</h2>\n" +
+"                <p class=\"modal__description\">\n" +
+"                <form action=\"EditarProdutoViewController\" method=\"post\">\n" +
+"                    <div style=\"margin-left: 20px;\">\n" +
+"                        <br>\n" +
+"                        Descrição <input type=\"text\" name=\"descricao\"><br><br>\n" +
+"                        Preço <input type=\"number\" name=\"preco\"><br><br>\n" +
+"                        Unidades <input type=\"number\" name=\"unidades\"><br><br>\n" +
+"                        URL Da Imagem <input type=\"url\"  name=\"imgUrl\"><br><br>\n" +
+"                        <input type=\"submit\" value=\"Editar Produto " +i+ "\" class=\"modal__link\" name=\"editar\" ><br>\n" +
+"\n" +
+"                    </div>\n" +
+"\n" +
+"                </form>\n" +
+"                <button class=\"modal__link\"onclick=\"document.getElementById('modal_2').classList.toggle('visivel')\" style=\"position: relative;left: 67%;\n" +
+"                        margin-bottom: -20px;top: -68px;\">Cancelar</button>\n" +
+"            </div>\n" +
+"        </div>");
 
             } 
             

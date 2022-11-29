@@ -174,8 +174,8 @@
                     ${tabelaProduto54}
                     ${tabelaProduto55}
                     ${tabelaProduto56}
-                    
-                    
+
+
                 </tbody>
             </table>
         </div>
@@ -249,75 +249,69 @@
                                     <i class="fas fa-exclamation-circle"></i>
                                     <i class="fas fa-check-circle"></i>
                                 </div>
-</div>
-                                <button type="submit">Adicionar Produto</button>
+                            </div>
+                            <button type="submit">Adicionar Produto</button>
                         </form>
                         <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" style="position: relative;left: 52%;
-    margin-bottom: -20px;top: -58px;">Cancelar</button>
-                    
-                    <!--<form action="CadastrarProdutoViewController" method="post">
-                        <div style="margin-left: 20px;">
-                        <br>
-                        Descrição<input type="text" name="descricao"><br><br>
-                        Preço<input type="number" name="preco"><br><br>
-                        Unidades<input type="number" name="unidades"><br><br>
-                        URL Da Imagem<input type="url"  name="imgUrl"><br><br>
-                        <input type="submit" value="Cadastrar Produto"><br><br> 
-                        </div>
-                        
-                    </form>-->
+                                margin-bottom: -20px;top: -58px;">Cancelar</button>
+
+                        <!--<form action="CadastrarProdutoViewController" method="post">
+                            <div style="margin-left: 20px;">
+                            <br>
+                            Descrição<input type="text" name="descricao"><br><br>
+                            Preço<input type="number" name="preco"><br><br>
+                            Unidades<input type="number" name="unidades"><br><br>
+                            URL Da Imagem<input type="url"  name="imgUrl"><br><br>
+                            <input type="submit" value="Cadastrar Produto"><br><br> 
+                            </div>
+                            
+                        </form>-->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="modal_2" class="modal modal--2">
-        <div class="modal__content">
-            <h2 class="modal__title">Meu primeiro modal</h2>
-            <p class="modal__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis id error accusamus pariatur quasi
-                est amet maiores tempore, eum beatae expedita fugiat modi, ipsum commodi laborum voluptatem, assumenda
-                et quod?
-            </p>
-            <a href="produtosSistema.jsp" class="modal__link">OK</a>
-        </div>
-    </div>
 
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-    <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/table.js"></script>
-    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
-    <script src="js/form.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-    <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
-    <script>
-                        jQuery(function () {
+        <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-                            jQuery("#preco").maskMoney({
-                                prefix: 'R$ ',
-                                thousands: '.',
-                                decimal: '.'
-                            });
+        <!-- ALL JS FILES -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- ALL PLUGINS -->
+        <script src="js/jquery.superslides.min.js"></script>
+        <script src="js/bootstrap-select.js"></script>
+        <script src="js/inewsticker.js"></script>
+        <script src="js/bootsnav.js."></script>
+        <script src="js/images-loded.min.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/baguetteBox.min.js"></script>
+        <script src="js/form-validator.min.js"></script>
+        <script src="js/contact-form-script.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/table.js"></script>
+        <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+        <script src="js/form.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+        <script>
+                    jQuery(function () {
+
+                        jQuery("#preco").maskMoney({
+                            prefix: 'R$ ',
+                            thousands: '.',
+                            decimal: '.'
                         });
-                        function teste() {
-                            document.getElementById('modal_1').classList.toggle('visivel');
-                        }
-    </script>              
-</body>
+                    });
+                    function teste() {
+                        document.getElementById('modal_1').classList.toggle('visivel');
+                    }
+                    function modal2() {
+                        document.getElementById('modal_2').classList.toggle('visivel');
+
+                    }
+        </script>              
+    </body>
 </html>
