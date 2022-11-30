@@ -16,7 +16,7 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <!-- Site Icons -->
@@ -62,7 +62,8 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">PRODUTOS</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" onclick="lista();" id="listarProdutos">Produtos</a></li>
+                                    <li><a href="shop.jsp">Produtos</a></li>
+                                    <!--onclick="lista();" id="listarProdutos"-->
                                     <li><a href="cart.jsp">Carrinho</a></li>
                                 </ul>
                             </li>
@@ -71,49 +72,20 @@
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
-
                 </div>
-                <!-- Start Side Menu -->
-                <div class="side">
-                    <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                    <li class="cart-box">
-                        <ul class="cart-list">
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Delica omtantur </a></h6>
-                                <p>1x - <span class="price">$80.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Omnes ocurreret</a></h6>
-                                <p>1x - <span class="price">$60.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Agam facilisis</a></h6>
-                                <p>1x - <span class="price">$40.00</span></p>
-                            </li>
-                            <li class="total">
-                                <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                                <span class="float-right"><strong>Total</strong>: $180.00</span>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
-                <!-- End Side Menu -->
             </nav>
             <!-- End Navigation -->
         </header>
         <!-- End Main Top -->
 
-        
+
         <!-- Start Shop Page  -->
         <div class="shop-box-inner">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
                         <div class="right-product-box">
-                            
+
                             <div class="product-categorie-box">
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
@@ -522,8 +494,8 @@
         <!-- End copyright  -->
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-        
-       
+
+
 
         <!-- ALL JS FILES -->
         <script src="js/jquery-3.2.1.min.js"></script>
@@ -543,15 +515,15 @@
         <script src="js/form-validator.min.js"></script>
         <script src="js/contact-form-script.js"></script>
         <script src="js/custom.js"></script>
-        
-        <script type="text/javascript">
+
+        <!--<script type="text/javascript">
             function lista() {
-	
-	$.get("TabelaProdutoViewController.java", function(resultado){
+        
+        $.get("TabelaProdutoViewController.java", function(resultado){
             console.log(JSON.stringify(resultado));
  });
  }
-        </script>
+        </script>-->
     </body>
 
 </html>
