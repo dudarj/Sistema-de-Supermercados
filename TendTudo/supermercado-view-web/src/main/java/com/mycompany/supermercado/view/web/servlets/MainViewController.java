@@ -7,18 +7,23 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 import model.DTO.Cliente;
+import model.DTO.Produto;
 import model.servicos.ClienteServico;
+import model.servicos.ProdutoServico;
 
 @WebServlet(name = "MainViewController", urlPatterns = {"/MainViewController"})
 public class MainViewController extends HttpServlet {
 
     private ClienteServico servico = new ClienteServico();
-
+    private ProdutoServico serv = new ProdutoServico();
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        
+        
         String login = request.getParameter("usuario");
         String senha = request.getParameter("senhaL");
 
@@ -30,13 +35,12 @@ public class MainViewController extends HttpServlet {
                 request.getSession().setAttribute("UsuarioLogado", c);
                 RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
                 rd.forward(request, response);
-                request.setAttribute("", login);
-                request.setAttribute("", senha);
+                
             } else if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
                 RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
                 rd.forward(request, response);
-                request.setAttribute("", login);
-                request.setAttribute("", senha);
+               
+
             } else {
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                 request.setAttribute("Mensagem", "Usuário ou Senha inválidos.");

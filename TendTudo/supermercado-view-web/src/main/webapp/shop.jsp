@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -61,7 +62,7 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">PRODUTOS</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="shop.jsp">Produtos</a></li>
+                                    <li><a href="#" onclick="lista();" id="listarProdutos">Produtos</a></li>
                                     <li><a href="cart.jsp">Carrinho</a></li>
                                 </ul>
                             </li>
@@ -124,12 +125,7 @@
                                                             <p class="aVENDA">A VENDA</p>
                                                         </div>
                                                         <img src="images/produtos/omo.png" class="img-fluid" alt="Image">
-                                                        <div class="mask-icon">
-                                                            <ul>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                            </ul>
+                                                        <div class="mask-icon">    
                                                             <a class="cart" href="#">Add ao Carrinho</a>
                                                         </div>
                                                     </div>
@@ -139,7 +135,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -160,8 +156,8 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            </div>-->
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -182,8 +178,8 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            </div>-->
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -204,8 +200,8 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            </div>-->
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -226,8 +222,8 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            </div>-->
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -248,8 +244,8 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            </div>-->
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -270,8 +266,8 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            </div>-->
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -292,8 +288,8 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            </div>-->
+                                            <!--<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
@@ -314,7 +310,7 @@
                                                         <h5> $9.79</h5>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="list-view">
@@ -526,6 +522,8 @@
         <!-- End copyright  -->
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+        
+       
 
         <!-- ALL JS FILES -->
         <script src="js/jquery-3.2.1.min.js"></script>
@@ -545,6 +543,15 @@
         <script src="js/form-validator.min.js"></script>
         <script src="js/contact-form-script.js"></script>
         <script src="js/custom.js"></script>
+        
+        <script type="text/javascript">
+            function lista() {
+	
+	$.get("TabelaProdutoViewController.java", function(resultado){
+            console.log(JSON.stringify(resultado));
+ });
+ }
+        </script>
     </body>
 
 </html>

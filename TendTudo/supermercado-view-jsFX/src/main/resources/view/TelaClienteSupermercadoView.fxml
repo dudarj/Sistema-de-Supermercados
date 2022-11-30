@@ -37,7 +37,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
-      <TableView fx:id="tbvCompra" layoutY="371.0" prefHeight="176.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="371.0">
+      <TableView fx:id="tbvCompra" layoutY="371.0" onMouseClicked="#deletarProdutoItems" prefHeight="176.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="371.0">
         <columns>
           <TableColumn fx:id="tbcItemCompra" prefWidth="204.0" text="Item" />
           <TableColumn fx:id="tbcPrecoCompra" prefWidth="141.0" text="Preço (R$)" />

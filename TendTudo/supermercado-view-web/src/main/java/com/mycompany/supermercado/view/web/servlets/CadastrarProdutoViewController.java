@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
@@ -32,7 +33,7 @@ public class CadastrarProdutoViewController extends HttpServlet {
 
             String teste = request.getParameter("preco").substring(2);
             Double preco = Double.valueOf(teste);
-
+            
             String descricao = request.getParameter("descricao");
             Integer unidades = Integer.valueOf(request.getParameter("unidades"));
             String imagem = request.getParameter("imgUrl");

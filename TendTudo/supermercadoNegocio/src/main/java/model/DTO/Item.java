@@ -11,6 +11,8 @@ public class Item implements Serializable {
     private Long codigo;
     private int quantidade;
     private double valorTotal;
+    Produto p = new Produto();
+    Venda v = new Venda();
 
     public Item() {
     }
@@ -44,6 +46,24 @@ public class Item implements Serializable {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+    public Produto getP() {
+        return p;
+    }
+
+    public void setP(Produto p) {
+        this.p = p;
+    }
+
+    public Venda getV() {
+        return v;
+    }
+
+    public void setV(Venda v) {
+        this.v = v;
+    }
+    
+    
 
     @Override
     public int hashCode() {

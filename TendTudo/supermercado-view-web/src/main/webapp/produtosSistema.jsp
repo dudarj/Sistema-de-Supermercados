@@ -218,7 +218,7 @@
                                     <label>Preço do Produto</label>
                                     <input
                                         type="text"
-                                        id="preco"
+                                        class="preco"
                                         placeholder="Digite o Preço do Produto..."
                                         name="preco"
                                         />
@@ -255,17 +255,7 @@
                         <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" style="position: relative;left: 52%;
                                 margin-bottom: -20px;top: -58px;">Cancelar</button>
 
-                        <!--<form action="CadastrarProdutoViewController" method="post">
-                            <div style="margin-left: 20px;">
-                            <br>
-                            Descrição<input type="text" name="descricao"><br><br>
-                            Preço<input type="number" name="preco"><br><br>
-                            Unidades<input type="number" name="unidades"><br><br>
-                            URL Da Imagem<input type="url"  name="imgUrl"><br><br>
-                            <input type="submit" value="Cadastrar Produto"><br><br> 
-                            </div>
-                            
-                        </form>-->
+                     
                     </div>
                 </div>
             </div>
@@ -299,7 +289,7 @@
         <script>
                     jQuery(function () {
 
-                        jQuery("#preco").maskMoney({
+                        jQuery(".preco").maskMoney({
                             prefix: 'R$ ',
                             thousands: '.',
                             decimal: '.'

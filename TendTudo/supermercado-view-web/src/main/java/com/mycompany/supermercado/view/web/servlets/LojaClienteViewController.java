@@ -4,6 +4,7 @@
  */
 package com.mycompany.supermercado.view.web.servlets;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,16 +14,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
-import model.DAO.impl.ProdutoDAOJDBC;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 
 /**
  *
- * @author Samuel
+ * @author DUDA
  */
-@WebServlet(name = "EditarProdutoViewController", urlPatterns = {"/EditarProdutoViewController"})
-public class EditarProdutoViewController extends HttpServlet {
+@WebServlet(name = "LojaClienteViewController", urlPatterns = {"/LojaClienteViewController"})
+public class LojaClienteViewController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,35 +33,19 @@ public class EditarProdutoViewController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
+    private ProdutoServico servico = new ProdutoServico();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             
-            ProdutoServico servico = new ProdutoServico();
             List<Produto> list = servico.ListarProdutos();
+            ObjectMapper obj = new ObjectMapper();
+            String json = obj.writeValueAsString(list);
+            response.getWriter().write(json);
             
-            Produto p = new Produto();
             
-            String a = request.getParameter("editar");
-            String descricao = request.getParameter("descricao");
-            int unidades = Integer.parseInt(request.getParameter("unidades"));
-            String imagem = request.getParameter("imgUrl");
-            String produtoStr = request.getParameter("preco");
-            Double preco = Double.valueOf(produtoStr);
-            
-            int b = Integer.parseInt(a.replace("Editar Produto ", ""));
-
-            p.setDescricao(descricao);
-
-            p.setPreco(preco);
-            p.setImg(imagem);
-            p.setQuantidade(unidades);
-            p.setCodigo(list.get(b).getCodigo());
-            servico.salvar(p);
-
-            RequestDispatcher rd = request.getRequestDispatcher("TabelaProdutoViewController");
-            rd.forward(request, response);
         }
     }
 

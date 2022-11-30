@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Supermercados TendTudo </title>
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
         <!-- Icones do site -->
         <link rel="shortcut icon" href="images/tendtudo.png" >
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="css/responsive.css">
         <!-- CSS Personalizado -->
         <link rel="stylesheet" href="css/custom.css">
-        
+
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <!-- Página pronta -->
     </head>
@@ -48,7 +48,7 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Produtos</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="shop.jsp">Produtos</a></li>
+                                    <li><a href="shop.jsp" id="produtos">Produtos</a></li>
                                     <li><a href="cart.jsp">Carrinho</a></li>
                                 </ul>
                             </li>
@@ -450,6 +450,10 @@
         <!-- End copyright  -->
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+
+        
+
 
         <!-- ALL JS FILES -->
         <script src="js/jquery-3.2.1.min.js"></script>

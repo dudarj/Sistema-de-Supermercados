@@ -1,12 +1,13 @@
 package controller;
 
-import application.Main;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Set;
+
+import application.Main;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,19 +15,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import listeners.DataChangeListener;
 import model.DTO.Produto;
 import model.servicos.ProdutoServico;
 import util.Alerts;
-import util.MaskFieldUtil;
 import util.Utils;
 
 public class TelaClienteSupermercadoViewController implements Initializable, DataChangeListener {
@@ -54,7 +56,7 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     private TableColumn<String, String> tbcQuantidadeVenda;
 
     @FXML
-    private TableColumn<Produto, Integer> tbcQuantidadeCompra;
+    private TableColumn<Produto, String> tbcQuantidadeCompra;
 
     @FXML
     private TableColumn<Produto, Produto> tbcADICIONA;
@@ -75,7 +77,6 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     public void initialize(URL url, ResourceBundle rb) {
         AlterarTabelaVisualizacao();
         initializeNodes();
-        //onAdicionaCarrinho();
     }
 
     private void initializeNodes() {
@@ -83,6 +84,8 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         tbcPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
         Utils.formatTableColumnDouble(tbcPrecoVenda, 2);
         tbcEstoqueVenda.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
+        //tbcQuantidadeCompra.setCellValueFactory(new PropertyValueFactory<>("qtdeItem"));
+
         Stage stage = (Stage) Main.getMainScene().getWindow();
         tbvLoja.prefHeightProperty().bind(stage.heightProperty());
     }
@@ -94,18 +97,14 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         List<Produto> list = servico.ListarProdutos();
         obLista = FXCollections.observableArrayList(list);
         tbvLoja.setItems(obLista);
-        tbvLoja.setEditable(true);
-        tbcQuantidadeVenda.setCellFactory(TextFieldTableCell.forTableColumn());
+        //  tbcQuantidadeCompra.setCellFactory(TextFieldTableCell.forTableColumn());
         initAdicionaBotao();
 
-        /*obListaVenda = FXCollections.observableArrayList(listaProduto);
-        tbvCompra.setItems(obListaVenda);*/
     }
 
     @Override
     public void onDataChanged() {
         AlterarTabelaVisualizacao();
-        //onAdicionaCarrinho();
     }
 
     private void initAdicionaBotao() {
@@ -123,10 +122,45 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
                 }
                 setGraphic(button);
                 button.setOnAction(event -> {
-                    listaProduto.add(obj);
+
+                    popularLista(obj); //metodo para adicionar produtos a lista
+
                 });
             }
         });
+    }
+
+    //Adiciona itens a lista de produtos.
+    public void popularLista(Produto obj) {
+        listaProduto.add(obj);
+        AdicionarItemsTableview();
+    }
+
+    @FXML
+    public void deletarProdutoItems(MouseEvent e) {
+
+        int x = tbvCompra.getSelectionModel().getSelectedIndex();
+        Produto p = (Produto) tbvCompra.getItems().get(x);
+        System.out.println("Produto" + p.getDescricao());
+        if (x > -1) {
+            Optional<ButtonType> result;
+            result = Alerts.showConfirmation("Deseja realmente retirar da lista de compra", p.getDescricao());
+            if (result.get() == ButtonType.OK) {
+                obListaVenda.remove(x);
+            }
+        }
+
+    }
+
+    public void AdicionarItemsTableview() {
+        listaProduto.forEach(System.out::println);
+
+        tbcItemCompra.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        tbcPrecoCompra.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        //tbcQuantidadeCompra.setCellValueFactory(new PropertyValueFactory<>("qtdeItem"));
+
+        obListaVenda = FXCollections.observableArrayList(listaProduto);
+        tbvCompra.setItems(obListaVenda);
     }
 
     @FXML
@@ -143,6 +177,7 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         ObservableList<Produto> list;
         list = FXCollections.observableArrayList(objList);
         tbvLoja.setItems(list);
+
     }
 
     @FXML
@@ -156,14 +191,4 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         }
     }
 
-    /*@FXML
-    public void onAdicionaCarrinho() {
-
-        tbcItemCompra.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-        tbcPrecoCompra.setCellValueFactory(new PropertyValueFactory<>("preco"));
-        Utils.formatTableColumnDouble(tbcPrecoCompra, 2);
-        tbcQuantidadeVenda.setCellValueFactory(new PropertyValueFactory<>("qtdeItem"));
-        Stage stage = (Stage) Main.getMainScene().getWindow();
-        tbvCompra.prefHeightProperty().bind(stage.heightProperty());
-    }*/
 }

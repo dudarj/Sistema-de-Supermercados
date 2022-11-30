@@ -17,6 +17,8 @@ import java.util.logging.Level;
 import java.util.List;
 import model.DAO.ItemDAO;
 import model.DTO.Item;
+import model.DTO.Produto;
+import model.DTO.Venda;
 
 /**
  *
@@ -30,12 +32,14 @@ public class ItemDAOJDBC implements ItemDAO {
     }
 
     @Override
-    public void insert(Item obj) {
-        String sqlInsert = "INSERT INTO item(quantidade, valortotal) VALUES (?,?)";
+    public void insert(Item obj, Produto p, Venda v) {
+        String sqlInsert = "INSERT INTO item(quantidade, valortotal, codigo_produto, codigo_venda) VALUES (?,?,?,?)";
         try {
             PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
             st.setInt(1, obj.getQuantidade());
             st.setDouble(2, obj.getValorTotal());
+            st.setLong(3, obj.getP().getCodigo());
+            st.setLong(4, obj.getV().getCodigo());
 
             int linhasAfetadas = st.executeUpdate();
 

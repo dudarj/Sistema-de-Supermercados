@@ -16,6 +16,7 @@ public class Cliente implements Serializable {
     private String login;
     private String senha;
     private String tipo;
+    Venda v = new Venda();
 
     public Cliente() {
     }
@@ -100,6 +101,18 @@ public class Cliente implements Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    public Venda getV() {
+        return v;
+    }
+
+    public void setV(Venda v) {
+        this.v = v;
+    }
+    
+    
+    
+    
 
     @Override
     public int hashCode() {
