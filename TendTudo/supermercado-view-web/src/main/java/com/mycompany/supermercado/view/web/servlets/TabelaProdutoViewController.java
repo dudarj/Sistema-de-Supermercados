@@ -53,7 +53,7 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "                        <td><form action=\"DeletarProdutoViewController\" method=\"post\" id=\"deletar\">\n"
                         + "                            \n"
                         + "                            <input type=\"submit\" value=\"Deletar " + (i + 1) + "\" name=\"deletar\" class=\"apagar\"></form></td>\n"
-                        + "                        <td><input type=\"submit\" value=\"Editar\" class=\"editar\" name=\"editar\" onclick=\"modal2()\"></td>\n"
+                        + "                        <td><input type=\"submit\" value=\"Editar\" name=\"editar\" class=\"editar\" onclick=\"modal2()\"></td>\n"
                         + "                    </tr>"
                 + "        <div id=\"modal_2\" class=\"modal\">\n" +
 "            <div class=\"modal__content\">\n" +
