@@ -217,4 +217,46 @@ public class ClienteDAOJDBC implements ClienteDAO {
             ConexaoJdbc.closeResultSet(rs);
         }
     }
+    
+    @Override
+    public List<Cliente> findByNome(String nome) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            String sql = "select * "
+                    + " from cliente c "
+                    + " where c.nome LIKE '%" + nome + "%' ";
+            st = conn.prepareStatement(sql);
+            List<Cliente> list = new ArrayList<>();
+
+            //st.setString(1, nome);
+            rs = st.executeQuery();
+            while (rs.next()) {
+                Cliente obj = new Cliente();
+                obj.setCodigo(rs.getLong("codigo"));
+                obj.setNome(rs.getString("nome"));
+                obj.setCpf(rs.getString("cpf"));
+                obj.setTelefone(rs.getString("telefone"));
+                obj.setEndereco(rs.getString("endereco"));
+                obj.setStatus(rs.getInt("status"));
+                obj.setLogin(rs.getString("login"));
+                obj.setSenha(rs.getString("senha"));
+                obj.setTipo(rs.getString("tipo"));
+
+                list.add(obj);
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
+
+    @Override
+    public List<Cliente> findAll() {
+        // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return null;
+    }
 }

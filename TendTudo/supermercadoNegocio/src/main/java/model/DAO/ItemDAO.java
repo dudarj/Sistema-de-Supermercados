@@ -14,4 +14,6 @@ public interface ItemDAO {
     Item findById(Long id);
     List<Item> ListarItens();
     
+    void salvar(Item obj, Long id_venda, Long id_produto);
+    
 }

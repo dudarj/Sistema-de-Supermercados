@@ -11,4 +11,6 @@ public interface ClienteDAO {
     List<Cliente> ListarClientes();
     Cliente validaUsuario(Cliente obj);
     Cliente findByLogin(String login);
+    List<Cliente> findByNome(String nome);
+    List<Cliente> findAll();
 }

@@ -6,10 +6,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import listeners.DataChangeListener;
@@ -43,6 +46,12 @@ public class ListaClientesViewController implements Initializable, DataChangeLis
 
     @FXML
     private TableColumn<Cliente, String> tbcTipo;
+    
+    @FXML
+    private TextField pesquisa;
+
+    @FXML
+    private Button btnpesquisar;
 
     private ClienteServico servico = new ClienteServico();
     private ObservableList<Cliente> obLista;
@@ -77,5 +86,20 @@ public class ListaClientesViewController implements Initializable, DataChangeLis
     @Override
     public void onDataChanged() {
         AlterarTabelaVisualizacao();
+    }
+    
+    @FXML
+    public void onbtnPesquisarAction(ActionEvent event) {
+
+        List<Cliente> objList;
+        if (pesquisa.getText() == " ") {
+            objList = servico.findAll();
+        } else {
+            objList = servico.findByNome(pesquisa.getText());
+        }
+        ObservableList<Cliente> list;
+        list = FXCollections.observableArrayList(objList);
+        tbvCliente.setItems(list);
+
     }
 }

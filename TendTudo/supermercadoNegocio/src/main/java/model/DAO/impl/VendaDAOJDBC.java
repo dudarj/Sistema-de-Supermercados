@@ -31,7 +31,7 @@ public class VendaDAOJDBC implements VendaDAO {
             PreparedStatement st = conn.prepareStatement(sqlVenda, Statement.RETURN_GENERATED_KEYS);
             st.setDate(1, new java.sql.Date(obj.getDataVenda().getTime()));
             st.setDouble(2, obj.getValorTotal());
-            st.setLong(3, obj.getC().getCodigo());
+            st.setLong(3, obj.getCliente().getCodigo());
             st.setLong(4, obj.getP().getCodigo());
             st.setLong(5, obj.getTi().getCodigo());
             
@@ -115,11 +115,11 @@ public class VendaDAOJDBC implements VendaDAO {
         ResultSet rs = null;
         try {
             st = conn.prepareStatement(
-                    "SELECT c.nome, p.parcelas, ti.descricao FROM venda v "
-                    + "inner join cliente c on c.codigo = v.codigo_cliente "
-                    + "inner join pagamento p on p.codigo = v.codigo_pagamento "
-                    + "inner join tipopagamento ti on ti.codigo = v.codigo_tipopagamento "
-                    + "ORDER BY datavenda");
+                    " SELECT c.nome, p.parcelas, ti.descricao FROM venda v "
+                    + " inner join cliente c on c.codigo = v.codigo_cliente "
+                    + " inner join pagamento p on p.codigo = v.codigo_pagamento "
+                    + " inner join tipopagamento ti on ti.codigo = v.codigo_tipopagamento "
+                    + " ORDER BY datavenda");
 
             rs = st.executeQuery();
 
@@ -142,7 +142,7 @@ public class VendaDAOJDBC implements VendaDAO {
                 ti.setCodigo(rs.getLong("codigo_tipopagamento"));
                 ti.setDescricao(rs.getString("descricao"));
                 
-                obj.setC(c);
+                obj.setCliente(c);
                 obj.setP(p);
                 obj.setTi(ti);
               
@@ -155,6 +155,11 @@ public class VendaDAOJDBC implements VendaDAO {
             ConexaoJdbc.closeStatement(st);
             ConexaoJdbc.closeResultSet(rs);
         }
+    }
+
+    @Override
+    public void salvar(Venda obj, Long id_cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 

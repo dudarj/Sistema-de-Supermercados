@@ -6,41 +6,50 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="517.0" prefWidth="1050.0" style="-fx-background-color: #c6c6c6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListaProdutosViewController">
-    <children>
-        <Label layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="196.0" text="TendTudo - Produtos">
-            <font>
-                <Font name="Gill Sans MT Condensed" size="31.0" />
-            </font>
-        </Label>
-        <TableView fx:id="tbvProduto" layoutY="106.0" prefHeight="411.0" prefWidth="1050.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
-            <columns>
-                <TableColumn fx:id="tbcCodigo" prefWidth="48.0" text="Código" />
-                <TableColumn fx:id="tbcDescricao" prefWidth="238.0" text="Descrição" />
-                <TableColumn fx:id="tbcPreco" minWidth="-Infinity" prefWidth="201.0" text="Preço (R$)" />
-                <TableColumn fx:id="tbcQuantidade" prefWidth="209.0" text="Quantidade" />
-                <TableColumn fx:id="tbcEDIT" minWidth="0.0" prefWidth="87.0" />
-                <TableColumn fx:id="tbcREMOVE" minWidth="0.0" prefWidth="112.0" />
-            </columns>
-        </TableView>
-        <ToolBar layoutY="52.0" prefHeight="54.0" prefWidth="1050.0" style="-fx-background-color: #c6c6c6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <items>
-                <Button fx:id="btnNovoProduto" mnemonicParsing="false" onAction="#onBtnNovoProdutoAction" prefHeight="25.0" prefWidth="115.0" text="Novo Produto">
-                    <font>
-                        <Font name="Franklin Gothic Medium Cond" size="12.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-            </items>
-            <padding>
-                <Insets left="15.0" />
-            </padding>
-        </ToolBar>
-    </children>
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="196.0" text="TendTudo - Produtos">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="31.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbvProduto" layoutY="106.0" prefHeight="411.0" prefWidth="1050.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
+        <columns>
+            <TableColumn fx:id="tbcCodigo" prefWidth="48.0" text="Código" />
+          <TableColumn fx:id="tbcDescricao" prefWidth="238.0" text="Descrição" />
+            <TableColumn fx:id="tbcPreco" minWidth="-Infinity" prefWidth="201.0" text="Preço (R$)" />
+            <TableColumn fx:id="tbcQuantidade" prefWidth="209.0" text="Quantidade" />
+            <TableColumn fx:id="tbcImg" prefWidth="153.0" text="Img" />
+            <TableColumn fx:id="tbcEDIT" minWidth="0.0" prefWidth="71.0" />
+            <TableColumn fx:id="tbcREMOVE" minWidth="0.0" prefWidth="115.0" />
+        </columns>
+      </TableView>
+      <ToolBar layoutY="52.0" prefHeight="54.0" prefWidth="148.0" style="-fx-background-color: #c6c6c6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="902.0">
+        <items>
+          <Button fx:id="btnNovoProduto" mnemonicParsing="false" onAction="#onBtnNovoProdutoAction" prefHeight="25.0" prefWidth="115.0" text="Novo Produto">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+        </items>
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </ToolBar>
+      <Label layoutX="251.0" layoutY="71.0" text="Pesquisar:" />
+      <TextField fx:id="pesquisa" layoutX="314.0" layoutY="67.0" prefHeight="25.0" prefWidth="317.0" />
+      <Button fx:id="btnpesquisar" layoutX="639.0" layoutY="67.0" mnemonicParsing="false" onAction="#onbtnPesquisarAction" text="Pesquisar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
 </AnchorPane>

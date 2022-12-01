@@ -21,6 +21,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -52,10 +53,19 @@ public class ListaProdutosViewController implements Initializable, DataChangeLis
     private TableColumn<Produto, Integer> tbcQuantidade;
 
     @FXML
+    private TableColumn<Produto, String> tbcImg;
+
+    @FXML
     private TableColumn<Produto, Produto> tbcEDIT;
 
     @FXML
     private TableColumn<Produto, Produto> tbcREMOVE;
+
+    @FXML
+    private TextField pesquisa;
+
+    @FXML
+    private Button btnpesquisar;
 
     private ProdutoServico servico = new ProdutoServico();
     private ObservableList<Produto> obLista;
@@ -103,6 +113,7 @@ public class ListaProdutosViewController implements Initializable, DataChangeLis
         tbcPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
         Utils.formatTableColumnDouble(tbcPreco, 2);
         tbcQuantidade.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
+        tbcImg.setCellValueFactory(new PropertyValueFactory<>("url_img"));
         Stage stage = (Stage) Main.getMainScene().getWindow();
         tbvProduto.prefHeightProperty().bind(stage.heightProperty());
     }
@@ -173,6 +184,21 @@ public class ListaProdutosViewController implements Initializable, DataChangeLis
                 Alerts.showAlert("Erro ao remover objeto", null, e.getMessage(), AlertType.ERROR);
             }
         }
+    }
+
+    @FXML
+    public void onbtnPesquisarAction(ActionEvent event) {
+
+        List<Produto> objList;
+        if (pesquisa.getText() == " ") {
+            objList = servico.findAll();
+        } else {
+            objList = servico.findByNome(pesquisa.getText());
+        }
+        ObservableList<Produto> list;
+        list = FXCollections.observableArrayList(objList);
+        tbvProduto.setItems(list);
+
     }
 
 }

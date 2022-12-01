@@ -9,10 +9,12 @@ public class Item implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private Long codigo;
-    private int quantidade;
+     private int quantidade;
+     private double preco;
     private double valorTotal;
-    Produto p = new Produto();
-    Venda v = new Venda();
+    
+    private Produto produto;
+    private Venda venda;
 
     public Item() {
     }
@@ -40,32 +42,38 @@ public class Item implements Serializable {
     }
 
     public double getValorTotal() {
-        return valorTotal;
+        return preco * quantidade;
     }
 
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
-
-    public Produto getP() {
-        return p;
-    }
-
-    public void setP(Produto p) {
-        this.p = p;
-    }
-
-    public Venda getV() {
-        return v;
-    }
-
-    public void setV(Venda v) {
-        this.v = v;
-    }
     
+    public Produto getProduto() {
+		return produto;
+	}
     
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
 
-    @Override
+    public Venda getVenda() {
+		return venda;
+	}
+
+	public void setVenda(Venda venda) {
+		this.venda = venda;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 5;
         hash = 97 * hash + Objects.hashCode(this.codigo);

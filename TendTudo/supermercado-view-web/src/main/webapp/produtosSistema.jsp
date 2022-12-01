@@ -116,7 +116,8 @@
                         <th class="col-xs-3"></th>
                     </tr>
                 </thead>
-                <tbody> 
+                <tbody>
+                    
                     ${tabelaProduto0}
                     ${tabelaProduto1}
                     ${tabelaProduto2}
@@ -255,7 +256,7 @@
                         <button id="fechamento" onclick="document.getElementById('modal_1').classList.toggle('visivel')" style="position: relative;left: 52%;
                                 margin-bottom: -20px;top: -58px;">Cancelar</button>
 
-                     
+
                     </div>
                 </div>
             </div>
@@ -285,23 +286,44 @@
         <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
         <script src="js/form.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
         <script>
-                    jQuery(function () {
+                            jQuery(function () {
 
-                        jQuery(".preco").maskMoney({
-                            prefix: 'R$ ',
-                            thousands: '.',
-                            decimal: '.'
-                        });
-                    });
-                    function teste() {
-                        document.getElementById('modal_1').classList.toggle('visivel');
-                    }
-                    function modal2() {
-                        document.getElementById('modal_2').classList.toggle('visivel');
+                                jQuery(".preco").maskMoney({
+                                    prefix: 'R$ ',
+                                    thousands: '.',
+                                    decimal: '.'
+                                });
+                            });
+                            function teste() {
+                                document.getElementById('modal_1').classList.toggle('visivel');
+                            }
+                            function modal2() {
+                                document.getElementById('modal_2').classList.toggle('visivel');
 
-                    }
-        </script>              
+                            }
+        </script>
+
+        <script type="text/javascript">
+            $('#modal_2').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                ;
+                var desc = button.data('desc');
+                var prec = button.data('pre');
+                var uni = button.data('uni');
+                var img = button.data('img');
+                var modal = $(this);
+                modal.find('#descricaoM').val(desc);
+                modal.find('#precoM').val(prec);
+                modal.find('#unidadesM').val(uni);
+                modal.find('#imagemM').val(img);
+            });
+
+
+        </script>
+
+
     </body>
 </html>

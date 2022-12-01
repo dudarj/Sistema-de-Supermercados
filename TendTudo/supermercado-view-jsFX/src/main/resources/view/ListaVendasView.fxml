@@ -15,7 +15,6 @@
       </Label>
       <TableView fx:id="tbvVenda" layoutY="79.0" prefHeight="438.0" prefWidth="905.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="79.0">
          <columns>
-            <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Código" />
             <TableColumn fx:id="tbcCliente" prefWidth="283.0" text="Cliente" />
             <TableColumn fx:id="tbcData" minWidth="0.0" prefWidth="208.0" text="Data" />
             <TableColumn fx:id="tbcValorTotal" prefWidth="170.0" text="Valor Total" />

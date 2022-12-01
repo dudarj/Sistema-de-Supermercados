@@ -1,7 +1,9 @@
 package controller;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -38,43 +40,39 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
 
     @FXML
     private TableView<Produto> tbvLoja;
-
     @FXML
     private TableView<Produto> tbvCompra;
-
     @FXML
     private TableColumn<Produto, String> tbcItemVenda;
     @FXML
     private TableColumn<Produto, String> tbcItemCompra;
-
     @FXML
     private TableColumn<Produto, Double> tbcPrecoVenda;
     @FXML
     private TableColumn<Produto, Double> tbcPrecoCompra;
-
     @FXML
     private TableColumn<Produto, Integer> tbcEstoqueVenda;
-
     @FXML
     private TableColumn<String, String> tbcQuantidadeVenda;
-
     @FXML
     private TableColumn<Produto, String> tbcQtde;
-
     @FXML
     private TableColumn<Produto, String> tbcQuantidadeCompra;
-
     @FXML
     private TableColumn<Produto, Produto> tbcADICIONA;
     @FXML
     private TableColumn<Produto, Produto> tbcREMOVE;
-
     @FXML
     private TextField pesquisa;
     @FXML
     private Button btnpesquisar;
+    @FXML
+    private Button btnFinalizarCompra;
 
     private ProdutoServico servico = new ProdutoServico();
+
+    private Cliente cliente = new Cliente();
+
     private ObservableList<Produto> obLista;
     private ObservableList<Produto> obListaVenda;
 
@@ -83,10 +81,28 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     Set<Item> itens = new HashSet<>();
     List<Venda> venda = new ArrayList<>();
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void onFinalizarComprasAction(ActionEvent event) {/*Finalizar a venda para o cliente.*/
+        Date dataVenda = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+
+        Alerts.showConfirmation("horas", sdf.format(dataVenda)); //08000244323 - Jeniffer;
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         AlterarTabelaVisualizacao();
+        AdicionarItemsTableview();
         initializeNodes();
+        initializeNodesVenda();
     }
 
     private void initializeNodes() {
@@ -99,6 +115,20 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         tbvLoja.prefHeightProperty().bind(stage.heightProperty());
     }
 
+    private void initializeNodesVenda() {
+        tbcItemCompra.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        tbcPrecoCompra.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        Utils.formatTableColumnDouble(tbcPrecoCompra, 2);
+        tbcQuantidadeVenda.setCellValueFactory(new PropertyValueFactory<>("qtdeItem"));
+
+        tbvCompra.setEditable(true);
+        tbcQuantidadeVenda.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        Stage stage = (Stage) Main.getMainScene().getWindow();
+        tbvCompra.prefHeightProperty().bind(stage.heightProperty());
+
+    }
+
     public void AlterarTabelaVisualizacao() {
         if (servico == null) {
             throw new IllegalStateException("Servico é nulo");
@@ -108,14 +138,20 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         tbvLoja.setItems(obLista);
 
         initAdicionaBotao();
+    }
+
+    public void AdicionarItemsTableview() {
+
+        obListaVenda = FXCollections.observableArrayList(listaProduto);
+        tbvCompra.setItems(obListaVenda);
 
         initRemoveButtons();
-
     }
 
     @Override
     public void onDataChanged() {
         AlterarTabelaVisualizacao();
+        AdicionarItemsTableview();
     }
 
     private void initAdicionaBotao() {
@@ -157,16 +193,16 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
                 setGraphic(button);
                 button.setOnAction(event -> {
 
-                    int x = tbvCompra.getSelectionModel().getSelectedIndex();
-                    Produto p = (Produto) tbvCompra.getItems().get(x);
-                    System.out.println("Produto" + p.getDescricao());
-                    if (x > -1) {
+                    Produto p = tbvCompra.getSelectionModel().getSelectedItem();
+                    if (p != null) {
                         Optional<ButtonType> result;
                         result = Alerts.showConfirmation("Deseja realmente retirar da lista de compra",
                                 p.getDescricao());
                         if (result.get() == ButtonType.OK) {
-                            obListaVenda.remove(x);
+                            listaProduto.remove(p);
+                            obListaVenda.remove(p);
                         }
+
                     }
 
                 });
@@ -178,20 +214,6 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     public void popularLista(Produto obj) {
         listaProduto.add(obj);
         AdicionarItemsTableview();
-    }
-
-    public void AdicionarItemsTableview() {
-        listaProduto.forEach(System.out::println);
-
-        tbcItemCompra.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-        tbcPrecoCompra.setCellValueFactory(new PropertyValueFactory<>("preco"));
-        tbcQuantidadeVenda.setCellValueFactory(new PropertyValueFactory<>("qtdeItem"));
-
-        obListaVenda = FXCollections.observableArrayList(listaProduto);
-        tbvCompra.setItems(obListaVenda);
-
-        tbvCompra.setEditable(true);
-        tbcQuantidadeVenda.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
     @FXML
@@ -206,14 +228,12 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         ObservableList<Produto> list;
         list = FXCollections.observableArrayList(objList);
         tbvLoja.setItems(list);
-        //System.out.println(cli.getLogin());
 
     }
 
     @FXML
-    public void onquantidadeCompra(CellEditEvent editEvent) {
+    public void onquantidadeCompra(@SuppressWarnings("rawtypes") CellEditEvent editEvent) {
 
-        //int p = tbvCompra.getSelectionModel().getSelectedIndex();
         Produto produto = tbvCompra.getSelectionModel().getSelectedItem();
         String q = (String) editEvent.getNewValue();
         produto.setQtdeItem(Integer.parseInt(q));

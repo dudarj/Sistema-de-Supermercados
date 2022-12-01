@@ -56,7 +56,7 @@
                 </Label>
             </children>
         </HBox>
-        <Button layoutX="700.0" layoutY="444.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="152.0" text="Finalizar Compra">
+        <Button fx:id="btnFinalizarCompra" layoutX="700.0" layoutY="444.0" mnemonicParsing="false" onAction="#onFinalizarComprasAction" prefHeight="23.0" prefWidth="152.0" text="Finalizar Compra">
             <font>
                 <Font name="Malgun Gothic Semilight" size="14.0" />
             </font>

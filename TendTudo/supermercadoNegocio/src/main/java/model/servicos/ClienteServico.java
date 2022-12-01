@@ -26,5 +26,13 @@ public class ClienteServico {
     public List<Cliente> ListarClientes() {
         return dao.ListarClientes();
     }
+    
+    public List<Cliente> findAll() {
+        return dao.findAll();
+    }
+
+    public List<Cliente> findByNome(String nome) {
+        return dao.findByNome(nome);
+    }
 
 }

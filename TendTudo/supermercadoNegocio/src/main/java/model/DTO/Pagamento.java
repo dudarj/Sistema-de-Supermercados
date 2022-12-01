@@ -5,8 +5,11 @@ import java.util.Objects;
 
 public class Pagamento implements Serializable {
     
+    private static final long serialVersionUID = 1L;
+    
     private Long codigo;
     private int parcelas;
+    private TipoPagamento tipoPagamento;
 
     public Pagamento() {
     }
@@ -31,6 +34,16 @@ public class Pagamento implements Serializable {
     public void setParcelas(int parcelas) {
         this.parcelas = parcelas;
     }
+
+    public TipoPagamento getTipoPagamento() {
+        return tipoPagamento;
+    }
+
+    public void setTipoPagamento(TipoPagamento tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
+    }
+    
+    
 
     @Override
     public int hashCode() {

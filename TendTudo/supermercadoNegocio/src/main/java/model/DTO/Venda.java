@@ -1,21 +1,28 @@
 package model.DTO;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 
 public class Venda implements Serializable {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     private Long codigo;
-    private Date dataVenda = new Date();
+    private Date dataVenda;
     private double valorTotal;
-    private Cliente c = new Cliente();
-    private Pagamento p = new Pagamento();
-    TipoPagamento ti = new TipoPagamento();
+
+    private Cliente cliente = new Cliente();
+
+    private List<Item> itens = new ArrayList<>();
     
+
+    private Pagamento p = new Pagamento();
+    private TipoPagamento ti = new TipoPagamento();
+
     public Venda() {
     }
 
@@ -46,15 +53,34 @@ public class Venda implements Serializable {
     }
 
     public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+        this.valorTotal = SomarTotalVenda(itens);
     }
 
-    public Cliente getC() {
-        return c;
+    public Double SomarTotalVenda(List<Item> itens) {
+
+        Double total = 0.0;
+
+        for (Item x : itens) {
+            total = x.getValorTotal();
+        }
+
+        return total;
     }
 
-    public void setC(Cliente c) {
-        this.c = c;
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public List<Item> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Pagamento getP() {
@@ -72,7 +98,6 @@ public class Venda implements Serializable {
     public void setTi(TipoPagamento ti) {
         this.ti = ti;
     }
-    
     
 
     @Override
@@ -111,5 +136,5 @@ public class Venda implements Serializable {
     @Override
     public String toString() {
         return "Venda{" + "codigo=" + codigo + ", dataVenda=" + dataVenda + ", valorTotal=" + valorTotal + '}';
-    }   
+    }
 }

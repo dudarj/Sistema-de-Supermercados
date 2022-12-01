@@ -38,8 +38,8 @@ public class ItemDAOJDBC implements ItemDAO {
             PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
             st.setInt(1, obj.getQuantidade());
             st.setDouble(2, obj.getValorTotal());
-            st.setLong(3, obj.getP().getCodigo());
-            st.setLong(4, obj.getV().getCodigo());
+            st.setLong(3, obj.getProduto().getCodigo());
+            st.setLong(4, obj.getVenda().getCodigo());
 
             int linhasAfetadas = st.executeUpdate();
 
@@ -136,5 +136,10 @@ public class ItemDAOJDBC implements ItemDAO {
             ConexaoJdbc.closeStatement(st);
             ConexaoJdbc.closeResultSet(rs);
         }
+    }
+
+    @Override
+    public void salvar(Item obj, Long id_venda, Long id_produto) {
+        // Generated from 
     }
 }

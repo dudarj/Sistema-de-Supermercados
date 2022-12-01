@@ -32,6 +32,9 @@ public class TelaProdutosViewController implements Initializable {
 
     @FXML
     private TextField quantidade;
+    
+    @FXML
+    private TextField imagem;
 
     @FXML
     private Button btnAdicionar;
@@ -97,6 +100,11 @@ public class TelaProdutosViewController implements Initializable {
             exception.addError("descricao", "O campo não pode estar vazio.");
         }
         obj.setDescricao(descricao.getText());
+        
+        if (imagem.getText() == null || imagem.getText().trim().equals("")) {
+            exception.addError("imagem", "O campo não pode estar vazio.");
+        }
+        obj.setImg(imagem.getText());
 
         if (preco.getText() == null || preco.getText().trim().equals("")) {
             exception.addError("preco", "O campo não pode estar vazio.");
@@ -140,6 +148,7 @@ public class TelaProdutosViewController implements Initializable {
         descricao.setText(entidade.getDescricao());
         preco.setText(String.valueOf(entidade.getPreco()));
         quantidade.setText(String.valueOf(entidade.getQuantidade()));
+        imagem.setText(entidade.getImg());
         
         initializeNodes();
     }
