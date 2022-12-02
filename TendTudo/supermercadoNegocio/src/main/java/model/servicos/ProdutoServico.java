@@ -32,4 +32,8 @@ public class ProdutoServico {
     public List<Produto> findByNome(String nome) {
         return dao.findByNome(nome);
     }
+    
+    public void updateSupermercado(Produto obj) {
+    	dao.updateSupermercado();
+    }
 }

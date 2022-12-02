@@ -67,7 +67,6 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
             st.setInt(3, obj.getQuantidade());
             st.setString(4, obj.getImg());
             st.setLong(5, obj.getCodigo());
-            
 
             st.executeUpdate();
         } catch (SQLException e) {
@@ -185,5 +184,23 @@ public class ProdutoDAOJDBC implements ProdutoDAO {
     public List<Produto> findAll() {
         // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         return null;
+    }
+
+    @Override
+    public void updateSupermercado() {
+        PreparedStatement st = null;
+        try {
+            st = conn.prepareStatement("UPDATE produto " + "SET qtdeItem = 0 WHERE codigo in(2,3,4,5,6 ) ");
+
+            /*st.setInt(1, obj.getQtdeItem());
+            st.setDouble(2, obj.getPreco());
+            st.setInt(3, obj.getQuantidade());
+            st.setLong(4, obj.getCodigo());*/
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+        }
     }
 }

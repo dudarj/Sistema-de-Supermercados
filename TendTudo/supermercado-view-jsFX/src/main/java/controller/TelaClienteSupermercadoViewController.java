@@ -11,14 +11,19 @@ import java.util.ResourceBundle;
 import java.util.Set;
 
 import application.Main;
+import java.io.IOException;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
@@ -26,11 +31,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import listeners.DataChangeListener;
 import model.DTO.Cliente;
 import model.DTO.Item;
 import model.DTO.Produto;
+import model.DTO.TipoPagamento;
 import model.DTO.Venda;
 import model.servicos.ProdutoServico;
 import util.Alerts;
@@ -63,11 +71,13 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     @FXML
     private TableColumn<Produto, Produto> tbcREMOVE;
     @FXML
+    private ComboBox<TipoPagamento> comboBoxTipo;
+    @FXML
+    private TextField parcelas;
+    @FXML
     private TextField pesquisa;
     @FXML
     private Button btnpesquisar;
-    @FXML
-    private Button btnFinalizarCompra;
 
     private ProdutoServico servico = new ProdutoServico();
 
@@ -90,10 +100,8 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     }
 
     public void onFinalizarComprasAction(ActionEvent event) {/*Finalizar a venda para o cliente.*/
-        Date dataVenda = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-
-        Alerts.showConfirmation("horas", sdf.format(dataVenda)); //08000244323 - Jeniffer;
+        Stage parentStage = Utils.currentStage(event);
+        loadView("/view/FinalizarCompraView.fxml", parentStage);
 
     }
 
@@ -239,6 +247,24 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         produto.setQtdeItem(Integer.parseInt(q));
         System.out.println(produto);
 
+    }
+
+    private void loadView(String absoluteName, Stage parentStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+            Pane pane = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setScene(new Scene(pane));
+            dialogStage.setResizable(false);
+            dialogStage.setTitle("Finalizar Compra");
+            dialogStage.initOwner(parentStage);
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alerts.showAlert("Exceção de entrada e saída", "Erro ao carregar a Tela", e.getMessage(), Alert.AlertType.ERROR);
+        }
     }
 
 }

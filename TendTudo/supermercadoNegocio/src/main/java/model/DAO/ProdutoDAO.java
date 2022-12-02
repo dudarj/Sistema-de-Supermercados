@@ -12,5 +12,6 @@ public interface ProdutoDAO {
     List<Produto> ListarProdutos();
     List<Produto> findByNome(String nome);
     List<Produto> findAll();
+    void updateSupermercado();
     
 }
