@@ -30,7 +30,7 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     private TableColumn<Venda, Long> tbcCodigo;
 
     @FXML
-    private TableColumn<Venda, Cliente> tbcCliente;
+    private TableColumn<Cliente, Venda> tbcCliente;
 
     @FXML
     private TableColumn<Venda, Date> tbcData;
@@ -39,10 +39,10 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     private TableColumn<Venda, Double> tbcValorTotal;
 
     @FXML
-    private TableColumn<Venda, TipoPagamento> tbcTipoPagamento;
+    private TableColumn<TipoPagamento, Venda> tbcTipoPagamento;
 
     @FXML
-    private TableColumn<Venda, Pagamento> tbcParcelas;
+    private TableColumn<Pagamento, Venda> tbcParcelas;
 
     private VendaServico servico = new VendaServico();
     private ObservableList<Venda> obLista;
@@ -54,11 +54,11 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     }
     
     private void initializeNodes() {
-       tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         tbcCliente.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        tbcData.setCellValueFactory(new PropertyValueFactory<>("datavenda"));
+        tbcData.setCellValueFactory(new PropertyValueFactory<>("dataVenda"));
         Utils.formatTableColumnDate(tbcData, "dd/MM/yyyy");
-        tbcValorTotal.setCellValueFactory(new PropertyValueFactory<>("valortotal"));
+        tbcValorTotal.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
         Utils.formatTableColumnDouble(tbcValorTotal, 2);
         tbcTipoPagamento.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         tbcParcelas.setCellValueFactory(new PropertyValueFactory<>("parcelas"));

@@ -114,8 +114,8 @@ public class VendaDAOJDBC implements VendaDAO {
         PreparedStatement st = null;
         ResultSet rs = null;
         try {
-            st = conn.prepareStatement(
-                    " SELECT c.nome, p.parcelas, ti.descricao FROM venda v "
+            st = conn.prepareStatement("SELECT * " 
+                    + " FROM venda v " 
                     + " inner join cliente c on c.codigo = v.codigo_cliente "
                     + " inner join pagamento p on p.codigo = v.codigo_pagamento "
                     + " inner join tipopagamento ti on ti.codigo = v.codigo_tipopagamento "

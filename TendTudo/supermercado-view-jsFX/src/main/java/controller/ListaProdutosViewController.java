@@ -113,7 +113,7 @@ public class ListaProdutosViewController implements Initializable, DataChangeLis
         tbcPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
         Utils.formatTableColumnDouble(tbcPreco, 2);
         tbcQuantidade.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
-        tbcImg.setCellValueFactory(new PropertyValueFactory<>("url_img"));
+        tbcImg.setCellValueFactory(new PropertyValueFactory<>("img"));
         Stage stage = (Stage) Main.getMainScene().getWindow();
         tbvProduto.prefHeightProperty().bind(stage.heightProperty());
     }
