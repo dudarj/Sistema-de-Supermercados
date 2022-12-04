@@ -222,4 +222,22 @@ public abstract class MaskFieldUtil {
             }
         });
     }
+
+    public static void mascaraEmail(TextField textField) {
+
+        textField.setOnKeyTyped((KeyEvent event) -> {
+            if ("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz._-@".contains(event.getCharacter()) == false) {
+                event.consume();
+            }
+
+            if ("@".equals(event.getCharacter()) && textField.getText().contains("@")) {
+                event.consume();
+            }
+
+            if ("@".equals(event.getCharacter()) && textField.getText().length() == 0) {
+                event.consume();
+            }
+        });
+
+    }
 }
