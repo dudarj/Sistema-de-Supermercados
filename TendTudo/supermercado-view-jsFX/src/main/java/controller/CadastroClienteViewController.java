@@ -42,6 +42,9 @@ public class CadastroClienteViewController implements Initializable {
 
     @FXML
     private TextField senha;
+    
+    @FXML
+    private TextField email;
 
     @FXML
     private Button btnCadastro;
@@ -86,6 +89,11 @@ public class CadastroClienteViewController implements Initializable {
             exception.addError("endereco", "O campo não pode estar vazio.");
         }
         obj.setEndereco(endereco.getText());
+        
+        if (email.getText() == null || email.getText().trim().equals("")) {
+            exception.addError("email", "O campo não pode estar vazio.");
+        }
+        obj.setEmail(email.getText());
 
         if (cpf.getText() == null || cpf.getText().trim().equals("")) {
             exception.addError("cpf", "O campo não pode estar vazio.");
@@ -107,6 +115,8 @@ public class CadastroClienteViewController implements Initializable {
         } else if (telefone.getText() == null || telefone.getText().trim().equals("")) {
             Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
         } else if (endereco.getText() == null || endereco.getText().trim().equals("")) {
+            Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
+        } else if (email.getText() == null || email.getText().trim().equals("")) {
             Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
         } else if (cpf.getText() == null || cpf.getText().trim().equals("")) {
             Alerts.showAlert("Autenticação", "Acesso", "Campos de preenchimento obrigatórios.", Alert.AlertType.WARNING);
@@ -148,11 +158,11 @@ public class CadastroClienteViewController implements Initializable {
         MaskFieldUtil.numericField(cpf);
         MaskFieldUtil.numericField(telefone);
         MaskFieldUtil.cpfCnpjField(cpf);
+        MaskFieldUtil.mascaraEmail(email);
         MaskFormatter formatter = new MaskFormatter(telefone);
         MaskFieldUtil.maxField(telefone, 14);
         MaskFormatter.mascaraTelefone(telefone);
         formatter.showMask();
-
     }
 
 }
