@@ -28,17 +28,18 @@ public class ClienteDAOJDBC implements ClienteDAO {
     @Override
     public void insert(Cliente obj) {
         String sqlInsert = "INSERT INTO cliente "
-                + "(nome, cpf, telefone, endereco, status, login, senha) "
-                + "VALUES (?,?,?,?,?,?,?)";
+                + "(nome, cpf, telefone, endereco, email, status, login, senha) "
+                + "VALUES (?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, obj.getNome());
             st.setString(2, obj.getCpf());
             st.setString(3, obj.getTelefone());
             st.setString(4, obj.getEndereco());
-            st.setInt(5, obj.getStatus());
-            st.setString(6, obj.getLogin());
-            st.setString(7, obj.getSenha());
+            st.setString(5, obj.getEmail());
+            st.setInt(6, obj.getStatus());
+            st.setString(7, obj.getLogin());
+            st.setString(8, obj.getSenha());
 
             int linhasAfetadas = st.executeUpdate();
 
@@ -60,7 +61,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
     @Override
     public void update(Cliente obj) {
         String sqlUpdate = "UPDATE cliente "
-                + "SET nome = ?, cpf = ?, telefone = ?, endereco = ?, status=? "
+                + "SET nome = ?, cpf = ?, telefone = ?, endereco = ?, email = ?, status=? "
                 + "WHERE codigo = ?";
         try {
             PreparedStatement st = conn.prepareStatement(sqlUpdate);
@@ -68,7 +69,9 @@ public class ClienteDAOJDBC implements ClienteDAO {
             st.setString(2, obj.getCpf());
             st.setString(3, obj.getTelefone());
             st.setString(4, obj.getEndereco());
-            st.setInt(5, obj.getStatus());
+            st.setString(5, obj.getEmail());
+            st.setInt(6, obj.getStatus());
+            
             st.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
@@ -105,6 +108,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
                 obj.setCpf(rs.getString("cpf"));
                 obj.setTelefone(rs.getString("telefone"));
                 obj.setEndereco(rs.getString("endereco"));
+                obj.setEmail(rs.getString("email"));
                 obj.setStatus(rs.getInt("status"));
                 return obj;
             }
@@ -136,6 +140,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
                 obj.setCpf(rs.getString("cpf"));
                 obj.setTelefone(rs.getString("telefone"));
                 obj.setEndereco(rs.getString("endereco"));
+                obj.setEmail(rs.getString("email"));
                 obj.setStatus(rs.getInt("status"));
                 obj.setTipo(rs.getString("tipo"));
                 lista.add(obj);
@@ -201,6 +206,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
                 obj.setCpf(rs.getString("cpf"));
                 obj.setTelefone(rs.getString("telefone"));
                 obj.setEndereco(rs.getString("endereco"));
+                obj.setEmail(rs.getString("email"));
                 obj.setStatus(rs.getInt("status"));
                 obj.setLogin(rs.getString("login"));
                 obj.setSenha(rs.getString("senha"));
@@ -238,6 +244,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
                 obj.setCpf(rs.getString("cpf"));
                 obj.setTelefone(rs.getString("telefone"));
                 obj.setEndereco(rs.getString("endereco"));
+                obj.setEmail(rs.getString("email"));
                 obj.setStatus(rs.getInt("status"));
                 obj.setLogin(rs.getString("login"));
                 obj.setSenha(rs.getString("senha"));
