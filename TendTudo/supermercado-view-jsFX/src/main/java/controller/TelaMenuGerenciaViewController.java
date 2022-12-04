@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.DTO.Cliente;
 import util.Alerts;
 import util.Utils;
 
@@ -34,6 +35,16 @@ public class TelaMenuGerenciaViewController implements Initializable {
     @FXML
     private Button btnTabelapagamento;
     
+    
+    private Cliente cliente = new Cliente();
+    
+    public Cliente getCliente() {
+    	return cliente;
+    }
+    
+    public void setCliente(Cliente cliente) {
+    	this.cliente = cliente;
+    }
     
 
     @FXML
