@@ -2603,3 +2603,15 @@ ul.cart-list > li.total > .btn:hover{
 .cliente-foto {
     background-image: url(../imgs/pessoas.png);
 }
+
+#img_duda {
+    width: 302px;
+    height: 302px;
+    object-fit: cover;
+}
+
+#img_enzo {
+    width: 255px;
+    height: 305px;
+    object-fit: cover;
+}

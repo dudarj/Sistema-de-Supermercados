@@ -18,19 +18,24 @@ public class Cliente implements Serializable {
     private String login;
     private String senha;
     private String tipo;
+    private String email;
 
     private List<Venda> vendas = new ArrayList<>();
 
     public Cliente() {
     }
 
-    public Cliente(Long codigo, String nome, String cpf, String telefone, String endereco, int status) {
+    public Cliente(Long codigo, String nome, String cpf, String telefone, String endereco, int status, String login, String senha, String tipo, String email) {
         this.codigo = codigo;
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.endereco = endereco;
         this.status = status;
+        this.login = login;
+        this.senha = senha;
+        this.tipo = tipo;
+        this.email = email;
     }
 
     public Long getCodigo() {
@@ -105,6 +110,14 @@ public class Cliente implements Serializable {
         this.tipo = tipo;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public List<Venda> getVendas() {
         return vendas;
     }
@@ -115,16 +128,18 @@ public class Cliente implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.codigo);
-        hash = 97 * hash + Objects.hashCode(this.nome);
-        hash = 97 * hash + Objects.hashCode(this.cpf);
-        hash = 97 * hash + Objects.hashCode(this.telefone);
-        hash = 97 * hash + Objects.hashCode(this.endereco);
-        hash = 97 * hash + this.status;
-        hash = 97 * hash + Objects.hashCode(this.login);
-        hash = 97 * hash + Objects.hashCode(this.senha);
-        hash = 97 * hash + Objects.hashCode(this.tipo);
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.codigo);
+        hash = 59 * hash + Objects.hashCode(this.nome);
+        hash = 59 * hash + Objects.hashCode(this.cpf);
+        hash = 59 * hash + Objects.hashCode(this.telefone);
+        hash = 59 * hash + Objects.hashCode(this.endereco);
+        hash = 59 * hash + this.status;
+        hash = 59 * hash + Objects.hashCode(this.login);
+        hash = 59 * hash + Objects.hashCode(this.senha);
+        hash = 59 * hash + Objects.hashCode(this.tipo);
+        hash = 59 * hash + Objects.hashCode(this.email);
+        hash = 59 * hash + Objects.hashCode(this.vendas);
         return hash;
     }
 
@@ -164,12 +179,18 @@ public class Cliente implements Serializable {
         if (!Objects.equals(this.tipo, other.tipo)) {
             return false;
         }
-        return Objects.equals(this.codigo, other.codigo);
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        if (!Objects.equals(this.codigo, other.codigo)) {
+            return false;
+        }
+        return Objects.equals(this.vendas, other.vendas);
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone + ", endereco=" + endereco + ", status=" + status + ", login=" + login + ", senha=" + senha + ", tipo=" + tipo + '}';
+        return "Cliente{" + "codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone + ", endereco=" + endereco + ", status=" + status + ", login=" + login + ", senha=" + senha + ", tipo=" + tipo + ", email=" + email + ", vendas=" + vendas + '}';
     }
 
 }

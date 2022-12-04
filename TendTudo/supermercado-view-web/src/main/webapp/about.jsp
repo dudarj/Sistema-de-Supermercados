@@ -167,79 +167,67 @@
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="hover-team">
-                            <div class="our-team"> <img src="images/FotoSamuel.jpg" alt="" />
+                            <div class="our-team"> <img id="img_samuel" src="images/about/FotoSamuel.jpg" alt="" />
                                 <div class="team-content">
-                                    <h3 class="title">Samuel</h3> <span class="post">Dev Web / JSP - Servlets</span> </div>
+                                    <h3 class="title">Samuel</h3> <span class="post">Dev Java e Web / JSP - Servlets</span> </div>
                                 <ul class="social">
                                     <li>
                                         <a href="#" class="fab fa-facebook"></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="fab fa-twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="fab fa-google-plus"></a>
+                                        <a href="https://twitter.com/SAMUEL12958758" class="fab fa-twitter"></a>
                                     </li>
                                     <li>
                                         <a href="#" class="fab fa-youtube"></a>
                                     </li>
                                 </ul>
-                                <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
                             </div>
                             <div class="team-description">
-                                <p>Estudande do curso de informática, nasci em 08 de maio de 2006. Moro no município de Confins desde que nasci, gosto de ouvir musica, jogar videogame, editar e produzir videos, programar e dentre outras coisas. </p>
+                                <p>Programador Web, Java Developer e criador das servelts, Moro no município de Confins desde que nasci, gosto de ouvir musica, jogar videogame, editar e produzir videos, programar e dentre outras coisas. </p>
                             </div>
                             <hr class="my-0"> </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="hover-team">
-                            <div class="our-team"> <img src="images/img-2.jpg" alt="" />
+                            <div class="our-team"> <img id="img_duda" src="images/about/FotoDuda.jpeg" alt="" />
                                 <div class="team-content">
-                                    <h3 class="title">Maria Eduarda</h3> <span class="post">Dev Desktop / Banco de Dados</span> </div>
+                                    <h3 class="title">Maria Eduarda</h3> <span class="post">Dev Java e Web / Banco de Dados</span> </div>
                                 <ul class="social">
                                     <li>
                                         <a href="#" class="fab fa-facebook"></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="fab fa-twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="fab fa-google-plus"></a>
+                                        <a href="https://twitter.com/rezendz0" class="fab fa-twitter"></a>
                                     </li>
                                     <li>
                                         <a href="#" class="fab fa-youtube"></a>
                                     </li>
                                 </ul>
-                                <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
                             </div>
                             <div class="team-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                                <p>Programadora Web, Java Developer e interface desktop Estudande do curso de informática. Gosto muito de programar enquanto escuto músicas.</p>
                             </div>
                             <hr class="my-0"> </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="hover-team">
-                            <div class="our-team"> <img src="images/img-3.jpg" alt="" />
+                            <div class="our-team"> <img id="img_enzo" src="images/about/FotoEnzao.jpg" alt="" />
                                 <div class="team-content">
-                                    <h3 class="title">Enzo</h3> <span class="post">Design / Desenvolvedor Web</span> </div>
+                                    <h3 class="title">Enzo</h3> <span class="post">Designer / Dev Java e Web </span> </div>
                                 <ul class="social">
                                     <li>
                                         <a href="#" class="fab fa-facebook"></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="fab fa-twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="fab fa-google-plus"></a>
+                                        <a href="https://twitter.com/enzxo__" class="fab fa-twitter"></a>
                                     </li>
                                     <li>
                                         <a href="#" class="fab fa-youtube"></a>
                                     </li>
                                 </ul>
-                                <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
                             </div>
                             <div class="team-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                                <p>Programador Web, designer e Java Developer, Estudande do curso de informática, gosto de programar e faço alguns templates para sites.</p>
                             </div>
                             <hr class="my-0"> </div>
                     </div>
