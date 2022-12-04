@@ -92,24 +92,22 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     private ObservableList<Produto> obListaVenda;
     private ObservableList<TipoPagamento> obsListTipo;
 
-     Set<Produto> listaProduto = new HashSet<>();
+    Set<Produto> listaProduto = new HashSet<>();
     Set<Item> itens = new HashSet<>();
     List<Venda> venda = new ArrayList<>();
 
-    
-    
     public Cliente getCliente() {
         return cliente;
     }
+
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public void onFinalizarComprasAction(ActionEvent event) {/Finalizar a venda para o cliente./
+    public void onFinalizarComprasAction(ActionEvent event) {
         Stage parentStage = Utils.currentStage(event);
-       
-        
-        loadView(cliente,"/view/FinalizarCompraView.fxml", parentStage);
+
+        loadView(cliente, "/view/FinalizarCompraView.fxml", parentStage);
     }
 
     @Override
@@ -291,10 +289,9 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
-            
+
             FinalizarCompraViewController finaliza = loader.getController();
             finaliza.setCliente(c);
-
 
             Stage dialogStage = new Stage();
             dialogStage.setScene(new Scene(pane));
