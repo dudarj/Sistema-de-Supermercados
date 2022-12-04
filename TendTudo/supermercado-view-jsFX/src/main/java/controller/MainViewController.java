@@ -28,15 +28,17 @@ public class MainViewController implements Initializable {
 
     @FXML
     private Button btnCadastrar;
-    
+
     @FXML
     private TextField login;
 
     @FXML
     private PasswordField senha;
-    
+
     private ClienteServico servico = new ClienteServico();
-     
+
+    Cliente cliente = new Cliente();
+
     @FXML
     public void onCaminhoLogarAction(ActionEvent event) {
         String loginInput = login.getText().trim();
@@ -54,12 +56,15 @@ public class MainViewController implements Initializable {
                 Stage parentStage = Utils.currentStage(event);
                 login.setText("");
                 senha.setText("");
-                loadView("/view/TelaMenuGerenciaView.fxml", parentStage);
+                loadView(c, "/view/TelaMenuGerenciaView.fxml", parentStage);
             } else if (loginInput.equals(c.getLogin()) && (senhaInput.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
                 Stage parentStage = Utils.currentStage(event);
                 login.setText("");
                 senha.setText("");
-                loadView("/view/TelaClienteSupermercadoView.fxml", parentStage);
+
+                cliente = c;
+
+                loadView(cliente, "/view/TelaClienteSupermercadoView.fxml", parentStage);
             } else {
                 Alerts.showAlert("Autenticação", "Acesso Negado", "Informações não registradas.", Alert.AlertType.WARNING);
             }
@@ -71,15 +76,32 @@ public class MainViewController implements Initializable {
     @FXML
     public void onCaminhoCadastrarAction(ActionEvent event) {
         Stage parentStage = Utils.currentStage(event);
-        loadView("/view/CadastroClienteView.fxml", parentStage);
+
+            loadView2("/view/CadastroClienteView.fxml", parentStage);
+          
     }
 
-    private void loadView(String absoluteName, Stage parentStage) {
+    private void loadView(Cliente obj, String absoluteName, Stage parentStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
-            
-            
+
+            if (!obj.equals(null) || !obj.equals("null")) {
+                if (obj.getTipo().equals("c")) {
+
+                    TelaClienteSupermercadoViewController clienteVenda = loader.getController();
+                    clienteVenda.setCliente(obj);
+                    clienteVenda.loadAssociatedObjectsTipo();
+
+                } else {
+
+                    TelaMenuGerenciaViewController gerencia = loader.getController();
+                    gerencia.setCliente(obj);
+
+                }
+
+            }
+
             Stage dialogStage = new Stage();
             dialogStage.setScene(new Scene(pane));
             dialogStage.setResizable(false);
@@ -92,7 +114,23 @@ public class MainViewController implements Initializable {
         }
     }
 
-    @Override
+    private void loadView2(String absoluteName, Stage parentStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+            Pane pane = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setScene(new Scene(pane));
+            dialogStage.setResizable(false);
+            dialogStage.initOwner(parentStage);
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alerts.showAlert("Exceção de entrada e saída", "Erro ao carregar a Tela", e.getMessage(), AlertType.ERROR);
+        }
+    }
+
     public void initialize(URL url, ResourceBundle rb) {
         //TODO
     }
