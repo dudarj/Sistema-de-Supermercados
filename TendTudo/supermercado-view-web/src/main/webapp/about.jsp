@@ -167,9 +167,13 @@
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="hover-team">
-                            <div class="our-team"> <img id="img_samuel" src="images/about/FotoSamuel.jpg" alt="" />
+                            <div class="our-team"> <div><img id="img_samuel" src="images/about/FotoSamuel.jpg" alt="" /></div>
                                 <div class="team-content">
-                                    <h3 class="title">Samuel</h3> <span class="post">Dev Java e Web / JSP - Servlets</span> </div>
+                                    <h3 class="title">Samuel</h3> <span class="post">Dev Java e Web / JSP - Servlets</span>
+                                    <div class="team-description">
+                                        <p>Programador Web, Java Developer e criador das servelts, Moro no município de Confins desde que nasci, gosto de ouvir musica, jogar videogame, editar e produzir videos, programar e dentre outras coisas. </p>
+                                    </div>
+                                </div>
                                 <ul class="social">
                                     <li>
                                         <a href="#" class="fab fa-facebook"></a>
@@ -182,16 +186,18 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="team-description">
-                                <p>Programador Web, Java Developer e criador das servelts, Moro no município de Confins desde que nasci, gosto de ouvir musica, jogar videogame, editar e produzir videos, programar e dentre outras coisas. </p>
-                            </div>
+                            
                             <hr class="my-0"> </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="hover-team">
                             <div class="our-team"> <img id="img_duda" src="images/about/FotoDuda.jpeg" alt="" />
                                 <div class="team-content">
-                                    <h3 class="title">Maria Eduarda</h3> <span class="post">Dev Java e Web / Banco de Dados</span> </div>
+                                    <h3 class="title">Maria Eduarda</h3> <span class="post">Dev Java e Web / Banco de Dados</span>
+                                    <div class="team-description">
+                                        <p>Programadora Web, Java Developer e interface desktop Estudande do curso de informática. Gosto muito de programar enquanto escuto músicas.</p>
+                                    </div>
+                                </div>
                                 <ul class="social">
                                     <li>
                                         <a href="#" class="fab fa-facebook"></a>
@@ -203,17 +209,20 @@
                                         <a href="#" class="fab fa-youtube"></a>
                                     </li>
                                 </ul>
+
                             </div>
-                            <div class="team-description">
-                                <p>Programadora Web, Java Developer e interface desktop Estudande do curso de informática. Gosto muito de programar enquanto escuto músicas.</p>
-                            </div>
+                            
                             <hr class="my-0"> </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="hover-team">
                             <div class="our-team"> <img id="img_enzo" src="images/about/FotoEnzao.jpg" alt="" />
                                 <div class="team-content">
-                                    <h3 class="title">Enzo</h3> <span class="post">Designer / Dev Java e Web </span> </div>
+                                    <h3 class="title">Enzo</h3> <span class="post">Designer / Dev Java e Web </span> 
+                                    <div class="team-description">
+                                        <p>Programador Web, designer e Java Developer, Estudande do curso de informática, gosto de programar e faço alguns templates para sites.</p>
+                                    </div>
+                                </div>
                                 <ul class="social">
                                     <li>
                                         <a href="#" class="fab fa-facebook"></a>
@@ -225,12 +234,11 @@
                                         <a href="#" class="fab fa-youtube"></a>
                                     </li>
                                 </ul>
+                                
                             </div>
-                            <div class="team-description">
-                                <p>Programador Web, designer e Java Developer, Estudande do curso de informática, gosto de programar e faço alguns templates para sites.</p>
-                            </div>
+                            
                             <hr class="my-0"> </div>
-                    </div>
+                        </div>
 
                 </div>
             </div>

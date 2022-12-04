@@ -1646,9 +1646,13 @@ ul.cart-list > li.total > .btn:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .our-team img{
+    object-fit: cover;
+    height: 256px;
     width: 100%;
-    height: auto;
     transition: all 0.3s ease-in-out 0s;
+}
+#img_samuel{
+    object-position: 50% 0;
 }
 .our-team:hover img{
     opacity: 0.5;
@@ -1656,11 +1660,9 @@ ul.cart-list > li.total > .btn:hover{
 .our-team .team-content{
     color: #000;
     opacity: 1;
-    position: absolute;
     bottom: 0px;
     left: 0px;
     background: #ffffff;
-    padding-left: 55px;
     width: 100%;
     transition: all 0.3s ease 0s;
 }
@@ -1748,6 +1750,11 @@ ul.cart-list > li.total > .btn:hover{
 .hover-team:hover img{
     opacity: 0.5;
 }
+
+.team-content{
+    padding: 5px;
+}
+
 .hover-team .team-content .title{
     border-bottom: 2px solid red;
 }
@@ -2602,16 +2609,4 @@ ul.cart-list > li.total > .btn:hover{
 
 .cliente-foto {
     background-image: url(../imgs/pessoas.png);
-}
-
-#img_duda {
-    width: 302px;
-    height: 302px;
-    object-fit: cover;
-}
-
-#img_enzo {
-    width: 255px;
-    height: 300px;
-    object-fit: cover;
 }
