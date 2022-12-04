@@ -1,9 +1,7 @@
 package controller;
 
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +22,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
@@ -34,6 +34,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import listeners.DataChangeListener;
 import model.DTO.Cliente;
 import model.DTO.Item;
@@ -41,6 +42,7 @@ import model.DTO.Produto;
 import model.DTO.TipoPagamento;
 import model.DTO.Venda;
 import model.servicos.ProdutoServico;
+import model.servicos.TipoPagamentoServico;
 import util.Alerts;
 import util.Utils;
 
@@ -63,10 +65,6 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     @FXML
     private TableColumn<String, String> tbcQuantidadeVenda;
     @FXML
-    private TableColumn<Produto, String> tbcQtde;
-    @FXML
-    private TableColumn<Produto, String> tbcQuantidadeCompra;
-    @FXML
     private TableColumn<Produto, Produto> tbcADICIONA;
     @FXML
     private TableColumn<Produto, Produto> tbcREMOVE;
@@ -78,31 +76,40 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     private TextField pesquisa;
     @FXML
     private Button btnpesquisar;
+    @FXML
+    private Button btnFinalizarCompra;
+    @FXML
+    private Button btnAdicionaTipoPagamento;
 
     private ProdutoServico servico = new ProdutoServico();
+    private TipoPagamentoServico servicoTipo = new TipoPagamentoServico();
 
     private Cliente cliente = new Cliente();
+    private Venda v = new Venda();
+    private TipoPagamento tipopagamento = new TipoPagamento();
 
     private ObservableList<Produto> obLista;
     private ObservableList<Produto> obListaVenda;
+    private ObservableList<TipoPagamento> obsListTipo;
 
-    Set<Produto> listaProduto = new HashSet<>();
-
+     Set<Produto> listaProduto = new HashSet<>();
     Set<Item> itens = new HashSet<>();
     List<Venda> venda = new ArrayList<>();
 
+    
+    
     public Cliente getCliente() {
         return cliente;
     }
-
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public void onFinalizarComprasAction(ActionEvent event) {/*Finalizar a venda para o cliente.*/
+    public void onFinalizarComprasAction(ActionEvent event) {/Finalizar a venda para o cliente./
         Stage parentStage = Utils.currentStage(event);
-        loadView("/view/FinalizarCompraView.fxml", parentStage);
-
+       
+        
+        loadView(cliente,"/view/FinalizarCompraView.fxml", parentStage);
     }
 
     @Override
@@ -110,6 +117,7 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         AlterarTabelaVisualizacao();
         AdicionarItemsTableview();
         initializeNodes();
+        initializeComboBoxTipo();
         initializeNodesVenda();
     }
 
@@ -134,7 +142,27 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
 
         Stage stage = (Stage) Main.getMainScene().getWindow();
         tbvCompra.prefHeightProperty().bind(stage.heightProperty());
+    }
 
+    private void initializeComboBoxTipo() {
+        Callback<ListView<TipoPagamento>, ListCell<TipoPagamento>> factory = lv -> new ListCell<TipoPagamento>() {
+            @Override
+            protected void updateItem(TipoPagamento tipo, boolean empty) {
+                super.updateItem(tipo, empty);
+                setText(empty ? "" : tipo.getDescricao());
+            }
+        };
+        comboBoxTipo.setCellFactory(factory);
+        comboBoxTipo.setButtonCell(factory.call(null));
+    }
+
+    public void loadAssociatedObjectsTipo() {
+        if (servicoTipo == null) {
+            throw new IllegalStateException("tipo servico nulo");
+        }
+        List<TipoPagamento> list = servicoTipo.ListarTiposPagamentos();
+        obsListTipo = FXCollections.observableArrayList(list);
+        comboBoxTipo.setItems(obsListTipo);
     }
 
     public void AlterarTabelaVisualizacao() {
@@ -146,6 +174,16 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         tbvLoja.setItems(obLista);
 
         initAdicionaBotao();
+    }
+
+    protected Double somarValorTotalItens() {
+        Double vl = 0.0;
+
+        for (Produto items : listaProduto) {
+            vl += items.getPreco() * items.getQtdeItem();
+        }
+
+        return vl;
     }
 
     public void AdicionarItemsTableview() {
@@ -245,14 +283,18 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
         Produto produto = tbvCompra.getSelectionModel().getSelectedItem();
         String q = (String) editEvent.getNewValue();
         produto.setQtdeItem(Integer.parseInt(q));
-        System.out.println(produto);
+        //somarValorTotalItens();
 
     }
 
-    private void loadView(String absoluteName, Stage parentStage) {
+    private void loadView(Cliente c, String absoluteName, Stage parentStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
+            
+            FinalizarCompraViewController finaliza = loader.getController();
+            finaliza.setCliente(c);
+
 
             Stage dialogStage = new Stage();
             dialogStage.setScene(new Scene(pane));
