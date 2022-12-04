@@ -48,6 +48,9 @@ public class ListaClientesViewController implements Initializable, DataChangeLis
     private TableColumn<Cliente, String> tbcTipo;
     
     @FXML
+    private TableColumn<Cliente, String> tbcEmail;
+    
+    @FXML
     private TextField pesquisa;
 
     @FXML
@@ -68,6 +71,7 @@ public class ListaClientesViewController implements Initializable, DataChangeLis
         tbcCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
         tbcTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
         tbcEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
+        tbcEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         tbcStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         tbcTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
         Stage stage = (Stage) Main.getMainScene().getWindow();
