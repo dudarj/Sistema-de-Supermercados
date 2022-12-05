@@ -38,6 +38,7 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
     </head>
 
     <body>
@@ -77,28 +78,17 @@
             <!-- End Navigation -->
         </header>
         <!-- End Main Top -->
-
+        <%String a = request.getParameter("buscar");%>
+      
         <sql:setDataSource var="conexao" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_4f92f1c6b3d797c?autoReconnect=true&useSSL=false" user="b327b7745da4e4" password="789cfcce" />
         <sql:query dataSource="${conexao}" var="result">
-            SELECT * FROM produto
+            SELECT * FROM produto WHERE descricao LIKE '%<%=a%>%'
         </sql:query>
 
-
+            <p style="font-size: 20px; margin-left: 20px;     margin-top: 26px;margin-bottom: -100px;"> Produtos encontrados com os caracteres "<%=a%>"</p>
         <!-- Start Shop Page  -->
         <div class="shop-box-inner">
             <div class="container">
-
-                <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
-                    <div class="product-categori">
-                        <div class="search-product">
-                            <form action="shopBuscar.jsp">
-                                <input class="form-control" placeholder="Busque aqui..." type="text" name="buscar">
-                                <button type="submit"> <i class="fa fa-search"></i> </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                
 
                 <div class="row">
                     <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">

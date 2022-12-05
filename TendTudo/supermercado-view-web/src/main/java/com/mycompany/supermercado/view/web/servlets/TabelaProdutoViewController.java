@@ -32,7 +32,8 @@ public class TabelaProdutoViewController extends HttpServlet {
             ProdutoServico servico = new ProdutoServico();
             List<Produto> list = servico.ListarProdutos();
             RequestDispatcher rd = request.getRequestDispatcher("produtosSistema.jsp");
-
+            String produto = request.getParameter("buscar");
+            request.setAttribute("produtoBuscado", produto);
             int a = list.size();
 
             String[] v = new String[3];
