@@ -72,6 +72,7 @@
                         <th class="col-xs-6">CPF</th>
                         <th class="col-xs-6">Telefone</th>
                         <th class="col-xs-6">Endereço</th>
+                        <th class="col-xs-6">E-mail</th>
                         <th class="col-xs-3">Status</th>
                         <th class="col-xs-3">Tipo</th>
                     </tr>

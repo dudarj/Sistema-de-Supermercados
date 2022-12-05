@@ -78,6 +78,9 @@
                                             <input oninput="mascara(this)" type="text" name="Cpf" id="Cpf" tabindex="1" class="form-control" placeholder="CPF" value="">
                                         </div>
                                         <div class="form-group">
+                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="exemplo@exemplo.com.br" value="">
+                                        </div>
+                                        <div class="form-group">
                                             <input type="text" name="login" id="username" tabindex="1" class="form-control" placeholder="Usuário" value="">
                                         </div>
                                         <div class="form-group">

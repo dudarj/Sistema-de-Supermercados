@@ -27,6 +27,7 @@ public class CadastroViewController extends HttpServlet {
             String telefone = request.getParameter("telefone");
             String endereco = request.getParameter("endereco");
             String Cpf = request.getParameter("Cpf");
+            String email = request.getParameter("email");
             String login = request.getParameter("login");
             String senha = request.getParameter("senha");
             String confirmPassword = request.getParameter("confirm-password");
@@ -40,6 +41,7 @@ public class CadastroViewController extends HttpServlet {
                 cliente.setTelefone(telefone);
                 cliente.setEndereco(endereco);
                 cliente.setCpf(Cpf);
+                cliente.setEmail(email);
                 cliente.setStatus(0);
                 cliente.setLogin(login);
                 cliente.setSenha(senha);

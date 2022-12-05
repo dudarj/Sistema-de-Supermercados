@@ -190,7 +190,7 @@
                                     <p><i class="fas fa-phone-square"></i>Telefone <a href="tel: +55 31 4002 8922">+55 31 4002 8922</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:supermercadostendtudo@gmail.com"> supermercadostendtudo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:tendtudocefet@gmail.com"> tendtudocefet@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>
