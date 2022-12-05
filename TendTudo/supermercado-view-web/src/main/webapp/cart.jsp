@@ -11,7 +11,7 @@
 
         <!-- Mobile Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
@@ -42,7 +42,7 @@
     </head>
 
     <body>
-        
+
 
         <!-- Start Main Top -->
         <header class="main-header">
@@ -110,8 +110,8 @@
         </header>
         <!-- End Main Top -->
 
-        
-        
+
+
         <!-- Start Top Search -->
         <div class="top-search">
             <div class="container">
@@ -127,7 +127,7 @@
         <!-- Start All Title Box -->
         <div class="all-title-box">
             <div class="container">
-                                    <c:out value="oi" />
+                <c:out value="oi" />
 
                 <div class="row">
                     <div class="col-lg-12">

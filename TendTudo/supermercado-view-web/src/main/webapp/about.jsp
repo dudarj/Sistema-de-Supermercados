@@ -9,7 +9,7 @@
 
         <!-- Mobile Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <!-- Site Metas -->
@@ -186,7 +186,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <hr class="my-0"> </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
@@ -211,7 +211,7 @@
                                 </ul>
 
                             </div>
-                            
+
                             <hr class="my-0"> </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
@@ -234,11 +234,11 @@
                                         <a href="#" class="fab fa-youtube"></a>
                                     </li>
                                 </ul>
-                                
+
                             </div>
-                            
+
                             <hr class="my-0"> </div>
-                        </div>
+                    </div>
 
                 </div>
             </div>

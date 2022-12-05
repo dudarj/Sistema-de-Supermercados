@@ -21,8 +21,8 @@
         <img src="images/tendtudo.png" class="logo" alt="" style="width: 277px;margin-bottom: -1px;margin-top: -138px;margin-left: 40%;">       
         <div class="container">
 
-            
-            
+
+
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="panel panel-login">

@@ -163,126 +163,6 @@
             </div>
         </div>
 
-        <!-- Start Products  -->
-        <div class="products-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-all text-center">
-                            <h1>Frutas e Vegetais</h1>
-                            <p>As melhores frutas e vegetais para você!!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="special-menu text-center">
-                            <div class="button-group filter-button-group">
-                                <button class="active" data-filter="*">Todos</button>
-                                <button data-filter=".top-featured">Principais destaques</button>
-                                <button data-filter=".best-seller">Mais vendidos</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row special-list">
-                    <div class="col-lg-3 col-md-6 special-grid best-seller">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <div class="type-lb">
-                                    <p class="A VENDA">Venda</p>
-                                </div>
-                                <img src="images/produtos/p2_vilma.png" class="img-fluid" alt="Image">
-                                <div class="mask-icon">
-                                    <ul>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                    <a class="cart" href="#">Add ao carrinho</a>
-                                </div>
-                            </div>
-                            <div class="why-text">
-                                <h4>Batata Palha Vilma</h4>
-                                <h5>R$4.29</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 special-grid top-featured">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <div class="type-lb">
-                                    <p class="new">Novo</p>
-                                </div>
-                                <img src="images/produtos/p5_nescau.png" class="img-fluid" alt="Image">
-                                <div class="mask-icon">
-                                    <ul>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                    <a class="cart" href="#">Add ao carrinho</a>
-                                </div>
-                            </div>
-                            <div class="why-text">
-                                <h4>Cereal Matinal Duo, NESCAU,</h4>
-                                <h5> R$7.99</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 special-grid top-featured">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <div class="type-lb">
-                                    <p class="A VENDA">Venda</p>
-                                </div>
-                                <img src="images/produtos/p6_picanha.png" class="img-fluid" alt="Image">
-                                <div class="mask-icon">
-                                    <ul>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                    <a class="cart" href="#">Add ao carrinho</a>
-                                </div>
-                            </div>
-                            <div class="why-text">
-                                <h4>Picanha Prata Swift</h4>
-                                <h5> R$79.99</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 special-grid best-seller">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <div class="type-lb">
-                                    <p class="A VENDA">Venda</p>
-                                </div>
-                                <img src="images/produtos/p4_vodka.png" class="img-fluid" alt="Image">
-                                <div class="mask-icon">
-                                    <ul>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                    <a class="cart" href="#">Add ao carrinho</a>
-                                </div>
-                            </div>
-                            <div class="why-text">
-                                <h4>Vodka Francesa Grey Goose Original</h4>
-                                <h5>R$169.99</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Products  -->
-
         <!-- Start Blog  -->
         <div class="latest-blog">
             <div class="container">
@@ -452,7 +332,7 @@
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
 
-        
+
 
 
         <!-- ALL JS FILES -->
