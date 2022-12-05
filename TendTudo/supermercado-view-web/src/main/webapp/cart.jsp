@@ -133,7 +133,7 @@
                     <div class="col-lg-12">
                         <h2>Carrinho</h2>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                            <li class="breadcrumb-item"><a href="shop.jsp">Loja</a></li>
                             <li class="breadcrumb-item active">Carrinho</li>
                         </ul>
                     </div>
@@ -234,14 +234,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row my-5">
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="update-box">
-                            <input value="Atualizar Carrinho" type="submit">
                         </div>
                     </div>
                 </div>
