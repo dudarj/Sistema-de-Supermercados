@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <!-- Basic -->
@@ -40,7 +42,7 @@
     </head>
 
     <body>
-
+        
 
         <!-- Start Main Top -->
         <header class="main-header">
@@ -74,7 +76,6 @@
                     </div>
                     <!-- /.navbar-collapse -->
 
-               
                 </div>
                 <!-- Start Side Menu -->
                 <div class="side">
@@ -109,6 +110,8 @@
         </header>
         <!-- End Main Top -->
 
+        
+        
         <!-- Start Top Search -->
         <div class="top-search">
             <div class="container">
@@ -124,6 +127,8 @@
         <!-- Start All Title Box -->
         <div class="all-title-box">
             <div class="container">
+                                    <c:out value="oi" />
+
                 <div class="row">
                     <div class="col-lg-12">
                         <h2>Carrinho</h2>
