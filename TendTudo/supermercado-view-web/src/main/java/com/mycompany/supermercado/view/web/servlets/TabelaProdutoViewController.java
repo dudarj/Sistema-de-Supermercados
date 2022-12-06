@@ -53,13 +53,13 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "                        <td class=\"col-xs-3\"> <img src=" + "'" + list.get(i).getImg() + "'" + " style=width:60px; height:30px/></td>"
                         + "                        <td><form action=\"DeletarProdutoViewController\" method=\"post\" id=\"deletar\">\n"
                         + "                            \n"
-                        + "                            <input type=\"submit\" value=\"Deletar " + (i + 1) + "\" name=\"deletar\" class=\"apagar\"></form></td>\n"
+                        + "                            <input class=\"apagar\" type=\"submit\" value=\"Deletar " + (i + 1) + "\" name=\"deletar\"></form></td>\n"
                         +  " <td><form action=\"EditarProdutoViewController\" method=\"post\" id=\"editar\">\n"
                         + "                            \n <h4>Editar Produto</h4>"
-                        + "                            Descrição <input type=\"text\" name=\"descricao\" id=\"descricaoM\" value="+ list.get(i).getDescricao() +"><br><br>\n"
-                        + "                        Preço <input type=\"text\" name=\"preco\" id=\"precoM\" value="+ list.get(i).getPreco()+"><br><br>\n"
-                        + "                        Unidades <input type=\"number\" name=\"unidades\" id=\"unidadesM\" value="+ list.get(i).getQuantidade()+"><br><br>\n"
-                        + "                        URL Da Imagem <input type=\"url\"  name=\"imgUrl\" id=\"imagemM\" value="+ list.get(i).getImg()+"><br><br>\n" +
+                        + "                            Descrição <input class=\"form-control\" type=\"text\" name=\"descricao\" id=\"descricaoM\" value="+ list.get(i).getDescricao() +"><br><br>\n"
+                        + "                        Preço <input class=\"form-control\" type=\"text\" name=\"preco\" id=\"precoM\" value="+ list.get(i).getPreco()+"><br><br>\n"
+                        + "                        Unidades <input class=\"form-control\" type=\"number\" name=\"unidades\" id=\"unidadesM\" value="+ list.get(i).getQuantidade()+"><br><br>\n"
+                        + "                        URL Da Imagem <input class=\"form-control\" type=\"url\"  name=\"imgUrl\" id=\"imagemM\" value="+ list.get(i).getImg()+"><br><br>\n" +
                                 "<input type=\"submit\" value=\"Editar Produto " + i + "\" name=\"editar\" class=\"editar\"></form></td>\n"
                         + "                    </tr>"
                         + "        <div id=\"modal_2\" class=\"modal\">\n"
@@ -69,10 +69,10 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "                <form action=\"EditarProdutoViewController\" method=\"post\">\n"
                         + "                    <div style=\"margin-left: 20px;\">\n"
                         + "                        <br>\n"
-                        + "                        Descrição <input type=\"text\" name=\"descricao\" id=\"descricaoM\"><br><br>\n"
-                        + "                        Preço <input type=\"text\" name=\"preco\" id=\"precoM\"><br><br>\n"
-                        + "                        Unidades <input type=\"number\" name=\"unidades\" id=\"unidadesM\"><br><br>\n"
-                        + "                        URL Da Imagem <input type=\"url\"  name=\"imgUrl\" id=\"imagemM\"><br><br>\n"
+                        + "                        Descrição <input class=\"form-control\" type=\"text\" name=\"descricao\" id=\"descricaoM\"><br><br>\n"
+                        + "                        Preço <input class=\"form-control\" type=\"text\" name=\"preco\" id=\"precoM\"><br><br>\n"
+                        + "                        Unidades <input class=\"form-control\" type=\"number\" name=\"unidades\" id=\"unidadesM\"><br><br>\n"
+                        + "                        URL Da Imagem <input class=\"form-control\" type=\"url\"  name=\"imgUrl\" id=\"imagemM\"><br><br>\n"
                         + "                        <input type=\"submit\" value=\"Editar Produto " + i + "\" class=\"modal__link\" name=\"editar\" style=\"cursor:pointer;\" ><br>\n"
                         + "\n"
                         + "                    </div>\n"
@@ -83,9 +83,7 @@ public class TabelaProdutoViewController extends HttpServlet {
                         + "            </div>\n"
                         + "        </div>"
                 );
-
             }
-
             rd.forward(request, response);
         }
     }
