@@ -38,8 +38,7 @@
     padding-left: 6px;
     padding-right: 6px;
     border: solid;
+    border-radius: 8px;
 }
 
-#deletar {
-    background-color: pink;
-}
+

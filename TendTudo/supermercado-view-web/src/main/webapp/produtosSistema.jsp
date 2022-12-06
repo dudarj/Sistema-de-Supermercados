@@ -50,6 +50,11 @@
                     margin-bottom: 0!important;
                     width: 50%;
                 }
+                
+                .form-edit {
+                    margin-bottom: 0!important;
+                    width: 100%;
+                }
 
                 .form{
                     padding: 0!important;
