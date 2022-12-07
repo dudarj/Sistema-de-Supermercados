@@ -32,8 +32,13 @@ public class ItemDAOJDBC implements ItemDAO {
     @Override
     public void insert(Set<Item> obj) {
         String sqlInsert = "INSERT INTO item(quantidade, valortotal, codigo_produto, codigo_venda) VALUES (?,?,?,?)";
+
+        String sqlUpdateProduto = "UPDATE produto "
+                + " SET quantidade = quantidade - ? "
+                + " WHERE codigo = ? ";
         try {
             PreparedStatement st = conn.prepareStatement(sqlInsert);
+            PreparedStatement stProd = conn.prepareStatement(sqlUpdateProduto);
 
             for (Item i : obj) {
 
@@ -41,6 +46,12 @@ public class ItemDAOJDBC implements ItemDAO {
                 st.setDouble(2, i.getValorTotal());
                 st.setLong(3, i.getProduto().getCodigo());
                 st.setLong(4, i.getVenda().getCodigo());
+
+                stProd.setInt(1, i.getQuantidade());
+                stProd.setLong(2, i.getProduto().getCodigo());
+
+                stProd.executeUpdate();
+
                 st.executeUpdate();
             }
 
