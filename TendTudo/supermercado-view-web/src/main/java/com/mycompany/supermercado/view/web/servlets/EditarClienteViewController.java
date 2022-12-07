@@ -1,7 +1,12 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package com.mycompany.supermercado.view.web.servlets;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,48 +17,53 @@ import java.util.List;
 import model.DTO.Cliente;
 import model.servicos.ClienteServico;
 
-@WebServlet(name = "MainViewController", urlPatterns = {"/MainViewController"})
-public class MainViewController extends HttpServlet {
+/**
+ *
+ * @author DUDA
+ */
+@WebServlet(name = "EditarClienteViewController", urlPatterns = {"/EditarClienteViewController"})
+public class EditarClienteViewController extends HttpServlet {
 
-    private ClienteServico servico = new ClienteServico();
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        HttpSession session = request.getSession(true);
-        String login = request.getParameter("usuario");
-        String senha = request.getParameter("senhaL");
-
-        if (login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) {
-            Cliente c = servico.findByLogin(login);
-
-            if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("g"))) {
-
-                request.getSession().setAttribute("UsuarioLogado", c);
-                RequestDispatcher rd = request.getRequestDispatcher("mainGerencia.jsp");
-                rd.forward(request, response);
-
-            } else if (login.equals(c.getLogin()) && (senha.equals(c.getSenha())) && (c.getTipo().equals("c"))) {
-                session.setAttribute("nome", c.getNome());
-                session.setAttribute("cpf", c.getCpf());
-                session.setAttribute("telefone", c.getTelefone());
-                session.setAttribute("endereco", c.getEndereco());
-                session.setAttribute("email", c.getEmail());
-                RequestDispatcher rd = request.getRequestDispatcher("mainCliente.jsp");
-                rd.forward(request, response);
-            } else {
-                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                request.setAttribute("Mensagem", "Usuário ou Senha inválidos.");
-                rd.forward(request, response);
-            }
-        } else {
-            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-            request.setAttribute("Mensagem", "Obrigatório preencher os campos.");
+        try ( PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession(true);
+            ClienteServico servico = new ClienteServico();
+            List<Cliente> list = servico.ListarClientes();
+            
+            Cliente c = new Cliente();
+            
+            String nome = request.getParameter("nome");
+            String cpf = request.getParameter("cpf");
+            String telefone = request.getParameter("telefone");
+            String endereco = request.getParameter("endereco");
+            String email = request.getParameter("email");
+                            
+            c.setNome(nome);
+            c.setCpf(cpf);
+            c.setTelefone(telefone);
+            c.setEndereco(endereco);
+            c.setEmail(email);
+            servico.update(c);
+            
+            session.setAttribute("nome", nome);
+            session.setAttribute("cpf", cpf);
+            session.setAttribute("telefone", telefone);
+            session.setAttribute("endereco", endereco);
+            session.setAttribute("email", email);            
+            RequestDispatcher rd = request.getRequestDispatcher("minhaConta.jsp");
             rd.forward(request, response);
-
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

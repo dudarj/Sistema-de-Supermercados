@@ -181,7 +181,7 @@ th{
 }
 label{
     display:inline-block;
-    margin-bottom:.5rem
+    margin-top:.5rem
 }
 button{
     border-radius:0
@@ -4942,7 +4942,7 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover{
     border-top:1px solid #dee2e6!important
 }
 .border-right{
-    border-right:1px solid #dee2e6!important
+    border-right: transparent
 }
 .border-bottom{
     border-bottom:1px solid #dee2e6!important

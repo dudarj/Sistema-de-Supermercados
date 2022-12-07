@@ -69,6 +69,10 @@
                             </li>
                             <li class="nav-item"><a class="nav-link" href="gallery.jsp">Espaço</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact-us.jsp">Fale Conosco</a></li>
+                            <div>
+                                <a href="minhaConta.jsp" class="user"><i class="far fa-user-circle" style='font-size:37px;justify-content: center;display: flex;margin-top: 3px;cursor:pointer' aria-hidden="true"></i></a>
+                                <p form action="ContaClienteViewController" method="post" name="nome" style="text-align: center;"><%=session.getAttribute("nome")%></p>
+                            </div>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->

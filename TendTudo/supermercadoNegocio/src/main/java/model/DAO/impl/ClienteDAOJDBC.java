@@ -24,7 +24,6 @@ public class ClienteDAOJDBC implements ClienteDAO {
     public ClienteDAOJDBC() {
     }
 
-
     @Override
     public void insert(Cliente obj) {
         String sqlInsert = "INSERT INTO cliente "
@@ -71,7 +70,27 @@ public class ClienteDAOJDBC implements ClienteDAO {
             st.setString(4, obj.getEndereco());
             st.setString(5, obj.getEmail());
             st.setInt(6, obj.getStatus());
-            
+
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void updateByCpf(Cliente obj) {
+        String sqlUpdate = "UPDATE cliente "
+                + "SET nome = ?, cpf = ?, telefone = ?, endereco = ?, email = ?"
+                + "WHERE cpf = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlUpdate);
+            st.setString(1, obj.getNome());
+            st.setString(2, obj.getCpf());
+            st.setString(3, obj.getTelefone());
+            st.setString(4, obj.getEndereco());
+            st.setString(5, obj.getEmail());
+            st.setString(6, obj.getCpf());
+
             st.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
@@ -84,6 +103,18 @@ public class ClienteDAOJDBC implements ClienteDAO {
         try {
             PreparedStatement st = conn.prepareStatement(sqlDelete);
             st.setLong(1, id);
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void deleteByCpf(String cpf) {
+        String sqlDelete = "DELETE FROM cliente WHERE cpf = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlDelete);
+            st.setString(1, cpf);
             st.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
@@ -194,7 +225,6 @@ public class ClienteDAOJDBC implements ClienteDAO {
         try {
             st = conn.prepareStatement("SELECT * FROM cliente "
                     + "WHERE login = ?");
-                    
 
             st.setString(1, login);
             rs = st.executeQuery();
@@ -223,7 +253,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
             ConexaoJdbc.closeResultSet(rs);
         }
     }
-    
+
     @Override
     public List<Cliente> findByNome(String nome) {
         PreparedStatement st = null;

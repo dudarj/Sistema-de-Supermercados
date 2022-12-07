@@ -8,6 +8,13 @@ import model.DTO.Cliente;
 public class ClienteServico {
 
     private ClienteDAO dao = DAOFactory.createClienteDao();
+    
+     public void update(Cliente obj) {
+        dao.updateByCpf(obj);
+    }
+    public void delete(String cpf) {
+        dao.deleteByCpf(cpf);
+    }
 
     public Cliente validaUsuario(Cliente obj) {
         return dao.validaUsuario(obj);
