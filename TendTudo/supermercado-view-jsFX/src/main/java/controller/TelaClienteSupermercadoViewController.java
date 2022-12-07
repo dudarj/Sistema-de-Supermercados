@@ -1,7 +1,9 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +11,6 @@ import java.util.ResourceBundle;
 import java.util.Set;
 
 import application.Main;
-import java.io.IOException;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
@@ -41,8 +43,10 @@ import model.DTO.Item;
 import model.DTO.Produto;
 import model.DTO.TipoPagamento;
 import model.DTO.Venda;
+import model.servicos.ItemServico;
 import model.servicos.ProdutoServico;
 import model.servicos.TipoPagamentoServico;
+import model.servicos.VendaServico;
 import util.Alerts;
 import util.Utils;
 
@@ -88,6 +92,8 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     private Venda v = new Venda();
     private TipoPagamento tipopagamento = new TipoPagamento();
 
+    private VendaServico vendaServico = new VendaServico();
+    
     private ObservableList<Produto> obLista;
     private ObservableList<Produto> obListaVenda;
     private ObservableList<TipoPagamento> obsListTipo;
@@ -105,9 +111,46 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     }
 
     public void onFinalizarComprasAction(ActionEvent event) {
-        Stage parentStage = Utils.currentStage(event);
+        Double totalVenda;
+       
+        totalVenda = somarValorTotalItens();
 
-        loadView(cliente, "/view/FinalizarCompraView.fxml", parentStage);
+        Date dataVenda = new Date();
+
+        v.setCliente(cliente);
+        v.setDataVenda(dataVenda);
+        
+        v.setValorTotal(totalVenda);
+        v.setTotal(totalVenda);
+        
+        Alerts.showConfirmation("Valor Total", "Valor Total: " + v.getValorTotal().toString());
+        
+        vendaServico.salvar(v, cliente.getCodigo());
+
+        populaItensProdutoVenda(listaProduto, v);
+
+        ItemServico itemServico = new ItemServico();
+
+        itemServico.insert(itens);
+
+        Alerts.showAlert("Operação", "Compra", "Compra realizada com sucesso!", AlertType.INFORMATION);;
+        /*Stage parentStage = Utils.currentStage(event);
+    	
+        loadView(cliente, "/view/FinalizarCompraView.fxml", parentStage);*/
+    }
+
+    public void populaItensProdutoVenda(Set<Produto> produtosItens, Venda v) {
+        Item i = new Item();
+        
+        for (Produto p : produtosItens) {
+            i.setProduto(p);
+            i.setVenda(v);
+            i.setPreco(p.getPreco());
+            i.setQuantidade(p.getQtdeItem());
+            i.setValorTotal(p.getPreco() * p.getQtdeItem());
+
+            itens.add(i);
+        }
     }
 
     @Override
@@ -285,13 +328,13 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
 
     }
 
-    private void loadView(Cliente c, String absoluteName, Stage parentStage) {
+    private void loadView(Cliente obj, String absoluteName, Stage parentStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
 
-            FinalizarCompraViewController finaliza = loader.getController();
-            finaliza.setCliente(c);
+            FinalizarCompraViewController fin = loader.getController();
+            fin.setCliente(obj);
 
             Stage dialogStage = new Stage();
             dialogStage.setScene(new Scene(pane));

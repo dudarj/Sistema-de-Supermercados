@@ -1,30 +1,28 @@
 /*
+
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package model.DAO.impl;
 
-import conexao.ConexaoJdbc;
-import conexao.DbException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
 import java.util.List;
+import java.util.Set;
+import java.util.logging.Level;
+
+import conexao.ConexaoJdbc;
+import conexao.DbException;
 import model.DAO.ItemDAO;
 import model.DTO.Item;
-import model.DTO.Produto;
-import model.DTO.Venda;
 
-/**
- *
- * @author Aluno
- */
 public class ItemDAOJDBC implements ItemDAO {
+
     private Connection conn;
 
     public ItemDAOJDBC(Connection conn) {
@@ -32,27 +30,20 @@ public class ItemDAOJDBC implements ItemDAO {
     }
 
     @Override
-    public void insert(Item obj, Produto p, Venda v) {
+    public void insert(Set<Item> obj) {
         String sqlInsert = "INSERT INTO item(quantidade, valortotal, codigo_produto, codigo_venda) VALUES (?,?,?,?)";
         try {
-            PreparedStatement st = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
-            st.setInt(1, obj.getQuantidade());
-            st.setDouble(2, obj.getValorTotal());
-            st.setLong(3, obj.getProduto().getCodigo());
-            st.setLong(4, obj.getVenda().getCodigo());
+            PreparedStatement st = conn.prepareStatement(sqlInsert);
 
-            int linhasAfetadas = st.executeUpdate();
+            for (Item i : obj) {
 
-            if (linhasAfetadas > 0) {
-                ResultSet rs = st.getGeneratedKeys();
-                if (rs.next()) {
-                    Long id = rs.getLong(1);
-                    obj.setCodigo(id);
-                }
-                ConexaoJdbc.closeResultSet(rs);
-            } else {
-                throw new DbException("Erro inesperado, nehuma linha foi afetada!");
+                st.setInt(1, i.getQuantidade());
+                st.setDouble(2, i.getValorTotal());
+                st.setLong(3, i.getProduto().getCodigo());
+                st.setLong(4, i.getVenda().getCodigo());
+                st.executeUpdate();
             }
+
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -13,7 +13,8 @@ public class Venda implements Serializable {
 
     private Long codigo;
     private Date dataVenda;
-    private double valorTotal;
+    private Double valorTotal;
+    private Double Total;
 
     private Cliente cliente = new Cliente();
 
@@ -26,7 +27,7 @@ public class Venda implements Serializable {
     public Venda() {
     }
 
-    public Venda(Long codigo, Date dataVenda, double valorTotal) {
+    public Venda(Long codigo, Date dataVenda, Double valorTotal) {
         this.codigo = codigo;
         this.dataVenda = dataVenda;
         this.valorTotal = valorTotal;
@@ -48,24 +49,23 @@ public class Venda implements Serializable {
         this.dataVenda = dataVenda;
     }
 
-    public double getValorTotal() {
+    public Double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = SomarTotalVenda(itens);
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
-    public Double SomarTotalVenda(List<Item> itens) {
-
-        Double total = 0.0;
-
-        for (Item x : itens) {
-            total = x.getValorTotal();
-        }
-
-        return total;
+    public Double getTotal() {
+        return Total;
     }
+
+    public void setTotal(Double Total) {
+        this.Total = Total;
+    }
+    
+    
 
     public Cliente getCliente() {
         return cliente;

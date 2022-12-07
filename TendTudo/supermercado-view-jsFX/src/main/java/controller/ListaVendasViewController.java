@@ -30,7 +30,7 @@ public class ListaVendasViewController implements Initializable, DataChangeListe
     private TableColumn<Venda, Long> tbcCodigo;
 
     @FXML
-    private TableColumn<Cliente, Venda> tbcCliente;
+    private TableColumn<Venda, String> tbcCliente;
 
     @FXML
     private TableColumn<Venda, Date> tbcData;

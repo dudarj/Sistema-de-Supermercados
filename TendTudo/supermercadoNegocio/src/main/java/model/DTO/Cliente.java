@@ -190,7 +190,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "Cliente{" + "codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone + ", endereco=" + endereco + ", status=" + status + ", login=" + login + ", senha=" + senha + ", tipo=" + tipo + ", email=" + email + ", vendas=" + vendas + '}';
+        return nome ;
     }
 
 }

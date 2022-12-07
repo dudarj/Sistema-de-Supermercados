@@ -81,34 +81,7 @@
                     <!-- /.navbar-collapse -->
 
                 </div>
-                <!-- Start Side Menu -->
-                <div class="side">
-                    <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                    <li class="cart-box">
-                        <ul class="cart-list">
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Delica omtantur </a></h6>
-                                <p>1x - <span class="price">$80.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Omnes ocurreret</a></h6>
-                                <p>1x - <span class="price">$60.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Agam facilisis</a></h6>
-                                <p>1x - <span class="price">$40.00</span></p>
-                            </li>
-                            <li class="total">
-                                <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                                <span class="float-right"><strong>Total</strong>: $180.00</span>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
-                <!-- End Side Menu -->
+              
             </nav>
             <!-- End Navigation -->
         </header>
@@ -172,7 +145,7 @@
                                         </td>
                                         <td class="name-pr">
                                             <a href="#">
-                                                Lorem ipsum dolor sit amet
+                                                Cenoura
                                             </a>
                                         </td>
                                         <td class="price-pr">
@@ -196,7 +169,7 @@
                                         </td>
                                         <td class="name-pr">
                                             <a href="#">
-                                                Lorem ipsum dolor sit amet
+                                                Tomate
                                             </a>
                                         </td>
                                         <td class="price-pr">
@@ -220,7 +193,7 @@
                                         </td>
                                         <td class="name-pr">
                                             <a href="#">
-                                                Lorem ipsum dolor sit amet
+                                                Uva
                                             </a>
                                         </td>
                                         <td class="price-pr">
@@ -246,34 +219,14 @@
                     <div class="col-lg-8 col-sm-12"></div>
                     <div class="col-lg-4 col-sm-12">
                         <div class="order-box">
-                            <h3>Order summary</h3>
-                            <div class="d-flex">
-                                <h4>Sub Total</h4>
-                                <div class="ml-auto font-weight-bold"> $ 130 </div>
-                            </div>
-                            <div class="d-flex">
-                                <h4>Discount</h4>
-                                <div class="ml-auto font-weight-bold"> $ 40 </div>
-                            </div>
-                            <hr class="my-1">
-                            <div class="d-flex">
-                                <h4>Coupon Discount</h4>
-                                <div class="ml-auto font-weight-bold"> $ 10 </div>
-                            </div>
-                            <div class="d-flex">
-                                <h4>Tax</h4>
-                                <div class="ml-auto font-weight-bold"> $ 2 </div>
-                            </div>
-                            <div class="d-flex">
-                                <h4>Shipping Cost</h4>
-                                <div class="ml-auto font-weight-bold"> Free </div>
-                            </div>
+                            <h3>Carrinho</h3>
                             <hr>
                             <div class="d-flex gr-total">
-                                <h5>Grand Total</h5>
+                                <h5>Valor Total</h5>
                                 <div class="ml-auto h5"> $ 388 </div>
                             </div>
-                            <hr> </div>
+                            <hr> 
+                        </div>
                     </div>
                     <div class="col-12 d-flex shopping-box"><a href="checkout.jsp" class="ml-auto btn hvr-hover">Finalizar Compra</a> </div>
                 </div>

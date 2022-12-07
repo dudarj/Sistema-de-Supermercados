@@ -20,8 +20,13 @@ public class VendaServico {
     }
 
     public void salvar(Venda obj, Long id_cliente) {
-        // TODO Auto-generated method stub
+        
+        dao.salvar(obj, id_cliente);
 
+    }
+    
+    public Venda findById(Long id){
+       return  dao.findById(id);
     }
     
 }

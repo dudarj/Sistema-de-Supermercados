@@ -34,7 +34,7 @@ public class VendaDAOJDBC implements VendaDAO {
             st.setLong(3, obj.getCliente().getCodigo());
             st.setLong(4, obj.getP().getCodigo());
             st.setLong(5, obj.getTi().getCodigo());
-            
+
             int linhasAfetadas = st.executeUpdate();
 
             if (linhasAfetadas > 0) {
@@ -42,6 +42,7 @@ public class VendaDAOJDBC implements VendaDAO {
                 if (rs.next()) {
                     Long id = rs.getLong(1);
                     obj.setCodigo(id);
+                    
                 }
                 ConexaoJdbc.closeResultSet(rs);
             } else {
@@ -114,8 +115,8 @@ public class VendaDAOJDBC implements VendaDAO {
         PreparedStatement st = null;
         ResultSet rs = null;
         try {
-            st = conn.prepareStatement("SELECT * " 
-                    + " FROM venda v " 
+            st = conn.prepareStatement("SELECT * "
+                    + " FROM venda v "
                     + " inner join cliente c on c.codigo = v.codigo_cliente "
                     + " inner join pagamento p on p.codigo = v.codigo_pagamento "
                     + " inner join tipopagamento ti on ti.codigo = v.codigo_tipopagamento "
@@ -128,24 +129,24 @@ public class VendaDAOJDBC implements VendaDAO {
                 Cliente c = new Cliente();
                 Pagamento p = new Pagamento();
                 TipoPagamento ti = new TipoPagamento();
-                
+
                 obj.setCodigo(rs.getLong("codigo"));
                 obj.setDataVenda(new java.util.Date(rs.getTimestamp("datavenda").getTime()));
                 obj.setValorTotal(rs.getDouble("valortotal"));
-                
+
                 c.setCodigo(rs.getLong("codigo_cliente"));
                 c.setNome(rs.getString("nome"));
-                
+
                 p.setCodigo(rs.getLong("codigo_pagamento"));
                 p.setParcelas(rs.getInt("parcelas"));
-                
+
                 ti.setCodigo(rs.getLong("codigo_tipopagamento"));
                 ti.setDescricao(rs.getString("descricao"));
-                
+
                 obj.setCliente(c);
                 obj.setP(p);
                 obj.setTi(ti);
-              
+
                 lista.add(obj);
             }
             return lista;
@@ -159,7 +160,39 @@ public class VendaDAOJDBC implements VendaDAO {
 
     @Override
     public void salvar(Venda obj, Long id_cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+         String sqlVenda = "INSERT INTO venda(datavenda, valortotal, codigo_cliente, codigo_pagamento, codigo_tipopagamento) VALUES (?,?,?,?,?)";
+        try {
+            PreparedStatement st = conn.prepareStatement(sqlVenda, Statement.RETURN_GENERATED_KEYS);
+            st.setDate(1, new java.sql.Date(obj.getDataVenda().getTime()));
+            st.setDouble(2, obj.getValorTotal());
+            st.setLong(3, obj.getCliente().getCodigo());
+            st.setLong(4, 4/*obj.getP().getCodigo()*/);
+            st.setLong(5, 4/*obj.getTi().getCodigo()*/);
+
+            int linhasAfetadas = st.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+                ResultSet rs = st.getGeneratedKeys();
+                if (rs.next()) {
+                    Long id = rs.getLong(1);
+                    obj.setCodigo(id); 
+                    
+                    retornaIdVenda(id);
+                    System.out.println("codigo da venda: "+id);
+                }
+                ConexaoJdbc.closeResultSet(rs);
+            } else {
+                throw new DbException("Erro inesperado, nehuma linha foi afetada!");
+            }
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    private Long retornaIdVenda(Long id) {
+        
+            return id;
     }
 }
-
