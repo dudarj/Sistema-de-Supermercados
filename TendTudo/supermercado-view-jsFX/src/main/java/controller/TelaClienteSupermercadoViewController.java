@@ -93,7 +93,7 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
     private TipoPagamento tipopagamento = new TipoPagamento();
 
     private VendaServico vendaServico = new VendaServico();
-    
+
     private ObservableList<Produto> obLista;
     private ObservableList<Produto> obListaVenda;
     private ObservableList<TipoPagamento> obsListTipo;
@@ -112,19 +112,19 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
 
     public void onFinalizarComprasAction(ActionEvent event) {
         Double totalVenda;
-       
+
         totalVenda = somarValorTotalItens();
 
         Date dataVenda = new Date();
 
         v.setCliente(cliente);
         v.setDataVenda(dataVenda);
-        
+
         v.setValorTotal(totalVenda);
         v.setTotal(totalVenda);
-        
+
         Alerts.showConfirmation("Valor Total", "Valor Total: " + v.getValorTotal().toString());
-        
+
         vendaServico.salvar(v, cliente.getCodigo());
 
         populaItensProdutoVenda(listaProduto, v);
@@ -141,7 +141,7 @@ public class TelaClienteSupermercadoViewController implements Initializable, Dat
 
     public void populaItensProdutoVenda(Set<Produto> produtosItens, Venda v) {
         Item i = new Item();
-        
+
         for (Produto p : produtosItens) {
             i.setProduto(p);
             i.setVenda(v);

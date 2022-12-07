@@ -9,6 +9,8 @@ public interface VendaDAO {
     void deleteById(Long id);
     Venda findById(Long id);
     List<Venda> ListarVendas();
+    List<Venda> findByData(String data);
+    List<Venda> findAll();
     
     void salvar(Venda obj, Long id_cliente);
 }

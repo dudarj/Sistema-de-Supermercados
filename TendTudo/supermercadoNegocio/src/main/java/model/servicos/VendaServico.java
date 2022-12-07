@@ -29,4 +29,12 @@ public class VendaServico {
        return  dao.findById(id);
     }
     
+    public List<Venda> findAll() {
+        return dao.findAll();
+    }
+    
+    public List<Venda> findByData(String data) {
+        return dao.findByData(data);
+    }
+    
 }

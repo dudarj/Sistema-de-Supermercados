@@ -42,7 +42,7 @@ public class VendaDAOJDBC implements VendaDAO {
                 if (rs.next()) {
                     Long id = rs.getLong(1);
                     obj.setCodigo(id);
-                    
+
                 }
                 ConexaoJdbc.closeResultSet(rs);
             } else {
@@ -160,8 +160,8 @@ public class VendaDAOJDBC implements VendaDAO {
 
     @Override
     public void salvar(Venda obj, Long id_cliente) {
-        
-         String sqlVenda = "INSERT INTO venda(datavenda, valortotal, codigo_cliente, codigo_pagamento, codigo_tipopagamento) VALUES (?,?,?,?,?)";
+
+        String sqlVenda = "INSERT INTO venda(datavenda, valortotal, codigo_cliente, codigo_pagamento, codigo_tipopagamento) VALUES (?,?,?,?,?)";
         try {
             PreparedStatement st = conn.prepareStatement(sqlVenda, Statement.RETURN_GENERATED_KEYS);
             st.setDate(1, new java.sql.Date(obj.getDataVenda().getTime()));
@@ -176,10 +176,10 @@ public class VendaDAOJDBC implements VendaDAO {
                 ResultSet rs = st.getGeneratedKeys();
                 if (rs.next()) {
                     Long id = rs.getLong(1);
-                    obj.setCodigo(id); 
-                    
+                    obj.setCodigo(id);
+
                     retornaIdVenda(id);
-                    System.out.println("codigo da venda: "+id);
+                    System.out.println("codigo da venda: " + id);
                 }
                 ConexaoJdbc.closeResultSet(rs);
             } else {
@@ -188,11 +188,45 @@ public class VendaDAOJDBC implements VendaDAO {
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ClienteDAOJDBC.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     private Long retornaIdVenda(Long id) {
-        
-            return id;
+        return id;
+    }
+
+    @Override
+    public List<Venda> findByData(String data) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            String sql = "select * "
+                    + " from venda v "
+                    + " where v.datavenda LIKE '%" + data + "%' ";
+            st = conn.prepareStatement(sql);
+            List<Venda> list = new ArrayList<>();
+
+            rs = st.executeQuery();
+            while (rs.next()) {
+                Venda obj = new Venda();
+                obj.setCodigo(rs.getLong("codigo"));
+                obj.setDataVenda(new java.util.Date(rs.getTimestamp("datavenda").getTime()));
+                obj.setValorTotal(rs.getDouble("valortotal"));
+
+                list.add(obj);
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            ConexaoJdbc.closeStatement(st);
+            ConexaoJdbc.closeResultSet(rs);
+        }
+    }
+
+    @Override
+    public List<Venda> findAll() {
+        // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return null;
     }
 }
